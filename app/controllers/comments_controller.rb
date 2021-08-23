@@ -2,6 +2,6 @@ class CommentsController < ApplicationController
   def create
   end
 
-  def index
+  def new
   end
 end

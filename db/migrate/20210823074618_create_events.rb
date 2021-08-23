@@ -5,6 +5,7 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.datetime :date
       t.text :content
       t.string :type
+      t.references :kurasu, null: false, foreign_key: true
 
       t.timestamps
     end
