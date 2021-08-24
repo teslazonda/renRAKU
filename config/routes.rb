@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   end
 
   resources :students, only: [] do
-    resources :messages, only: %i[index, create, new]
+    resources :messages, only: %i[index create new]
   end
   resources :messages, only: %i[show] do
-    resources :comments, only: %i[create, new]
+    resources :comments, only: %i[create new]
   end
   resources :dashboard, only: %i[index]
   # /dashboard
