@@ -1,9 +1,7 @@
 <%= simple_form_for @event do |f| %>
   <%= f.input :title %>
-  <%#= f.input :content %>
   <%= f.rich_text_area :rich_body %>
   <%= f.input :date, html5: true %>
-  <%#= f.association :kurasus, as: :check_boxes%>
   <% @kurasus.each do |kurasu| %>
     <%= f.simple_fields_for :participants do |participants_form| %>
       <%= participants_form.association :kurasu, as: :boolean, checked_value: kurasu.id, unchecked_value: "", label: kurasu.name, input_html:{checked: true}  %>
