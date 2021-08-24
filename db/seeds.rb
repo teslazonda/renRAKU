@@ -2,6 +2,7 @@ require 'faker'
 
 puts "Cleaning the DB"
 
+
 puts "clearing messages"
 Message.destroy_all
 puts "Messages cleared"
@@ -88,7 +89,9 @@ ren = Student.create!(
   last_name: "Kitano",
   birthday: "2015-08-24",
   student_number: 1,
+
   kurasu_id: class_one_a.id,
+
   user_id: sae.id
 )
 
