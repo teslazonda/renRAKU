@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
+    @events = policy_scope(Event)
   end
 
   def create
@@ -18,6 +18,7 @@ class EventsController < ApplicationController
     @event = Event.new
     @event.participants.build
     @kurasus = Kurasu.all
+    authorize @event
   end
 
   private

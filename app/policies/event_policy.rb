@@ -6,14 +6,14 @@ class EventPolicy < ApplicationPolicy
   end
 
   def create?
+    user.teacher?
   end
 
   def show?
   end
 
   def update?
+    user.teacher?
   end
 
-  def index?
-  end
 end
