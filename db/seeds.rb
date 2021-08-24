@@ -11,6 +11,10 @@ puts "clearing classes"
 Kurasu.destroy_all
 puts "Classes cleared"
 
+puts "clearing the events"
+Event.destroy_all
+puts "Events cleared"
+
 puts "clearing the users"
 User.destroy_all
 puts "User cleared"
@@ -71,9 +75,19 @@ classtwob = Kurasu.create(
 )
 puts "Classes created"
 
-puts "Creating 10 students for class 1-A"
-counter = 0
-10.times do
+puts "Creating our target student"
+ren = Student.create!(
+  first_name: "Ren",
+  last_name: "Kitano",
+  birthday: "2015-08-24",
+  student_number: 1,
+  kurasu_id: classonea.id,
+  user_id: sae.id
+)
+
+puts "Creating 9 students for class 1-A"
+counter = 1
+9.times do
   counter += 1
   student = Student.create!(
     first_name: Faker::Name.first_name,
