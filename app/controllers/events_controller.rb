@@ -6,18 +6,21 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    authorize @event
     if @event.save
       redirect_to events_path
     else
       @kurasus = Kurasu.all
+      @event.participants = []
+      @event.participants.build
       render '/events/new'
     end
   end
 
   def new
     @event = Event.new
-    @event.participants.build
     @kurasus = Kurasu.all
+    @event.participants.build
     authorize @event
   end
 
