@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_24_032928) do
+ActiveRecord::Schema.define(version: 2021_08_24_055016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,10 +30,8 @@ ActiveRecord::Schema.define(version: 2021_08_24_032928) do
     t.datetime "date"
     t.text "content"
     t.string "type"
-    t.bigint "kurasu_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["kurasu_id"], name: "index_events_on_kurasu_id"
   end
 
   create_table "kurasus", force: :cascade do |t|
@@ -59,12 +57,10 @@ ActiveRecord::Schema.define(version: 2021_08_24_032928) do
   create_table "participants", force: :cascade do |t|
     t.bigint "kurasu_id", null: false
     t.bigint "event_id", null: false
-    t.bigint "student_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["event_id"], name: "index_participants_on_event_id"
     t.index ["kurasu_id"], name: "index_participants_on_kurasu_id"
-    t.index ["student_id"], name: "index_participants_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -96,13 +92,11 @@ ActiveRecord::Schema.define(version: 2021_08_24_032928) do
 
   add_foreign_key "comments", "messages"
   add_foreign_key "comments", "users"
-  add_foreign_key "events", "kurasus"
   add_foreign_key "kurasus", "users"
   add_foreign_key "messages", "students"
   add_foreign_key "messages", "users"
   add_foreign_key "participants", "events"
   add_foreign_key "participants", "kurasus"
-  add_foreign_key "participants", "students"
   add_foreign_key "students", "kurasus"
   add_foreign_key "students", "users"
 end
