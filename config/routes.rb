@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
-  resources :kurasus, only: %i[index, edit, create, new]
-  resources :events, only: %i[index, create, new] do
-    resources :participants, only: %i[index, create, new]
+  resources :kurasus, only: %i[index edit create new]
+  resources :events, only: %i[index create new] do
+    resources :participants, only: %i[index create new]
   end
 
   resources :students, only: [] do
