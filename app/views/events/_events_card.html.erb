@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <% @events.each do |event| %>
+      <div class="card col-sm-12 col-md-5 col-lg-4 m-2">
+        <div class="card-body">
+          <h5 class="card-title"><%= event.title %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= event.date.strftime("%e %b %Y %H:%M") %></h6>
+          <p class="card-text"><%= event.content %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
