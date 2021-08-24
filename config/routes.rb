@@ -11,10 +11,10 @@ Rails.application.routes.draw do
   resources :messages, only: %i[show] do
     resources :comments, only: %i[create new]
   end
-  resources :dashboard, only: %i[index]
+  resources :dashboards, only: %i[index]
   # /dashboard
   devise_for :users
-  get '/dashboard' => "dashboard#index", :as => :user_root
+  get '/dashboard' => "dashboards#index", :as => :user_root
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
