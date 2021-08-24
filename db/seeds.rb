@@ -173,9 +173,15 @@ Event.create!(
 puts "Events created"
 
 puts "creating messages"
-Message.create!(
+sleepy = Message.create!(
   title: "Sleepy in class",
   content: "We have noticed that Ren-kun was quite sleepy this morning in class. Is everything alright?",
+  student_id: ren.id,
+  user_id: sae.id
+)
+lunch = Message.create!(
+  title: "Broken lunch box",
+  content: "Today Ren-kun dropped his lunch box when he took it out of his bag.\nThe top is broken, so you will want to get him a new lunch box",
   student_id: ren.id,
   user_id: sae.id
 )
