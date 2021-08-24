@@ -1,15 +1,2 @@
-<h1>BulletinBoard</h1>
-
-<div class="container">
-  <div class="row">
-    <% @events.each do |event| %>
-      <div class="card col-lg" style="width: 24rem;">
-        <div class="card-body">
-          <h5 class="card-title"><%= event.title %></h5>
-          <h6 class="card-subtitle mb-2 text-muted"><%= event.date %></h6>
-          <p class="card-text"><%= event.content %></p>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
+<h1 class="text-center mt-3 text-white">Bulletin Board</h1>
+<%= render 'events_card' %>
