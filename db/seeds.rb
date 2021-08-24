@@ -2,7 +2,6 @@ require 'faker'
 
 puts "Cleaning the DB"
 
-
 puts "clearing students"
 Student.destroy_all
 puts "Students cleared"
@@ -156,9 +155,11 @@ Event.create!(
   content: "On Saturday morning, the school will organize a Halloween party!\nMake sure to come with a costume and some candies for other children.\nThe party will start at 9am and finish at 12pm. Parents and children are more than welcome to stay for lunch on the school premises.\nThe main gate will close at 3pm.",
   kurasu_id: classonea.id
 )
+
 Event.create!(
   title: "Museum visit",
   date: "2021-9-15 10:00:00",
   content: "On Wednesday the 15th of September, we will bring class 1-A to the dinosaur museum.\nEntrance fees are ¥200, please make sure to prepare the exact amount as well as a lunch box for your child.\nThe bus leaves the school at 10am and we will be back at 2pm.",
   kurasu_id: classonea.id
 )
+puts "Events created"
