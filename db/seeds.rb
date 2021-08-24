@@ -185,3 +185,12 @@ lunch = Message.create!(
   student_id: ren.id,
   user_id: sae.id
 )
+puts "Messages created"
+
+puts "creating comments"
+Comment.create(
+  user_id: sae.id,
+  message_id: sleepy.id,
+  title: "roadtrip",
+  content: "Yes, sorry about this! Last weekend we went on a roatrip and he went to bed late last night"
+)
