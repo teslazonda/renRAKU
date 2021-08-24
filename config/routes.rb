@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'dashboard/show'
+  root to: 'pages#home'
   resources :kurasus, only: %i[index, edit, create, new]
   resources :events, only: %i[index, create, new] do
     resources :participants, only: %i[index, create, new]
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :dashboard, only: %i[index]
   # /dashboard
   devise_for :users
-  root to: 'dashboard#index'
+  get '/dashboard' => "dashboard#index", :as => :user_root
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
