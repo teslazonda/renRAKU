@@ -2,6 +2,15 @@ require 'faker'
 
 puts "Cleaning the DB"
 
+
+puts "clearing messages"
+Message.destroy_all
+puts "Messages cleared"
+
+puts "clearing comments"
+Comment.destroy_all
+puts "Comments cleared"
+
 puts "clearing students"
 Student.destroy_all
 puts "Students cleared"
@@ -49,25 +58,25 @@ kevin = User.create!(
 puts "Users created"
 
 puts "creating classes"
-classonea = Kurasu.create(
+class_one_a = Kurasu.create(
   name: "1-A",
   class_year: 1,
   user_id: sae.id
 )
 
-classoneb = Kurasu.create(
+class_one_b = Kurasu.create(
   name: "1-B",
   class_year: 1,
   user_id: sae.id
 )
 
-classtwoa = Kurasu.create(
+class_two_a = Kurasu.create(
   name: "2-A",
   class_year: 2,
   user_id: sae.id
 )
 
-classtwob = Kurasu.create(
+class_two_b = Kurasu.create(
   name: "2-B",
   class_year: 2,
   user_id: sae.id
@@ -80,7 +89,9 @@ ren = Student.create!(
   last_name: "Kitano",
   birthday: "2015-08-24",
   student_number: 1,
-  kurasu_id: classonea.id,
+
+  kurasu_id: class_one_a.id,
+
   user_id: sae.id
 )
 
@@ -93,7 +104,7 @@ counter = 1
     last_name: Faker::Name.last_name,
     birthday: Faker::Date.between(from: '2015-01-01', to: '2015-12-31'),
     student_number: counter,
-    kurasu_id: classonea.id,
+    kurasu_id: class_one_a.id,
     user_id: sae.id
   )
   puts "Created #{student.id}"
@@ -109,7 +120,7 @@ counter = 10
     last_name: Faker::Name.last_name,
     birthday: Faker::Date.between(from: '2015-01-01', to: '2015-12-31'),
     student_number: counter,
-    kurasu_id: classoneb.id,
+    kurasu_id: class_one_b.id,
     user_id: sae.id
   )
   puts "Created #{student.id}"
@@ -125,7 +136,7 @@ counter = 20
     last_name: Faker::Name.last_name,
     birthday: Faker::Date.between(from: '2014-01-01', to: '2014-12-31'),
     student_number: counter,
-    kurasu_id: classtwoa.id,
+    kurasu_id: class_two_a.id,
     user_id: sae.id
   )
   puts "Created #{student.id}"
@@ -141,7 +152,7 @@ counter = 30
     last_name: Faker::Name.last_name,
     birthday: Faker::Date.between(from: '2015-01-01', to: '2015-12-31'),
     student_number: counter,
-    kurasu_id: classtwob.id,
+    kurasu_id: class_two_b.id,
     user_id: sae.id
   )
   puts "Created #{student.id}"
@@ -153,13 +164,54 @@ Event.create!(
   title: "Haloween party!",
   date: "2021-10-30 09:00:00",
   content: "On Saturday morning, the school will organize a Halloween party!\nMake sure to come with a costume and some candies for other children.\nThe party will start at 9am and finish at 12pm. Parents and children are more than welcome to stay for lunch on the school premises.\nThe main gate will close at 3pm.",
-  kurasu_id: classonea.id
+  kurasu_id: class_one_a.id
 )
 
 Event.create!(
   title: "Museum visit",
   date: "2021-9-15 10:00:00",
   content: "On Wednesday the 15th of September, we will bring class 1-A to the dinosaur museum.\nEntrance fees are ¥200, please make sure to prepare the exact amount as well as a lunch box for your child.\nThe bus leaves the school at 10am and we will be back at 2pm.",
-  kurasu_id: classonea.id
+  kurasu_id: class_one_a.id
 )
 puts "Events created"
+
+puts "creating messages"
+sleepy = Message.create!(
+  title: "Sleepy in class",
+  content: "We have noticed that Ren-kun was quite sleepy this morning in class. Is everything alright?",
+  student_id: ren.id,
+  user_id: sae.id
+)
+lunch = Message.create!(
+  title: "Broken lunch box",
+  content: "Today Ren-kun dropped his lunch box when he took it out of his bag.\nThe top is broken, so you will want to get him a new lunch box",
+  student_id: ren.id,
+  user_id: sae.id
+)
+puts "Messages created"
+
+puts "creating comments"
+Comment.create(
+  user_id: viddy.id,
+  message_id: sleepy.id,
+  title: "roadtrip",
+  content: "Yes, sorry about this! Last weekend we went on a roatrip and he went to bed late last night"
+)
+Comment.create(
+  user_id: sae.id,
+  message_id: sleepy.id,
+  title: "roadtrip",
+  content: "Understood! Next time let us know, so we can let him nap longer"
+)
+Comment.create(
+  user_id: viddy.id,
+  message_id: lunch.id,
+  title: "old lunch box",
+  content: "Thank you for letting us know. This was an old lunch box, so we will get a new one this weekend"
+)
+Comment.create(
+  user_id: sae.id,
+  message_id: lunch.id,
+  title: "old lunch box",
+  content: "Thank you!"
+)
