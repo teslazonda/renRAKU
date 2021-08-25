@@ -24,6 +24,18 @@ class EventsController < ApplicationController
     authorize @event
   end
 
+  def edit
+    @event = Event.find(params[:id])
+    @kurasus = Kurasu.all
+    @event.participants.build
+    authorize @event
+  end
+
+  def update
+    @event.update(event_params)
+    redirect_to events_path
+  end
+
   private
 
   def event_params
