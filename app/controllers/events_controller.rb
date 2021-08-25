@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @events = policy_scope(Event)
