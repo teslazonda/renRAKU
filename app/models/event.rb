@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  has_many :participants
+  has_many :participants, dependent: :destroy
   has_many :kurasus, through: :participants
   has_many :students, through: :participants
   validates :title, presence: true
