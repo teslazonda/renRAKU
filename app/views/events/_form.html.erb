@@ -1,6 +1,7 @@
 <%= simple_form_for @event do |f| %>
   <%= f.input :title %>
   <%= f.rich_text_area :content %>
+  <%= f.input :photo, as: :file %>
   <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
   <% @kurasus.each do |kurasu| %>
     <%= f.simple_fields_for :participants do |participants_form| %>
