@@ -1,7 +1,6 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/show.html.erb</p>
+<h1 class="text-center mt-3 text-white">Dashboard</h1>
 <% if current_user.teacher  %>
-<p>I am a teacher</p>
+  <%= render 'teacher_cards' %>
 <% else %>
-<p>I am a parent</p>
+  <p>I am a parent</p>
 <% end %>
