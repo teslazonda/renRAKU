@@ -26,6 +26,21 @@ class EventsController < ApplicationController
     authorize @event
   end
 
+  def edit
+    @event = Event.find(params[:id])
+    @kurasus = Kurasu.all
+    @event.participants = []
+    @event.participants.build
+    authorize @event
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    authorize @event
+    @event.update(event_params)
+    redirect_to events_path
+  end
+
   def destroy
     @event = Event.find(params[:id])
     @event.destroy

@@ -16,6 +16,10 @@ class EventPolicy < ApplicationPolicy
     user.teacher?
   end
 
+  def edit?
+    user.teacher?
+  end
+
   def destroy?
     user.teacher?
   end
