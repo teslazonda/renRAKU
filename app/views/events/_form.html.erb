@@ -1,6 +1,6 @@
 <%= simple_form_for @event do |f| %>
   <%= f.input :title %>
-  <%= f.rich_text_area :content %>
+  <%= f.rich_text_area :rich_body %>
   <%= f.input :photo, as: :file %>
   <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
   <div class="d-flex">
