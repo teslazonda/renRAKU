@@ -22,3 +22,14 @@
 .footer-copyright {
   color: white;
 }
+// This will make the footer sticky
+html {
+  position: relative;
+  min-height: 100%;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  line-height: 60px; /* Vertically center the text there */
+}
