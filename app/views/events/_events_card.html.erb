@@ -13,7 +13,7 @@
 
             <h1 class="event-card-title"><a href="#"><%= event.title %></a></h1>
 
-            <p class="event-card-desc"><%= simple_format(event.content) %></p>
+            <p class="event-card-desc"><%= event.rich_body %></p>
 
             <div class="d-flex justify-content-start">
               <span class="event-card-classes">
@@ -27,6 +27,7 @@
             </div>
             <div class="d-flex justify-content-end">
               <span>
+                <%= link_to 'Update Event', edit_event_path(event), class: "btn btn-danger mx-1" if @user.teacher %>
                 <%= link_to 'Delete Event', event_path(event), method: :delete, data: { confirm: "Are you sure you want to delete this event?" }, class: "btn btn-danger mx-1" if @user.teacher %>
               </span>
             </div>
