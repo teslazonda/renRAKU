@@ -1,21 +1,40 @@
 <div class="container center">
   <div class="row">
     <% @events.each do |event| %>
-      <div class="card col-sm-12 col-md-5 col-lg-4 m-3">
-        <div class="card-body">
-          <%= cl_image_tag event.photo.key,
-            width: 200, height: 200, crop: :fill if event.photo.attached? %>
-          <div class="d-flex">
-            <% event.kurasus.each do |kurasu|%>
-              <%= kurasu.name %>
-            <% end %>
+      <div class="small m-4">
+        <article class="event-card">
+          <div class="pizza-box">
+            <%= cl_image_tag event.photo.key, crop: :fill if event.photo.attached? %>
           </div>
-          <h5 class="card-title"><%= event.title %></h5>
-          <h6 class="card-subtitle my-2"><%= event.date.strftime("%e %b %Y %H:%M") %></h6>
-          <p class="card-text"><%= event.rich_body %></p>
-          <%= link_to 'Delete Event', event_path(event), method: :delete, data: { confirm: "Are you sure you want to delete this event?" }, class: "btn btn-danger mx-1" if @user.teacher %>
-          <%= link_to 'Update Event', edit_event_path(event), class: "btn btn-danger mx-1" if @user.teacher %>
-        </div>
+          <div class="event-card-content">
+            <p class="event-card-tags">
+              <span class="event-card-tag">Event on the: <%= event.date.strftime("%e %b %Y %H:%M") %></span>
+            </p>
+
+            <h1 class="event-card-title"><a href="#"><%= event.title %></a></h1>
+
+            <p class="event-card-desc"><%= event.rich_body %></p>
+
+            <div class="d-flex justify-content-start">
+              <span class="event-card-classes">
+              For the following classes:
+                <% event.kurasus.each do |kurasu|%>
+                  <div class="classes">
+                    <%= kurasu.name %>
+                  </div>
+                <% end %>
+              </span>
+            </div>
+            <div class="d-flex justify-content-end">
+              <span>
+                <%= link_to 'Update Event', edit_event_path(event), class: "btn btn-danger mx-1" if @user.teacher %>
+                <%= link_to 'Delete Event', event_path(event), method: :delete, data: { confirm: "Are you sure you want to delete this event?" }, class: "btn btn-danger mx-1" if @user.teacher %>
+              </span>
+            </div>
+
+
+          </div>
+        </article>
       </div>
     <% end %>
   </div>
