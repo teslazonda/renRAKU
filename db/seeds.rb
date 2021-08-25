@@ -167,7 +167,7 @@ puts "Creating events"
 halloween_event = Event.create!(
   title: "Halloween party!",
   date: "2021-10-30 09:00:00",
-  content: "On Saturday morning, the school will organize a Halloween party!\nMake sure to come with a costume and some candies for other children.\nThe party will start at 9am and finish at 12pm. Parents and children are more than welcome to stay for lunch on the school premises.\nThe main gate will close at 3pm.",
+  rich_body: "On Saturday morning, the school will organize a Halloween party!\nMake sure to come with a costume and some candies for other children.\nThe party will start at 9am and finish at 12pm. Parents and children are more than welcome to stay for lunch on the school premises.\nThe main gate will close at 3pm.",
 )
 file_halloween = URI.open('https://blog.hotelsbyday.com/wp-content/uploads/halloweendaystayfeature-759x500.jpg')
 halloween_event.photo.attach(io: file_halloween, filename: 'halloween.jpg', content_type: 'image/jpg')
@@ -175,7 +175,7 @@ halloween_event.photo.attach(io: file_halloween, filename: 'halloween.jpg', cont
 museum_event = Event.create!(
   title: "Museum visit",
   date: "2021-9-15 10:00:00",
-  content: "On Wednesday the 15th of September, we will bring class 1-A to the dinosaur museum.\nEntrance fees are ¥200, please make sure to prepare the exact amount as well as a lunch box for your child.\nThe bus leaves the school at 10am and we will be back at 2pm.",
+  rich_body: "On Wednesday the 15th of September, we will bring class 1-A to the dinosaur museum.\nEntrance fees are ¥200, please make sure to prepare the exact amount as well as a lunch box for your child.\nThe bus leaves the school at 10am and we will be back at 2pm.",
 )
 file = URI.open('https://d27k8xmh3cuzik.cloudfront.net/wp-content/uploads/2018/10/national-musuem-of-colombo-cover-img.jpg')
 museum_event.photo.attach(io: file, filename: 'museum.jpg', content_type: 'image/jpg')
