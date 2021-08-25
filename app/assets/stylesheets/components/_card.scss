@@ -96,6 +96,14 @@ figure {
 	}
 }
 // Cards with photo
+.classes {
+  padding: 8px;
+  background-color: $light-gray;
+  margin-left: 4px;
+  margin-right: 4px;
+  color: white;
+  border-radius: 8px;
+}
 .event-card,
 .pizza-box {
 	display: flex;
@@ -146,13 +154,15 @@ figure {
 		text-transform: uppercase;
 		font-weight: 600;
 		letter-spacing: .02em;
-		color: var(--primary);
+		color: $red;
 	}
 
 	&-title {
 		margin: 0;
 		font-size: clamp(1.4em, 2.1vw, 2.1em);
 		font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+    border-bottom: 4px solid $red;
+    margin-right: 55%;
 
 		a {
 			text-decoration: none;
@@ -180,12 +190,13 @@ figure {
 		color: var(--lightgrey);
 	}
 
-	&-save {
+	&-classes {
 		display: flex;
 		align-items: center;
 		padding: 6px 14px 6px 12px;
 		background: none;
 		font-weight: bold;
+    margin-bottom: 8px;
 
 		svg {
 			margin-right: 6px;
