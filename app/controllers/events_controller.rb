@@ -24,8 +24,11 @@ class EventsController < ApplicationController
     authorize @event
   end
 
-  def delete
-
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    authorize @event
+    redirect_to events_path
   end
 
   private

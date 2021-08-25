@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
   resources :kurasus, only: %i[index edit create new]
-  resources :events, only: %i[index create new] do
+  resources :events, only: %i[index create new destroy] do
     resources :participants, only: %i[index create new]
   end
 
