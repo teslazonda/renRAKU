@@ -24,6 +24,10 @@ class EventsController < ApplicationController
     authorize @event
   end
 
+  def delete
+
+  end
+
   private
 
   def event_params
