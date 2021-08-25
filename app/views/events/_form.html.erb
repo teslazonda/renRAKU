@@ -1,7 +1,7 @@
 <%= simple_form_for @event do |f| %>
   <%= f.input :title %>
   <%= f.rich_text_area :content %>
-  <%= f.input :date, html5: true %>
+  <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
   <% @kurasus.each do |kurasu| %>
     <%= f.simple_fields_for :participants do |participants_form| %>
       <%= participants_form.association :kurasu, as: :boolean, checked_value: kurasu.id, unchecked_value: "", label: kurasu.name, input_html:{checked: true}  %>
