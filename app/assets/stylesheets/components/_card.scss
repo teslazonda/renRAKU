@@ -96,7 +96,7 @@ figure {
 	}
 }
 // Cards with photo
-.recipe,
+.event-card,
 .pizza-box {
 	display: flex;
 	flex-wrap: wrap;
@@ -118,10 +118,11 @@ figure {
 	}
 }
 
-.recipe {
+.event-card {
 	border: 2px solid #F2F2F2;
 	border-radius: 8px;
 	overflow: hidden;
+  background-color: white;
 
 	&-content {
 		padding: 16px 32px;
@@ -177,11 +178,7 @@ figure {
 		display: flex;
 		align-items: center;
 		padding: 6px 14px 6px 12px;
-		border-radius: 4px;
-		border: 2px solid currentColor;
-		color: var(--primary);
 		background: none;
-		cursor: pointer;
 		font-weight: bold;
 
 		svg {
