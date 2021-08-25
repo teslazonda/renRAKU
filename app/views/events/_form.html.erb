@@ -7,5 +7,5 @@
       <%= participants_form.association :kurasu, as: :boolean, checked_value: kurasu.id, unchecked_value: "", label: kurasu.name, input_html:{checked: true}  %>
     <% end %>
   <% end %>
-  <%= f.submit class: 'btn btn-warning mt-2' %>
+  <%= f.submit class: 'btn btn-danger mt-2' %>
 <% end %>

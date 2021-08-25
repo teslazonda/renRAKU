@@ -1,2 +1,6 @@
 <h1 class="text-center mt-3 text-white">Bulletin Board</h1>
+<div class="container mt-3 text-center">
+  <%= link_to 'Return', dashboards_path, class: "btn btn-primary mx-1"%>
+  <%= link_to 'Add Event', new_event_path, class: "btn btn-danger mx-1"%>
+</div>
 <%= render 'events_card' %>
