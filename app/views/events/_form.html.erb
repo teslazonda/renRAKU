@@ -6,9 +6,9 @@
   <div class="d-flex">
     <% @kurasus.each do |kurasu| %>
       <%= f.simple_fields_for :participants do |participants_form| %>
-        <%= participants_form.association :kurasu, as: :boolean, checked_value: kurasu.id, unchecked_value: "", label: 'Class '+ kurasu.name, input_html:{checked: true, class: "tag-selector"}, item_wrapper_class: 'tag-item'  %>
+        <%= participants_form.association :kurasu, as: :boolean, checked_value: kurasu.id, unchecked_value: "", label: 'Class' + kurasu.name, input_html:{checked: true, class: "tag-selector"}, item_wrapper_class: 'tag-item' %>
       <% end %>
     <% end %>
   </div>
-  <%= f.submit class: 'btn btn-danger mt-2' %>
+  <%= f.submit class: 'btn btn-danger mt-2 btn-lg btn-block' %>
 <% end %>
