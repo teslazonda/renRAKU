@@ -165,7 +165,7 @@ puts "students created"
 
 puts "Creating events"
 halloween_event = Event.create!(
-  title: "Haloween party!",
+  title: "Halloween party!",
   date: "2021-10-30 09:00:00",
   content: "On Saturday morning, the school will organize a Halloween party!\nMake sure to come with a costume and some candies for other children.\nThe party will start at 9am and finish at 12pm. Parents and children are more than welcome to stay for lunch on the school premises.\nThe main gate will close at 3pm.",
 )
