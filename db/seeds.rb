@@ -171,6 +171,7 @@ halloween_event = Event.create!(
 )
 file_halloween = URI.open('https://blog.hotelsbyday.com/wp-content/uploads/halloweendaystayfeature-759x500.jpg')
 halloween_event.photo.attach(io: file_halloween, filename: 'halloween.jpg', content_type: 'image/jpg')
+halloween_event.participants = [Participant.new(kurasu_id: class_one_b.id, event_id: halloween_event.id), Participant.new(kurasu_id: class_two_b.id, event_id: halloween_event.id)]
 
 museum_event = Event.create!(
   title: "Museum visit",
@@ -179,6 +180,7 @@ museum_event = Event.create!(
 )
 file = URI.open('https://d27k8xmh3cuzik.cloudfront.net/wp-content/uploads/2018/10/national-musuem-of-colombo-cover-img.jpg')
 museum_event.photo.attach(io: file, filename: 'museum.jpg', content_type: 'image/jpg')
+museum_event.participants = [Participant.new(kurasu_id: class_one_a.id, event_id: museum_event.id)]
 puts "Events created"
 
 puts "creating messages"
