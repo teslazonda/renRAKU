@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $light-gray;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,4 +13,15 @@
 .fa-address-book {
   font-size: 32px;
   color: $dark-electric-blue;
+  &:hover {
+    color: lighten($dark-electric-blue, 20%);;
+  }
+}
+.fa-cogs {
+  font-size: 30px;
+  color: $dark-electric-blue;
+  &:hover {
+    cursor: pointer;
+    color: lighten($dark-electric-blue, 20%);
+  }
 }
