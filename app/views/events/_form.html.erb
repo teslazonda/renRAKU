@@ -3,10 +3,12 @@
   <%= f.rich_text_area :content %>
   <%= f.input :photo, as: :file %>
   <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
-  <% @kurasus.each do |kurasu| %>
-    <%= f.simple_fields_for :participants do |participants_form| %>
-      <%= participants_form.association :kurasu, as: :boolean, checked_value: kurasu.id, unchecked_value: "", label: kurasu.name, input_html:{checked: true}  %>
+  <div class="d-flex">
+    <% @kurasus.each do |kurasu| %>
+      <%= f.simple_fields_for :participants do |participants_form| %>
+        <%= participants_form.association :kurasu, as: :boolean, checked_value: kurasu.id, unchecked_value: "", label: 'Class '+ kurasu.name, input_html:{checked: true, class: "tag-selector"}, item_wrapper_class: 'tag-item'  %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
   <%= f.submit class: 'btn btn-danger mt-2' %>
 <% end %>
