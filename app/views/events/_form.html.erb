@@ -1,6 +1,6 @@
 <%= simple_form_for @event do |f| %>
   <%= f.input :title %>
-  <%= f.rich_text_area :rich_body %>
+  <%= f.rich_text_area :content %>
   <%= f.input :date, html5: true %>
   <% @kurasus.each do |kurasu| %>
     <%= f.simple_fields_for :participants do |participants_form| %>

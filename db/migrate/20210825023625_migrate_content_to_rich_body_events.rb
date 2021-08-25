@@ -7,7 +7,7 @@ class MigrateContentToRichBodyEvents < ActiveRecord::Migration[6.0]
 
   def down
     Event.find_each do |event|
-      event.update(body: event.rich_body)
+      event.update(content: event.rich_body)
       event.update(rich_body: nil)
     end
   end
