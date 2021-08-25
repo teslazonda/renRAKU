@@ -1,0 +1,14 @@
+#new_event {
+  background-color: $light-gray;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+// To style the rich-text icon bar
+trix-toolbar .trix-button-row {
+  background-color: white;
+  margin-bottom: 12px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
