@@ -5,6 +5,11 @@
         <div class="card-body">
           <%= cl_image_tag event.photo.key,
             width: 200, height: 200, crop: :fill %>
+            <div class="d-flex">
+              <% event.kurasus.each do |kurasu|%>
+                <%= kurasu.name %>
+              <% end %>
+            </div>
 
           <h5 class="card-title"><%= event.title %></h5>
           <h6 class="card-subtitle my-2"><%= event.date.strftime("%e %b %Y %H:%M") %></h6>
