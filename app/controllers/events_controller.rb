@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
+    @user = current_user
     @events = policy_scope(Event)
   end
 
@@ -22,6 +24,13 @@ class EventsController < ApplicationController
     @kurasus = Kurasu.all
     @event.participants.build
     authorize @event
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    authorize @event
+    redirect_to events_path
   end
 
   private
