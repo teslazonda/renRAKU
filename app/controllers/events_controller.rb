@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
+    @user = current_user
     @events = policy_scope(Event)
   end
 
@@ -24,10 +26,17 @@ class EventsController < ApplicationController
     authorize @event
   end
 
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    authorize @event
+    redirect_to events_path
+  end
+
   private
 
   def event_params
-    params.require(:event).permit(:title, :rich_body, :content, :date, participants_attributes: [:kurasu_id])
+    params.require(:event).permit(:title, :rich_body, :content, :photo, :date, participants_attributes: [:kurasu_id])
   end
 
 end
