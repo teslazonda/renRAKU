@@ -463,6 +463,7 @@ sleepy = Message.create!(
   student_id: ren.id,
   user_id: sae.id
 )
+
 lunch = Message.create!(
   title: "Broken lunch box",
   content: "Today Ren-kun dropped his lunch box when he took it out of his bag.\nThe top is broken, so you will want to get him a new lunch box",
