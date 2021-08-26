@@ -1,10 +1,12 @@
-<h1><%= @student.first_name %> <%= @student.last_name %>'s Correspondence Notebook</h1>
-<p>Student Number: <%= @student.student_number %></p>
-<% @messages.each do |message| %>
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title"><%= message.title %></h5>
-      <p class="card-text"><%= message.content %></p>
+<div class="container mt-3 text-center">
+  <h1><%= @student.first_name %> <%= @student.last_name %>'s Correspondence Notebook</h1>
+  <p>Student Number: <%= @student.student_number %></p>
+  <% @messages.each do |message| %>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= message.title %></h5>
+        <p class="card-text"><%= message.content %></p>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
