@@ -17,5 +17,6 @@ class KurasusController < ApplicationController
 
   def index
     @user = current_user
+    @kurasus = policy_scope(Kurasu)
   end
 end
