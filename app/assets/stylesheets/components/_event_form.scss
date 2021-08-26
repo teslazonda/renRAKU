@@ -12,6 +12,9 @@ trix-toolbar .trix-button-row {
   padding-top: 10px;
   padding-left: 10px;
 }
+.trix-content *, .trix-content {
+  color: black;
+}
 // To style the date picker
 .flatpickr-months .flatpickr-month {
     background: $light-gray !important;
