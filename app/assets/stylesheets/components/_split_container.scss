@@ -1,0 +1,9 @@
+.left-half, .right-half {
+    border-radius: 16px;
+    margin: 16px;
+  }
+@media (max-width: 800px) {
+  .container-fluid {
+    flex-direction: column;
+  }
+}
