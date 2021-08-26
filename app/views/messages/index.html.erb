@@ -1,11 +1,11 @@
 <div class="container mt-3 text-center">
   <h1><%= @student.first_name %> <%= @student.last_name %>'s Renrakuchou</h1>
   <p>Student Number: <%= @student.student_number %></p>
-  <button type="button" class="btn btn-primary">Add Message</button>
+  <button type="button" class="btn btn-primary">Add New Message</button>
   <% @messages.each do |message| %>
     <div class="card mt-4">
       <div class="card-body">
-        <h5 class="card-title"><%= message.title %></h5>
+        <h5 class="card-title"><%= message.created_at.strftime("%Y-%m-%d") %>: <%= message.title %></h5>
         <p class="card-text"><%= message.content %></p>
         <button type="button" class="btn btn-primary">Add Comment</button>
       </div>
