@@ -1,2 +1,13 @@
-<h1>Edit: <%= @event.title %></h1>
-<%= render 'form', event: @event %>
+<div class="container">
+  <h1 class="text-center mt-3 text-white">Edit: <%= @event.title %></h1>
+  <div class="text-center">
+    <%= link_to 'Back', events_path, class: "btn btn-primary my-3 px-5"%>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10">
+      <div class="text-white event-form">
+        <%= render 'form', event: @event %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,11 @@
-#new_event {
+#new_event, .edit_event {
   background-color: $light-gray;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.edit_event {
+  background-color: darken($blue, 15%);
   padding: 16px;
   border-radius: 8px;
   margin-bottom: 16px;
@@ -11,6 +17,9 @@ trix-toolbar .trix-button-row {
   padding-right: 10px;
   padding-top: 10px;
   padding-left: 10px;
+}
+.trix-content *, .trix-content {
+  color: black;
 }
 // To style the date picker
 .flatpickr-months .flatpickr-month {
