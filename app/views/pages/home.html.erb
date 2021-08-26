@@ -1,34 +1,27 @@
 <%= render 'shared/banner' %>
-<div class="text-center text-white mt-4">
-  <h2>WHAT ARE WE ABOUT?</h2>
-  <p>Discover what renRAKU can do for you</p>
-</div>
-<div class="container d-flex justify-content-even mt-5">
-<div class="homepage-cards">
-<figure class="snip0016">
-	<img src="<%= image_path 'dashboard/bulletinboard.jpg' %>"/>
-	<figcaption>
-		<h2>Know about the latest events</h2>
-	</figcaption>
-</figure>
-<figure class="snip0016">
-	<img src="<%= image_path 'dashboard/notebook.jpg' %>"/>
-	<figcaption>
-		<h2>Exchange with parents or teachers</h2>
-	</figcaption>
-</figure>
-<figure class="snip0016">
-	<img src="<%= image_path 'dashboard/meeting.jpg' %>"/>
-	<figcaption>
-		<h2>Schedule meetings at the school</h2>
-	</figcaption>
-</figure>
-<figure class="snip0016">
-	<img src="<%= image_path 'dashboard/schedule.jpg' %>"/>
-	<figcaption>
-		<h2>Consult the weekly schedules</h2>
-	</figcaption>
-</figure>
-</div>
-<div class="container" style="margin: 200px"></div>
-</div>
+<h2 class="text-center text-white mb-5 mt-5">Hello</h2>
+<section class="container-fluid mx-0 px-0 d-flex">
+  <div class="flex-column justify-content-center bg-white left-half" style="flex: 1;">
+    <article>
+      <h1>Left Half</h1>
+      <p>Weekends don't count unless you spend them doing something completely pointless.</p>
+    </article>
+  </div>
+  <div class="flex-column justify-content-center bg-white right-half" style="flex: 1;">
+    <article>
+      <h1>Right Half</h1>
+      <p>If your knees aren't green by the end of the day, you ought to seriously re-examine your life.</p>
+    </article>
+  </div>
+</section>
+<%= render 'intro_block' %>
+<style>
+  .left-half {
+    height: 500px;
+  }
+  @media (max-width: 600px) {
+    .container-fluid {
+      flex-direction: column;
+    }
+  }
+</style>
