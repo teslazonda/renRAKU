@@ -1,16 +1,22 @@
 class KurasusController < ApplicationController
+  def index
+    @user = current_user
+    @kurasus = policy_scope(Kurasu)
+  end
+
   def create
+    authorize @kurasu
   end
 
   def new
+    authorize @kurasu
   end
 
   def edit
+    authorize @kurasu
   end
 
   def update
-  end
-
-  def index
+    authorize @kurasu
   end
 end

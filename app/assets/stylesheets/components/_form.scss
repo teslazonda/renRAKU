@@ -24,3 +24,13 @@
   background-color: $blue;
   color: white;
 }
+
+.flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-item {
+  padding: 5px;
+  flex: 1 1 25%;
+}
