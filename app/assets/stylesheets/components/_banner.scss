@@ -29,7 +29,13 @@
 		display: inline-block;
 	}
 }
-
+@media (min-width: 100px) and (max-width: 575px) {
+  .wrapper {
+    h1 {
+      font-size: 60px;
+    }
+  }
+}
 @keyframes textclip {
 	to {
 		background-position: 200% center;
