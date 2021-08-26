@@ -1,2 +1,15 @@
-<h1>Messages#index</h1>
-<p>Find me in app/views/messages/index.html.erb</p>
+<div class="container mt-3 text-center">
+  <h1><%= @student.first_name %> <%= @student.last_name %>'s Correspondence Notebook (連絡帳)</h1>
+  <p>Student Number: <%= @student.student_number %></p>
+  <button type="button" class="btn btn-primary">Add New Message</button>
+  <% @messages.each do |message| %>
+    <div class="card mt-4">
+      <div class="card-body">
+        <h5 class="card-title"><%= message.created_at.strftime("%Y-%m-%d") %>: <%= message.title %></h5>
+        <p class="card-text"><%= message.content %></p>
+        <button type="button" class="btn btn-primary">Add Comment</button>
+      </div>
+    </div>
+  <% end %>
+  <button type="button" class="btn btn-primary">Return</button>
+</div>
