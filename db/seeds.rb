@@ -103,7 +103,7 @@ lena = User.create!(
 )
 
 parents = []
-399.times do
+239.times do
   name = Faker::Name.name
   parent = User.create!(
     name: name,
