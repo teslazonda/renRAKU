@@ -287,7 +287,7 @@ puts "Creating 10 students for class 2-B"
     last_name: Faker::Name.last_name,
     birthday: Faker::Date.between(from: '2014-01-01', to: '2014-12-31'),
     student_number: counter,
-    kurasu_id: class_two_a.id,
+    kurasu_id: class_two_b.id,
     user_id: parents[parent_counter].id
   )
   parent_counter += 1
