@@ -27,9 +27,20 @@ html {
   position: relative;
   min-height: 100%;
 }
+body {
+  margin-bottom: 100px;
+}
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   line-height: 60px; /* Vertically center the text there */
+}
+@media (max-width: 576px) {
+  .footer-links a {
+  font-size: 12px;
+  }
+  .footer-copyright {
+    font-size: 12px;
+  }
 }
