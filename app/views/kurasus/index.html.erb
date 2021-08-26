@@ -1,23 +1,28 @@
-<h1>Kurasus#index</h1>
-<% @kurasus.each do |kurasu| %>
+<div class="container mt-3 text-center">
+<h1>Select a student to view notebook</h1>
+  <%= link_to 'Return', dashboards_path, class: "btn btn-primary mb-3" %>
+</div>
+<div class="container">
+  <div class="row">
+<% @user.kurasus.each do |kurasu| %>
 <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col"><%= kurasu.name %></th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
-      <th scope="col">Student Number</th>
     </tr>
   </thead>
   <tbody>
     <% kurasu.students.each do |student| %>
       <tr>
-        <th scope="row"><%= student.kurasu.name %></th>
+        <th scope="row"></th>
         <td><%= student.first_name %></td>
         <td><%= student.last_name %></td>
-        <td><%= student.student_number %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 <% end %>
+</div>
+</div>
