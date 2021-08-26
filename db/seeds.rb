@@ -88,22 +88,22 @@ viddy = User.create!(
 )
 
 # Creating two extra parents in case we need specific parents for demonstration purposes.
-quill = User.create!(
-  email: "quill@me.com",
-  password: 123456,
-  name: "Quill",
-  teacher: false
-)
+# quill = User.create!(
+#   email: "quill@me.com",
+#   password: 123456,
+#   name: "Quill",
+#   teacher: false
+# )
 
-lena = User.create!(
-  email: "lena@me.com",
-  password: 123456,
-  name: "Lena",
-  teacher: false
-)
+# lena = User.create!(
+#   email: "lena@me.com",
+#   password: 123456,
+#   name: "Lena",
+#   teacher: false
+# )
 
 parents = []
-399.times do
+239.times do
   name = Faker::Name.name
   parent = User.create!(
     name: name,
