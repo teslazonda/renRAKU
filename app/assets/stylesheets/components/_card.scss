@@ -202,3 +202,13 @@ figure {
       font-weight: lighter;
     }
 }
+// For class cards
+#class-card {
+  background-color: $blue;
+  text-align: center;
+  cursor: default;
+  p {
+    font-size: 2em;
+    color: white;
+  }
+}
