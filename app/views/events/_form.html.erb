@@ -4,7 +4,7 @@
   <%= f.input :photo, as: :file %>
   <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
   <div class="flexContainer">
-    <% @kurasus.each do |kurasu| %>
+    <% @kurasus.first(4).each do |kurasu| %>
       <div class="flex-item">
         <%= f.simple_fields_for :participants do |participants_form| %>
           <%= participants_form.association :kurasu, as: :boolean, checked_value: kurasu.id, unchecked_value: "", label: "Class\n#{kurasu.name}", input_html:{checked: true, class: "tag-selector"}, item_wrapper_class: 'tag-item' %>
