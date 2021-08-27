@@ -8,7 +8,6 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to student_messages_path(@message.student_id)
     else
-      raise
       render 'comments/new'
     end
   end
