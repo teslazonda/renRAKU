@@ -5,7 +5,10 @@
   <% @student.messages.each do |message| %>
     <div class="card mt-4">
       <div class="card-body">
-      <%# add picture here to the card (change the seeds first) %>
+        <div class="d-flex">
+          <%= cl_image_tag message.photo.key, height: 200, width: 200, crop: :fill if message.photo.attached? %>
+        </div>
+
         <h5 class="card-title"><%= message.created_at.strftime("%Y-%m-%d") %>: <%= message.title %></h5>
         <p class="card-text"><%= message.content %></p>
         <button type="button" class="btn btn-primary">Add Comment</button>
