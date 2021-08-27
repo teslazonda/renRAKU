@@ -1,0 +1,5 @@
+<h1>Create a new message for <%= "#{Student.find(params[:student_id]).last_name}, #{Student.find(params[:student_id]).first_name}" %></h1>
+
+<%= render 'form' %>
+
+<%= link_to "Return", student_messages_path, class: "btn btn-primary" %>

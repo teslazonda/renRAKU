@@ -6,11 +6,10 @@ class MessagePolicy < ApplicationPolicy
   end
 
   def create?
+    user.teacher?
   end
 
   def update?
-  end
-
-  def index?
+    user.teacher?
   end
 end
