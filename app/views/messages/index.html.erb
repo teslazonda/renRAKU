@@ -2,7 +2,7 @@
   <h1><%= @student.first_name %> <%= @student.last_name %>'s Correspondence Notebook (連絡帳)</h1>
   <p>Student Number: <%= @student.student_number %></p>
   <%= link_to "Add New Message", new_student_message_path, class: "btn btn-primary" %>
-  <% @messages.each do |message| %>
+  <% @student.messages.each do |message| %>
     <div class="card mt-4">
       <div class="card-body">
       <%# add picture here to the card (change the seeds first) %>
