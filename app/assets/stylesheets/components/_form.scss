@@ -1,3 +1,4 @@
+// Displays the buttons inline
 .tag-item {
   display: inline-block;
 }
@@ -7,6 +8,17 @@
   transform: scale(0);
 }
 
+
+.flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-item {
+  padding: 5px;
+  flex: 1 1 25%;
+}
+/*
 .tag-selector + label {
   // cursor: pointer;
   // display: inline-block;
@@ -69,13 +81,19 @@
   background-image: -o-linear-gradient(top, #321558, #593896);
   background-image: linear-gradient(to bottom, #321558, #593896);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=$blue, endColorstr=#b3bcf3);
 }
-
-.flexContainer {
-    display: flex;
-    flex-wrap: wrap;
+*/
+.tag-selector + label {
+  background-color: rgb(170, 182, 181);
+  color: $dark-electric-blue;
+  padding: 10px 20px 10px 20px;
+  box-shadow: 2px 2px 2px 2px $light-blue, -2px -2px 0px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s 0s ease;
+  border-radius: 8px;
 }
-
-.flex-item {
-  padding: 5px;
-  flex: 1 1 25%;
+.tag-selector:checked + label {
+  background-color: $blue;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s 0s ease;
 }
