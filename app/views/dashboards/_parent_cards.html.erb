@@ -20,9 +20,7 @@
           More Info
         </h3>
         <p>Consult the messages teachers have left in your child's notebook and communicate with the teachers directly.</p>
-        <button class="btn btn-primary">
-          Go to the notebook
-        </button>
+        <%= link_to "Go to the notebook", student_messages_path(current_user.students), class: 'btn btn-primary' %>
       </figcaption>
     </figure>
 

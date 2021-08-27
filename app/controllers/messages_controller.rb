@@ -1,7 +1,11 @@
 class MessagesController < ApplicationController
-  before_action :find_student, only: %i[index create new]
+  before_action :find_student, only: %i[create new]
   def index
-    # @user = current_user
+    if current_user.teacher
+      @student = Student.find(params[:student_id])
+    else
+      @student = Student.find_by(user: current_user)
+    end
     @user = current_user
     @messages = policy_scope(Message)
   end

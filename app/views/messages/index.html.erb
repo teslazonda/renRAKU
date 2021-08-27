@@ -2,6 +2,7 @@
   <h1><%= @student.first_name %> <%= @student.last_name %>'s Correspondence Notebook (連絡帳)</h1>
   <p>Student Number: <%= @student.student_number %></p>
   <%= link_to "Add New Message", new_student_message_path, class: "btn btn-primary" %>
+  <%= link_to "Return", kurasus_path, class: "btn btn-primary ml-2" %>
   <% @student.messages.each do |message| %>
     <div class="card mt-4">
       <div class="card-body">
@@ -15,5 +16,4 @@
       </div>
     </div>
   <% end %>
-  <button type="button" class="btn btn-primary">Return</button>
 </div>
