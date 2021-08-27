@@ -208,7 +208,6 @@ figure {
   align-items: center;
   justify-content: center;
   padding: 8px;
-  font-family: 'Open Sans', sans-serif;
 }
 
 .data-card {
@@ -227,8 +226,9 @@ figure {
 
   h3 {
     color: #2E3C40;
-    font-size: 3.5em;
-    font-weight: 600;
+    font-size: 2.5em;
+    font-weight: 400;
+    font: $body-font;
     line-height: 1;
     padding-bottom: .5em;
     margin: 0 0 0.142857143em;
@@ -239,7 +239,8 @@ figure {
   h4 {
     color: #627084;
     text-transform: uppercase;
-    font-size: 1.125em;
+    text-align: center;
+    font-size: 1.6em;
     font-weight: 700;
     line-height: 1;
     letter-spacing: 0.1em;
