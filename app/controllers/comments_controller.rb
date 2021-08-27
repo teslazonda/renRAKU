@@ -4,6 +4,8 @@ class CommentsController < ApplicationController
   end
 
   def new
+    @message = Message.find(params[:message_id])
+    @comment = Comment.new
     authorize @comment
   end
 end
