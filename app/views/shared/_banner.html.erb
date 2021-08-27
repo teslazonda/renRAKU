@@ -1,7 +1,16 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'banner.jpg' %>);">
   <div class="container">
-    <div class="wrapper">
-      <h1 class="text-center pb-5">renRAKU</h1>
+    <div class="wrapper flex-column">
+      <div>
+      <h1 class="text-center pb-3">renRAKU</h1>
+      </div>
+      <div>
+      <% if user_signed_in? %>
+        <%= link_to 'Go to your Dashboard', user_root_path, class: 'btn-lg btn-danger p-3', id: 'cta-homepage' %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class: "btn-lg btn-danger py-3", id: 'cta-homepage' %>
+      <% end %>
+      </div>
     </div>
   </div>
 </div>
