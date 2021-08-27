@@ -202,6 +202,17 @@ figure {
       font-weight: lighter;
     }
 }
+
+// For class cards
+#class-card {
+  background-color: $blue;
+  text-align: center;
+  cursor: default;
+  p {
+    font-size: 2em;
+    color: white;
+  }
+}
 // For the animated cards on the homepage
 .page-contain {
   display: flex;
