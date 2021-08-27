@@ -463,6 +463,8 @@ sleepy = Message.create!(
   student_id: ren.id,
   user_id: sae.id
 )
+file_sleepy = URI.open('https://i.ya-webdesign.com/images/sleepy-drawing-pikachu-1.png')
+sleepy.photo.attach(io: file_sleepy, filename: 'sleepy.jpg', content_type: 'image/jpg')
 
 lunch = Message.create!(
   title: "Broken lunch box",
@@ -470,7 +472,8 @@ lunch = Message.create!(
   student_id: ren.id,
   user_id: sae.id
 )
-
+file_lunch = URI.open('https://3.bp.blogspot.com/-soud9WTrtm0/WPYuy6umw3I/AAAAAAACpZY/SQ7kcZwKCroCGvjQ46nS8yVwAv2Id8O5ACLcB/s1600/vintage-lunch-boxes-20.jpg')
+lunch.photo.attach(io: file_lunch, filename: 'lunch.jpg', content_type: 'image/jpg')
 puts "Messages created"
 
 puts "creating comments"
