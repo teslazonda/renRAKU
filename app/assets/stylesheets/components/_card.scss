@@ -218,6 +218,16 @@ figure {
     color: white;
   }
 }
+// For student cards
+#student-card {
+  box-shadow: 0 0 0;
+  text-align: center;
+  font-size: large;
+  &:hover {
+    box-shadow: 2px 2px 4px rgba($color: black, $alpha: 0.6);
+    background-color: rgba($color: white, $alpha: 1.0);
+  }
+}
 // For the animated cards on the homepage
 .page-contain {
   display: flex;

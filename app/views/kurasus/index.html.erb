@@ -13,7 +13,7 @@
   <% kurasu.students.sort_by { |student| student.last_name}.each do |student| %>
     <div class="card mt-4" id="student-card">
       <div class="card-body">
-        <p class="card-text stretched-link"><%= kurasu.name %> <%= student.first_name%> <%= student.last_name%></p>
+        <p class="card-text stretched-link"><%= student.first_name%> <%= student.last_name%></p>
         <a href="/students/<%=student.id%>/messages" class="stretched-link"></a>
       </div>
     </div>
