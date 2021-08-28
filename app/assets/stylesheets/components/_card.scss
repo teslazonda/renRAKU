@@ -379,3 +379,19 @@ figure {
     margin-right: 35px;
   }
 }
+// For the parents comments
+#parents-comment {
+  box-shadow: none;
+  margin-left: 200px;
+  border-left: 4px solid $blue;
+  border-right: 4px solid $blue;
+  &:hover {
+    cursor: default;
+  }
+  em {
+    color: rgba(100, 100, 100, 0.5)
+  }
+  @media (max-width: 760px) {
+    margin-right: 35px;
+  }
+}

@@ -31,6 +31,15 @@
             </div>
           </div>
         </div>
+      <% else %>
+        <div class="card mt-4" id="parents-comment">
+          <div class="card-body">
+            <div class="d-flex flex-column text-right">
+            <em class="mb-2">On <%= comment.created_at.strftime("%A, %b %d %Y") %></em>
+            <p><strong><%= comment.user.name %></strong>:  <%= comment.content %></p>
+            </div>
+          </div>
+        </div>
       <% end %>
     <% end %>
   <% end %>
