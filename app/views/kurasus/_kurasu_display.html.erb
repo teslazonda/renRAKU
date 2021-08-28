@@ -9,7 +9,7 @@
     <% kurasu.students.sort_by { |student| student.last_name}.each do |student| %>
       <div class="card mt-4" id="student-card">
         <div class="card-body d-flex flex-column">
-          <p class="card-text stretched-link"><%= student.first_name%> <%= student.last_name%></p>
+          <p class="card-text stretched-link pr-4"><%= student.first_name%> <%= student.last_name%></p>
           <p id="student-number">#<%= student.student_number %></p>
           <a href="/students/<%=student.id%>/messages" class="stretched-link"></a>
         </div>
