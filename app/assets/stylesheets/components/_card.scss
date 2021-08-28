@@ -223,10 +223,21 @@ figure {
   box-shadow: 0 0 0;
   text-align: center;
   font-size: large;
+  position: relative;
   &:hover {
     box-shadow: 2px 2px 4px rgba($color: black, $alpha: 0.6);
     background-color: rgba($color: white, $alpha: 1.0);
   }
+  p {
+    margin-bottom: 0px;
+  }
+}
+#student-number {
+  color: blue;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 10px;
 }
 // For the animated cards on the homepage
 .page-contain {
