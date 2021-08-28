@@ -206,12 +206,46 @@ figure {
 // For class cards
 #class-card {
   background-color: $blue;
+  background-image: url('kurasu/classroomtables.jpg');
   text-align: center;
+  text-shadow: 2px 2px 4px black;
   cursor: default;
+  border-radius: 0px;
+  box-shadow: 2px 2px 4px lighten($dark-electric-blue, 10%);
+  border: none;
   p {
     font-size: 2em;
     color: white;
   }
+}
+// For student cards
+#student-card {
+  box-shadow: 0 0 0;
+  border-radius: 8px 0 0 8px;
+  border-right: 1px solid $light-gray;
+  text-align: center;
+  font-size: large;
+  position: relative;
+  background: linear-gradient(to left, $light-gray 25%,white 15%);
+  &:hover {
+    box-shadow: -2px 0px 4px rgba($color: black, $alpha: 0.6);
+    background-color: rgba($color: white, $alpha: 1.0);
+  }
+  p {
+    margin-bottom: 0px;
+  }
+}
+#student-number {
+  color: white;
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.473);
+  bottom: 50px;
+  right: -12px;
+  margin-right: 4px;
+  padding-right: 4px;
+  padding-left: 4px;
+  background-color: $dark-electric-blue;
+  border-radius: 10px;
 }
 // For the animated cards on the homepage
 .page-contain {
