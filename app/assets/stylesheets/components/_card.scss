@@ -329,3 +329,11 @@ figure {
     transform: translateX(.125em);
   }
 }
+// For the teacher comments
+#teacher-comment {
+  box-shadow: none;
+  margin-right: 20px;
+  &:hover {
+    cursor: default;
+  }
+}
