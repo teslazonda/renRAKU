@@ -206,11 +206,13 @@ figure {
 // For class cards
 #class-card {
   background-color: $blue;
+  background-image: url('kurasu/classroomtables.jpg');
   text-align: center;
   text-shadow: 2px 2px 4px black;
   cursor: default;
   border-radius: 0px;
-  box-shadow: 2px 2px 24px white;
+  box-shadow: 2px 2px 4px lighten($dark-electric-blue, 10%);
+  border: none;
   p {
     font-size: 2em;
     color: white;
