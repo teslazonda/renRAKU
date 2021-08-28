@@ -4,7 +4,10 @@
       <div class="d-flex">
         <%= cl_image_tag message.photo.key, height: 200, width: 200, crop: :fill if message.photo.attached? %>
       </div>
-      <h5 class="card-title"><%= message.created_at.strftime("%Y-%m-%d") %>: <%= message.title %></h5>
+      <div class="d-flex justify-content-between mb-3">
+        <h5><%= message.title %></h5>
+        <em><%= message.created_at.strftime("%A, %b %d %Y") %></em>
+      </div>
       <p class="card-text"><%= message.content %></p>
       <%= link_to "Add Comment", new_message_comment_path(message), class: "btn btn-primary" %>
     </div>
