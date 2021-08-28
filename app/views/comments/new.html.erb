@@ -1,5 +1,10 @@
-<h1>Create a new comment under <strong><%= @message.title %></strong></h1>
+<div class="container text-white text-center">
+  <h1 class="my-4">Create a new comment under:<br> "<strong><%= @message.title %></strong>"</h1>
+  <%= link_to "Return to Messages", student_messages_path(@message.student_id), class: "btn btn-primary" %>
+</div>
 
-<%= render 'form'  %>
-
-<%= link_to "Return to Messages", student_messages_path(@message.student_id), class: "btn btn-primary" %>
+<div class="row justify-content-center my-4 text-white">
+    <div class="col-lg-8 col-md-10">
+      <%= render 'form'  %>
+    </div>
+  </div>
