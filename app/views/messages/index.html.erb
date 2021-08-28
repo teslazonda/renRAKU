@@ -1,5 +1,5 @@
 <div class="container mt-3 text-center">
-  <h1><%= @student.first_name %> <%= @student.last_name %>'s Correspondence Notebook (連絡帳)</h1>
+  <h1><%= @student.last_name %>, <%= @student.first_name %>'s Correspondence Notebook (連絡帳)</h1>
   <p>Student Number: <%= @student.student_number %></p>
   <%= link_to "Add New Message", new_student_message_path, class: "btn btn-primary" %>
   <%= link_to "Return", kurasus_path, class: "btn btn-primary ml-2" %>
@@ -12,8 +12,19 @@
 
         <h5 class="card-title"><%= message.created_at.strftime("%Y-%m-%d") %>: <%= message.title %></h5>
         <p class="card-text"><%= message.content %></p>
-        <button type="button" class="btn btn-primary">Add Comment</button>
+        <%= link_to "Add Comment", new_message_comment_path(message), class: "btn btn-primary" %>
       </div>
     </div>
+    <% message.comments.each do |comment| %>
+      <div class="card mt-4">
+        <div class="card-body">
+          <div class="d-flex">
+          <strong><%= comment.user.name %></strong>- <%= comment.content %>
+          </div>
+        </div>
+      </div>
+      <%# <p>It's in here??</p> %>
+    <% end %>
+    <%# <p>Before this</p> %>
   <% end %>
 </div>
