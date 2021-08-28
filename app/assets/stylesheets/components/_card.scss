@@ -367,10 +367,15 @@ figure {
 #teacher-comment {
   box-shadow: none;
   margin-right: 200px;
+  border-left: 4px solid $red;
+  border-right: 4px solid $red;
   &:hover {
     cursor: default;
   }
   em {
     color: rgba(100, 100, 100, 0.5)
+  }
+  @media (max-width: 760px) {
+    margin-right: 35px;
   }
 }
