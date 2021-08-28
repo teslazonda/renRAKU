@@ -2,23 +2,22 @@
 <h1>Select a student to view notebook</h1>
   <%= link_to 'Return to Dashboard', dashboards_path, class: "btn btn-primary mb-3" %>
 </div>
+  <% @user.kurasus.each do |kurasu| %>
 <div class="container">
-<% @user.kurasus.each do |kurasu| %>
-<div class="cards mt-5">
-  <div class="card mt-4" id="class-card">
-    <div class="card-body">
-        <p class="card-text stretched-link"><%= kurasu.name %></p>
+    <div class="card mt-4" id="class-card">
+      <div class="card-body">
+        <p class="card-text stretched-link">Class - <%= kurasu.name %></p>
+      </div>
     </div>
-  </div>
-     <% kurasu.students.sort_by { |student| student.last_name}.each do |student| %>
-  <div class="card mt-4">
-    <div class="card-body">
+  <div class="cards mt-2">
+  <% kurasu.students.sort_by { |student| student.last_name}.each do |student| %>
+    <div class="card mt-4">
+      <div class="card-body">
         <p class="card-text stretched-link"><%= kurasu.name %> <%= student.first_name%> <%= student.last_name%></p>
         <a href="/students/<%=student.id%>/messages" class="stretched-link"></a>
-    </div>
-  </div>
-    <% end %>
+      </div>
     </div>
   <% end %>
-
+    </div>
 </div>
+  <% end %>
