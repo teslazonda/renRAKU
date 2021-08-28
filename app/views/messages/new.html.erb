@@ -1,5 +1,9 @@
-<h1>Create a new message for <%= "#{Student.find(params[:student_id]).last_name}, #{Student.find(params[:student_id]).first_name}" %></h1>
-
-<%= render 'form' %>
-
+<div class="container text-center text-white">
+<h1 class="my-4">Create a new message for <%= "#{Student.find(params[:student_id]).last_name}, #{Student.find(params[:student_id]).first_name}" %></h1>
 <%= link_to "Return", student_messages_path, class: "btn btn-primary" %>
+<div class="row justify-content-center mt-4">
+    <div class="col-lg-8 col-md-10 text-white">
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>
