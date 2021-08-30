@@ -363,3 +363,67 @@ figure {
     transform: translateX(.125em);
   }
 }
+// For the teacher comments
+#teacher-comment {
+  box-shadow: none;
+  margin-right: 200px;
+  border-left: 4px solid $red;
+  border-right: 4px solid $red;
+  &:hover {
+    cursor: default;
+  }
+  em {
+    color: rgba(100, 100, 100, 0.5)
+  }
+  @media (max-width: 800px) {
+    margin-right: 35px;
+  }
+}
+// For the parents comments
+#parents-comment {
+  box-shadow: none;
+  margin-left: 200px;
+  border-left: 4px solid $blue;
+  border-right: 4px solid $blue;
+  &:hover {
+    cursor: default;
+  }
+  em {
+    color: rgba(100, 100, 100, 0.5)
+  }
+  @media (max-width: 800px) {
+    margin-left: 35px;
+  }
+}
+// For the message cards
+#message-card {
+ box-shadow: none;
+ position: relative;
+ min-height: 200px;
+ border-radius: 0 8px 8px 0;
+ border-left: 2px solid black;
+ em {
+   color: white;
+   position: absolute;
+   top: -1px;
+   right: -1px;
+   padding: 8px;
+   background-color: $gray;
+   border-radius: 0 8px 0 8px;
+   border-top: 1px solid black;
+ }
+ h5 {
+   border-bottom: 2px solid $red;
+   padding-right: 25px;
+ }
+ @media (max-width: 800px) {
+   border-radius: 8px;
+   border-left: none;
+ }
+}
+.message-img {
+  border-radius: 8px 0 0 8px;
+  @media (max-width: 800px) {
+    display: none;
+  }
+}
