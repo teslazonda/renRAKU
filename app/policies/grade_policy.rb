@@ -4,4 +4,12 @@ class GradePolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def create?
+    user.teacher?
+  end
+
+  def update?
+    user.teacher?
+  end
 end
