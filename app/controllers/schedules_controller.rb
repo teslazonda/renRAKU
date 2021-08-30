@@ -1,6 +1,6 @@
 class SchedulesController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_kurasu, only: %i[index create update edit new]
+  before_action :find_kurasu, only: %i[index create new]
 
   def index
     @user = current_user
@@ -32,7 +32,9 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
     authorize @schedule
     @schedule.update(schedule_params)
-    redirect_to schedules_path
+    @schedule.kurasu = @kurasu
+    # redirect_to kurasu_schedules_path(@kurasu)
+    redirect_to edit_schedule(@schedule)
   end
 
   private
