@@ -74,6 +74,19 @@ ActiveRecord::Schema.define(version: 2021_08_30_024026) do
     t.index ["user_id"], name: "index_kurasus_on_user_id"
   end
 
+  create_table "meetings", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.date "date"
+    t.integer "hour"
+    t.bigint "parent_id"
+    t.bigint "teacher_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["parent_id"], name: "index_meetings_on_parent_id"
+    t.index ["teacher_id"], name: "index_meetings_on_teacher_id"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -126,6 +139,8 @@ ActiveRecord::Schema.define(version: 2021_08_30_024026) do
   add_foreign_key "comments", "messages"
   add_foreign_key "comments", "users"
   add_foreign_key "kurasus", "users"
+  add_foreign_key "meetings", "users", column: "parent_id"
+  add_foreign_key "meetings", "users", column: "teacher_id"
   add_foreign_key "messages", "students"
   add_foreign_key "messages", "users"
   add_foreign_key "participants", "events"
