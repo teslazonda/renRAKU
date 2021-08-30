@@ -238,7 +238,7 @@ figure {
   box-shadow: 0 0 0;
   border-radius: 8px 0 0 8px;
   border-right: 1px solid $light-gray;
-  text-align: center;
+  text-align: right;
   font-size: large;
   position: relative;
   background: linear-gradient(to left, $light-gray 25%,white 15%);
@@ -249,6 +249,18 @@ figure {
   p {
     margin-bottom: 0px;
   }
+}
+.notebook-button {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  flex-grow: 1;
+}
+.grades-button {
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+  flex-grow: 1;
 }
 #student-number {
   color: white;
