@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'grades/index'
-  get 'grades/new'
-  get 'grades/update'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'meetings/index'
   get 'meetings/show'
