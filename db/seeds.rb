@@ -33,6 +33,16 @@ puts "clearing the users"
 User.destroy_all
 puts "User cleared"
 
+puts "Creating admin"
+admin = User.create!(
+  email: "admin@me.com",
+  password: 123456,
+  name: "admin",
+  teacher: true
+)
+admin.admin = true
+admin.save
+
 puts "Creating new teachers"
 
 sae = User.create!(
