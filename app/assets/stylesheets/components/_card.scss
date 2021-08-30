@@ -221,6 +221,7 @@ figure {
 // For class cards
 #class-card {
   background-color: $blue;
+  position: relative;
   background-image: url('kurasu/classroomtables.jpg');
   text-align: center;
   text-shadow: 2px 2px 4px black;
@@ -231,6 +232,23 @@ figure {
   p {
     font-size: 2em;
     color: white;
+  }
+}
+.schedule-button {
+  background-color: rgb(235,235,235);
+  color: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  padding: 8px 16px;
+  text-shadow: none;
+  border-end-start-radius: 8px;
+  &:hover {
+    text-decoration: none;
+    color: rgb(60, 60, 60);
+    top: -2px;
+    box-shadow: 2px 2px 4px rgba($color: black, $alpha: 0.5);
   }
 }
 // For student cards
