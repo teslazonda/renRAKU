@@ -1,5 +1,10 @@
-<h1>Create a new comment under <strong><%= @message.title %></strong></h1>
+<div class="container">
+  <h1 class="text-center mt-3 text-white">Add a new comment under <strong><%= @message.title %></strong></h1>
+  <div class="text-center">
+    <%= link_to "Return to Messages", student_messages_path(@message.student_id), class: "btn btn-primary my-3 px-5" %>
+  </div>
+  <div class="d-flex justify-content-center text-white">
+    <%= render 'form'  %>
+  </div>
 
-<%= render 'form'  %>
-
-<%= link_to "Return to Messages", student_messages_path(@message.student_id), class: "btn btn-primary" %>
+</div>
