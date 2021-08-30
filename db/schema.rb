@@ -118,6 +118,13 @@ ActiveRecord::Schema.define(version: 2021_08_30_064957) do
     t.index ["kurasu_id"], name: "index_participants_on_kurasu_id"
   end
 
+  create_table "schedules", force: :cascade do |t|
+    t.bigint "kurasu_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["kurasu_id"], name: "index_schedules_on_kurasu_id"
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -157,6 +164,7 @@ ActiveRecord::Schema.define(version: 2021_08_30_064957) do
   add_foreign_key "messages", "users"
   add_foreign_key "participants", "events"
   add_foreign_key "participants", "kurasus"
+  add_foreign_key "schedules", "kurasus"
   add_foreign_key "students", "kurasus"
   add_foreign_key "students", "users"
 end
