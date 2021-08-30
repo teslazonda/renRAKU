@@ -3,7 +3,7 @@ class MeetingsController < ApplicationController
 
   def index
     @user = current_user
-    @meetings = Meeting.where(:user == current_user)
+    @meetings = Meeting.where(current_user == :user)
     @meetings = policy_scope(Meeting)
   end
 
@@ -19,9 +19,6 @@ class MeetingsController < ApplicationController
     if @meeting.save
       redirect_to meetings_path
     else
-      # @kurasus = Kurasu.all
-      # @meeting.participants = []
-      # @meeting.participants.build
       render '/meetings/new'
     end
   end
