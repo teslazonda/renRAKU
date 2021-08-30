@@ -1,8 +1,9 @@
 class SchedulesController < ApplicationController
+  before_action :find_kurasu, only: %i[index update edit]
+
   def index
     @user = current_user
     @schedules = policy_scope(Schedule)
-    @kurasu = Kurasu.find(params[:kurasu_id])
   end
 
   def update
@@ -25,6 +26,16 @@ class SchedulesController < ApplicationController
     authorize @schedule
     @kurasus = Kurasu.all
     @schedule.participants.build
+  end
+
+  private
+
+  def find_kurasu
+    @kurasu = Kurasu.find(params[:kurasu_id])
+  end
+
+  def schedule_params
+    params.require(:schedule).permit(:photo, :kurasu_id)
   end
 
 end

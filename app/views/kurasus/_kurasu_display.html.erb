@@ -1,20 +1,20 @@
 <% @user.kurasus.each do |kurasu| %>
   <div class="container">
-      <div class="card mt-4" id="class-card">
-        <div class="card-body">
-          <p class="card-text stretched-link">Class - <%= kurasu.name %></p>
-        </div>
+    <div class="card mt-4" id="class-card">
+      <div class="card-body">
+        <p class="card-text stretched-link">Class - <%= kurasu.name %></p>
       </div>
+    </div>
     <div class="cards mt-2">
-    <% kurasu.students.sort_by { |student| student.last_name}.each do |student| %>
-      <div class="card mt-4" id="student-card">
-        <div class="card-body d-flex flex-column">
-          <p class="card-text stretched-link pr-4"><%= student.first_name%> <%= student.last_name%></p>
-          <p id="student-number">#<%= student.student_number %></p>
-          <a href="/students/<%=student.id%>/messages" class="stretched-link"></a>
+      <% kurasu.students.sort_by { |student| student.last_name}.each do |student| %>
+        <div class="card mt-4" id="student-card">
+          <div class="card-body d-flex flex-column">
+            <p class="card-text stretched-link pr-4"><%= student.first_name%> <%= student.last_name%></p>
+            <p id="student-number">#<%= student.student_number %></p>
+            <a href="/students/<%=student.id%>/messages" class="stretched-link"></a>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
     </div>
   </div>
 <% end %>
