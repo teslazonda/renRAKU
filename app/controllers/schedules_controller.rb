@@ -1,16 +1,26 @@
 class SchedulesController < ApplicationController
-  before_action :find_kurasu, only: %i[index update edit]
+  before_action :authenticate_user!
+  before_action :find_kurasu, only: %i[index create update edit new]
 
   def index
     @user = current_user
     @schedules = policy_scope(Schedule)
   end
 
-  def update
-    @schedule = Schedule.find(params[:id])
+  def create
+    @schedule = Schedule.new(schedule_params)
     authorize @schedule
-    @schedule.update(schedule_params)
-    redirect_to schedules_path
+    @schedule.kurasu = @kurasu
+    if @schedule.save
+      redirect_to kurasu_schedules_path(@kurasu)
+    else
+      render '/schedules/new'
+    end
+  end
+
+  def new
+    @schedule = Schedule.new
+    authorize @schedule
   end
 
   def edit
@@ -18,9 +28,11 @@ class SchedulesController < ApplicationController
     authorize @schedule
   end
 
-  def new
-    @schedule = Schedule.new
+  def update
+    @schedule = Schedule.find(params[:id])
     authorize @schedule
+    @schedule.update(schedule_params)
+    redirect_to schedules_path
   end
 
   private

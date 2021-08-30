@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   resources :kurasus, only: %i[index edit create new] do
-    resources :schedules, only: %i[index new]
+    resources :schedules, only: %i[index new create]
   end
 
   resources :schedules, only: %i[edit update]
