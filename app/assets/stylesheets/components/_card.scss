@@ -206,12 +206,46 @@ figure {
 // For class cards
 #class-card {
   background-color: $blue;
+  background-image: url('kurasu/classroomtables.jpg');
   text-align: center;
+  text-shadow: 2px 2px 4px black;
   cursor: default;
+  border-radius: 0px;
+  box-shadow: 2px 2px 4px lighten($dark-electric-blue, 10%);
+  border: none;
   p {
     font-size: 2em;
     color: white;
   }
+}
+// For student cards
+#student-card {
+  box-shadow: 0 0 0;
+  border-radius: 8px 0 0 8px;
+  border-right: 1px solid $light-gray;
+  text-align: center;
+  font-size: large;
+  position: relative;
+  background: linear-gradient(to left, $light-gray 25%,white 15%);
+  &:hover {
+    box-shadow: -2px 0px 4px rgba($color: black, $alpha: 0.6);
+    background-color: rgba($color: white, $alpha: 1.0);
+  }
+  p {
+    margin-bottom: 0px;
+  }
+}
+#student-number {
+  color: white;
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.473);
+  bottom: 50px;
+  right: -12px;
+  margin-right: 4px;
+  padding-right: 4px;
+  padding-left: 4px;
+  background-color: $dark-electric-blue;
+  border-radius: 10px;
 }
 // For the animated cards on the homepage
 .page-contain {
@@ -327,5 +361,69 @@ figure {
   }
   100% {
     transform: translateX(.125em);
+  }
+}
+// For the teacher comments
+#teacher-comment {
+  box-shadow: none;
+  margin-right: 200px;
+  border-left: 4px solid $red;
+  border-right: 4px solid $red;
+  &:hover {
+    cursor: default;
+  }
+  em {
+    color: rgba(100, 100, 100, 0.5)
+  }
+  @media (max-width: 800px) {
+    margin-right: 35px;
+  }
+}
+// For the parents comments
+#parents-comment {
+  box-shadow: none;
+  margin-left: 200px;
+  border-left: 4px solid $blue;
+  border-right: 4px solid $blue;
+  &:hover {
+    cursor: default;
+  }
+  em {
+    color: rgba(100, 100, 100, 0.5)
+  }
+  @media (max-width: 800px) {
+    margin-left: 35px;
+  }
+}
+// For the message cards
+#message-card {
+ box-shadow: none;
+ position: relative;
+ min-height: 200px;
+ border-radius: 0 8px 8px 0;
+ border-left: 2px solid black;
+ em {
+   color: white;
+   position: absolute;
+   top: -1px;
+   right: -1px;
+   padding: 8px;
+   background-color: $gray;
+   border-radius: 0 8px 0 8px;
+   border-top: 1px solid black;
+ }
+ h5 {
+   border-bottom: 2px solid $red;
+   padding-right: 25px;
+ }
+ @media (max-width: 800px) {
+   border-radius: 8px;
+   border-left: none;
+ }
+}
+.message-img {
+  border-radius: 8px 0 0 8px;
+  @media (max-width: 800px) {
+    display: none;
   }
 }

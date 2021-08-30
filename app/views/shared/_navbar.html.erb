@@ -1,10 +1,13 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag 'homepage/logo.png' %>
+  <% end %>
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <i class="fas fa-address-book" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-          <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Bulletin Board", events_path, class: "dropdown-item" %>
             <% if current_user.teacher %>
               <%= link_to "Notebook", kurasus_path, class: "dropdown-item" %>
@@ -14,35 +17,13 @@
             <%= link_to "Parent Meetings", user_root_path, class: "dropdown-item" %> <%# Path to be changed later %>
             <%= link_to "Class Schedules", user_root_path, class: "dropdown-item" %> <%# Path to be changed later %>
             <%= link_to "Grades", user_root_path, class: "dropdown-item" %> <%# Path to be changed later %>
-            <%= link_to "Home Page", root_path, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "", new_user_session_path, class: "fas fa-address-book" %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-
-  <%# What are the next 3 lines for? I couldn't see the difference in the page when I removed it. %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item dropdown">
-          <i class="fas fa-cogs" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Dashboard", user_root_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link btn btn-primary text-white" %>
+          <%= link_to "", new_user_session_path, class: "fas fa-address-book" %>
         </li>
       <% end %>
     </ul>

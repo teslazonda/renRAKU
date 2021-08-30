@@ -1,0 +1,36 @@
+<% @student.messages.each do |message| %>
+<div class="d-flex justify-content-between">
+  <%= cl_image_tag message.photo.key, :class=>"message-img mt-4", height: 200, width: 200, crop: :fill if message.photo.attached? %>
+  <div class="card mt-4 flex-grow-1" id="message-card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between mb-3">
+        <h5><%= message.title %></h5>
+        <em><%= message.created_at.strftime("%A, %b %d %Y") %></em>
+      </div>
+      <p class="card-text"><%= message.content %></p>
+      <%= link_to "Add Comment", new_message_comment_path(message), class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
+  <% message.comments.each do |comment| %>
+    <% if comment.user.teacher %>
+      <div class="card mt-4" id="teacher-comment">
+        <div class="card-body">
+          <div class="d-flex flex-column">
+          <em class="mb-2">On <%= comment.created_at.strftime("%A, %b %d %Y") %></em>
+          <p><strong><%= comment.user.name %></strong>:  <%= comment.content %></p>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="card mt-4" id="parents-comment">
+        <div class="card-body">
+          <div class="d-flex flex-column text-right">
+          <em class="mb-2">On <%= comment.created_at.strftime("%A, %b %d %Y") %></em>
+          <p><strong><%= comment.user.name %></strong>:  <%= comment.content %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
