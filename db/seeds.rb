@@ -233,6 +233,23 @@ ren = Student.create!(
 
   user_id: viddy.id
 )
+puts "Giving target student grades"
+
+grade_dates = ['Mon Aug 30 08:10:20 2021 UTC', 'Tue Aug 31 08:55:28 2021 UTC' 'Sun Aug 29 08:44:28 2021 UTC']
+grade_subject = ['History', 'Math', 'Social Studies', 'English', 'Japanese']
+grade_name = ['Final Exam', 'Midterm', 'Pop quiz', 'Homework']
+grade_value = ['A', 'B', 'C']
+5.times do
+  Grade.create!(
+    date: grade_dates.sample,
+    subject: grade_subject.sample,
+    name: grade_name.sample,
+    value: grade_value.sample,
+    student: ren
+  )
+end
+
+
 
 puts "Creating 9 students for class 1-A"
 
@@ -248,6 +265,16 @@ parent_counter = 0
     kurasu_id: class_one_a.id,
     user_id: parents[parent_counter].id
   )
+
+  5.times do
+  Grade.create!(
+    date: grade_dates.sample,
+    subject: grade_subject.sample,
+    name: grade_name.sample,
+    value: grade_value.sample,
+    student: student
+  )
+  end
   parent_counter += 1
   puts "Created #{student.id}"
 end
@@ -267,6 +294,16 @@ puts "Creating 10 students for class 1-B"
     kurasu_id: class_one_b.id,
     user_id: parents[parent_counter].id
   )
+
+  5.times do
+  Grade.create!(
+    date: grade_dates.sample,
+    subject: grade_subject.sample,
+    name: grade_name.sample,
+    value: grade_value.sample,
+    student: student
+  )
+  end
   parent_counter += 1
   puts "Created #{student.id}"
 end
@@ -284,6 +321,16 @@ puts "Creating 10 students for class 2-A"
     kurasu_id: class_two_a.id,
     user_id: parents[parent_counter].id
   )
+
+ 5.times do
+  Grade.create!(
+    date: grade_dates.sample,
+    subject: grade_subject.sample,
+    name: grade_name.sample,
+    value: grade_value.sample,
+    student: student
+  )
+  end
   parent_counter += 1
   puts "Created #{student.id}"
 end
@@ -300,6 +347,16 @@ puts "Creating 10 students for class 2-B"
     kurasu_id: class_two_b.id,
     user_id: parents[parent_counter].id
   )
+
+ 5.times do
+  Grade.create!(
+    date: grade_dates.sample,
+    subject: grade_subject.sample,
+    name: grade_name.sample,
+    value: grade_value.sample,
+    student: student
+  )
+  end
   parent_counter += 1
   puts "Created #{student.id}"
 end
@@ -319,6 +376,16 @@ puts "Creating 10 students for class 3-A"
     kurasu_id: class_three_a.id,
     user_id: parents[parent_counter].id
   )
+
+ 5.times do
+  Grade.create!(
+    date: grade_dates.sample,
+    subject: grade_subject.sample,
+    name: grade_name.sample,
+    value: grade_value.sample,
+    student: student
+  )
+  end
   parent_counter += 1
   puts "Created #{student.id}"
 end
@@ -335,6 +402,15 @@ puts "Creating 10 students for class 3-B"
     kurasu_id: class_three_b.id,
     user_id: parents[parent_counter].id
   )
+ 5.times do
+  Grade.create!(
+    date: grade_dates.sample,
+    subject: grade_subject.sample,
+    name: grade_name.sample,
+    value: grade_value.sample,
+    student: student
+  )
+  end
   parent_counter += 1
   puts "Created #{student.id}"
 end
@@ -352,6 +428,16 @@ puts "Creating 10 students for class 4-A"
     kurasu_id: class_four_a.id,
     user_id: parents[parent_counter].id
   )
+ 5.times do
+  Grade.create!(
+    date: grade_dates.sample,
+    subject: grade_subject.sample,
+    name: grade_name.sample,
+    value: grade_value.sample,
+    student: student
+  )
+  end
+
   parent_counter += 1
   puts "Created #{student.id}"
 end
@@ -368,6 +454,15 @@ puts "Creating 10 students for class 4-B"
     kurasu_id: class_four_b.id,
     user_id: parents[parent_counter].id
   )
+ 5.times do
+  Grade.create!(
+    date: grade_dates.sample,
+    subject: grade_subject.sample,
+    name: grade_name.sample,
+    value: grade_value.sample,
+    student: student
+  )
+  end
   parent_counter += 1
   puts "Created #{student.id}"
 end
@@ -385,6 +480,15 @@ puts "Creating 10 students for class 5-A"
     kurasu_id: class_five_a.id,
     user_id: parents[parent_counter].id
   )
+  5.times do
+  Grade.create!(
+    date: grade_dates.sample,
+    subject: grade_subject.sample,
+    name: grade_name.sample,
+    value: grade_value.sample,
+    student: student
+  )
+  end
   parent_counter += 1
   puts "Created #{student.id}"
 end
@@ -401,6 +505,15 @@ puts "Creating 10 students for class 5-B"
     kurasu_id: class_five_b.id,
     user_id: parents[parent_counter].id
   )
+  5.times do
+  Grade.create!(
+    date: grade_dates.sample,
+    subject: grade_subject.sample,
+    name: grade_name.sample,
+    value: grade_value.sample,
+    student: student
+  )
+  end
   parent_counter += 1
   puts "Created #{student.id}"
 end
@@ -418,6 +531,15 @@ puts "Creating 10 students for class 6-A"
     kurasu_id: class_six_a.id,
     user_id: parents[parent_counter].id
   )
+  5.times do
+  Grade.create!(
+    date: grade_dates.sample,
+    subject: grade_subject.sample,
+    name: grade_name.sample,
+    value: grade_value.sample,
+    student: student
+  )
+  end
   parent_counter += 1
   puts "Created #{student.id}"
 end
@@ -434,6 +556,15 @@ puts "Creating 10 students for class 6-B"
     kurasu_id: class_six_b.id,
     user_id: parents[parent_counter].id
   )
+  5.times do
+  Grade.create!(
+    date: grade_dates.sample,
+    subject: grade_subject.sample,
+    name: grade_name.sample,
+    value: grade_value.sample,
+    student: student
+  )
+  end
   parent_counter += 1
   puts "Created #{student.id}"
 end
