@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'meetings/index'
   get 'meetings/show'
   get 'meetings/create'
   get 'meetings/new'
   get 'meetings/edit'
   get 'meetings/update'
+
   root to: 'pages#home'
   resources :kurasus, only: %i[index edit create new]
 
