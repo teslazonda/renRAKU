@@ -236,12 +236,12 @@ figure {
 // For student cards
 #student-card {
   box-shadow: 0 0 0;
-  border-radius: 8px 0 0 0;
-  border-right: 1px solid $light-gray;
+  border-radius: 8px 0 8px 0;
+  // border-right: 1px solid $light-gray;
   text-align: right;
   font-size: large;
   position: relative;
-  background: linear-gradient(to left, $light-gray 25%,white 15%);
+  background: linear-gradient(to left, rgb(231, 230, 230) 35%,white 15%);
   &:hover {
     box-shadow: -2px 0px 4px rgba($color: black, $alpha: 0.6);
     background-color: rgba($color: white, $alpha: 1.0);
@@ -266,13 +266,12 @@ figure {
 #student-number {
   color: white;
   position: absolute;
-  border: 1px solid rgba(0, 0, 0, 0.473);
   bottom: 50px;
   right: -12px;
   margin-right: 4px;
   padding-right: 4px;
   padding-left: 4px;
-  background-color: $dark-electric-blue;
+  background-color: $red;
   border-radius: 10px;
 }
 // For the animated cards on the homepage
