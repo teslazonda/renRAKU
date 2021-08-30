@@ -17,11 +17,17 @@ Rails.application.routes.draw do
   end
 
   resources :students, only: [] do
+    resources :grades, only: %i[index create new]
+  end
+
+  resources :students, only: [] do
     resources :messages, only: %i[index create new]
   end
+
   resources :messages, only: %i[show] do
     resources :comments, only: %i[create new]
   end
+
   resources :dashboards, only: %i[index]
   # /dashboard
   devise_for :users
