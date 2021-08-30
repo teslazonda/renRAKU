@@ -236,7 +236,7 @@ figure {
 // For student cards
 #student-card {
   box-shadow: 0 0 0;
-  border-radius: 8px 0 0 8px;
+  border-radius: 8px 0 0 0;
   border-right: 1px solid $light-gray;
   text-align: right;
   font-size: large;
@@ -245,6 +245,7 @@ figure {
   &:hover {
     box-shadow: -2px 0px 4px rgba($color: black, $alpha: 0.6);
     background-color: rgba($color: white, $alpha: 1.0);
+    cursor: default;
   }
   p {
     margin-bottom: 0px;
@@ -252,14 +253,14 @@ figure {
 }
 .notebook-button {
   position: absolute;
-  bottom: -40px;
+  bottom: -39px;
   left: 0;
   flex-grow: 1;
 }
 .grades-button {
   position: absolute;
-  bottom: -40px;
-  right: 0;
+  bottom: -39px;
+  left: 100px;
   flex-grow: 1;
 }
 #student-number {

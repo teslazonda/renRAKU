@@ -13,13 +13,12 @@
               <a href="#" class="btn btn-primary">Notebook</a>
             </div>
             <div class="grades-button">
-              <a href="#" class="btn btn-primary">Grades</a>
+              <a href="#" class="btn btn-danger">Grades</a>
             </div>
           </div>
         <div class="card-body d-flex justify-content-between">
           <p class="card-text stretched-link pr-4"><%= student.first_name%> <%= student.last_name%></p>
           <p id="student-number">#<%= student.student_number %></p>
-          <a href="/students/<%=student.id%>/messages" class="stretched-link"></a>
         </div>
       </div>
     <% end %>
