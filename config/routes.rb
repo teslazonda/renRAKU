@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'schedules/index'
-  get 'schedules/update'
-  get 'schedules/edit'
-  get 'schedules/new'
-  get 'schedules/show'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'meetings/index'
   get 'meetings/show'
