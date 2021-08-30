@@ -9,9 +9,13 @@
       </div>
       <p class="card-text"><%= message.content %></p>
       <%= link_to "Add Comment", new_message_comment_path(message), class: "btn btn-primary" %>
+      <a class="btn btn-primary" data-toggle="collapse" href="#comment<%= message.id %>" role="button" aria-expanded="false" aria-controls="collapseExample">
+        See Comments <i class="fas fa-sort-down"></i>
+      </a>
     </div>
   </div>
 </div>
+<div class="collapse" id="comment<%= message.id %>">
   <% message.comments.each do |comment| %>
     <% if comment.user.teacher %>
       <div class="card mt-4" id="teacher-comment">
@@ -33,4 +37,5 @@
       </div>
     <% end %>
   <% end %>
+  </div>
 <% end %>
