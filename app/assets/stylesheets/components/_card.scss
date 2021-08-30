@@ -455,3 +455,39 @@ figure {
     display: none;
   }
 }
+// For the profile card on the dashboard
+#dashboard-profile {
+  background-color: $light-gray;
+  color: white;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 15px;
+  margin-top: 8px;
+  padding: 16px;
+  margin-right: 8px;
+  width: 300px;
+  border-radius: 8px;
+  @media (max-width: 1110px) {
+    margin-right: auto;
+    margin-left: auto;
+    width: 350px;
+  }
+}
+.dashboard-layout {
+  position: relative;
+  @media (max-width: 1110px) {
+    flex-direction: column;
+  }
+}
+.time {
+  position: absolute;
+  border: 1px solid white;
+  border-top: none;
+  border-right: none;
+  top: -10px;
+  right: -10px;
+  background-color: lighten($light-gray, 5%);
+  padding: 4px;
+  border-radius: 4px;
+  color: white;
+}
