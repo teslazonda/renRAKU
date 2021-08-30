@@ -501,8 +501,8 @@ Comment.create(
 
 Meeting.create(
   title: "Needs Extra Study",
-  context: "Ren-kun seems to be struggling with the prepositions topic in English. I would like to meet you sometime next wednesday for a short meeting.",
-  date: 2021-9-22,
+  content: "Ren-kun seems to be struggling with the prepositions topic in English. I would like to meet you sometime next wednesday for a short meeting.",
+  date: "2021-9-22",
   parent_id: viddy.id,
   teacher_id: sae.id
 )
