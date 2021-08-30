@@ -3,24 +3,24 @@ class EventPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
-  end
 
-  def create?
-    user.teacher?
-  end
+    def create?
+      user.teacher?
+    end
 
-  def show?
-  end
+    def show?
+    end
 
-  def update?
-    user.teacher?
-  end
+    def update?
+      user.teacher?
+    end
 
-  def edit?
-    user.teacher?
-  end
+    def edit?
+      user.teacher?
+    end
 
-  def destroy?
-    user.teacher?
+    def destroy?
+      user.teacher?
+    end
   end
 end
