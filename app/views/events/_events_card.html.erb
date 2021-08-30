@@ -15,6 +15,7 @@
 
             <p class="event-card-desc"><%= event.rich_body %></p>
 
+            <% if event.kurasus.length < 3 %>
             <div class="d-flex justify-content-start">
               <span class="event-card-classes">
               For the following classes:
@@ -25,6 +26,26 @@
                 <% end %>
               </span>
             </div>
+            <% else %>
+            <div class="d-flex">
+              <div>
+                <a id="see-classes" data-toggle="collapse" href="#event<%= event.id %>" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  See Classes
+                </a>
+              </div>
+              <div class="collapse" id="event<%= event.id %>">
+                <div class="d-flex justify-content-start">
+                <span class="event-card-classes">
+                  <% event.kurasus.each do |kurasu|%>
+                    <div class="classes">
+                      <%= kurasu.name %>
+                    </div>
+                  <% end %>
+                </span>
+              </div>
+              </div>
+            </div>
+            <% end %>
             <div class="d-flex justify-content-end">
               <span>
                 <%= link_to 'Update Event', edit_event_path(event), class: "btn btn-danger mx-1" if @user.teacher %>
