@@ -1,0 +1,10 @@
+<div class="container center">
+  <div class="row">
+    <% @meetings.each do |meeting| %>
+      <%= meeting.title  %>
+      <%= meeting.content %>
+      <%= meeting.date %>
+      <%= meeting.hour %>
+    <% end %>
+  </div>
+</div>
