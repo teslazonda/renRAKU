@@ -2,6 +2,7 @@ class SchedulesController < ApplicationController
   def index
     @user = current_user
     @schedules = policy_scope(Schedule)
+    @kurasu = Kurasu.find(params[:kurasu_id])
   end
 
   def update
