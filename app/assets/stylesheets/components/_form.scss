@@ -1,12 +1,14 @@
 #new_event, .edit_event, #new_message, #new_comment, .new_user {
-  background-color: $light-gray;
+  background-color: rgb(240, 240, 240);
+  color: black;
+
   padding: 16px;
   border-radius: 8px;
   margin-bottom: 16px;
 }
 // To style the rich-text icon bar
 trix-toolbar .trix-button-row {
-  background-color: white;
+  background-color: rgb(240, 240, 240);
   margin-bottom: 12px;
   padding-right: 10px;
   padding-top: 10px;
