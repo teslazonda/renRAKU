@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   get 'meetings/update'
 
   root to: 'pages#home'
-  resources :kurasus, only: %i[index edit create new]
+  resources :kurasus, only: %i[index edit create new] do
+    resources :schedules, only: %i[index update edit new]
+  end
 
   resources :events, only: %i[index create new edit update destroy] do
     resources :participants, only: %i[index create new]

@@ -14,16 +14,16 @@ class SchedulesController < ApplicationController
   def edit
     @schedule = Schedule.find(params[:id])
     @kurasus = Kurasu.all
+    authorize @schedule
     @schedule.participants = []
     @schedule.participants.build
-    authorize @schedule
   end
 
   def new
     @schedule = Schedule.new
+    authorize @schedule
     @kurasus = Kurasu.all
     @schedule.participants.build
-    authorize @schedule
   end
 
 end
