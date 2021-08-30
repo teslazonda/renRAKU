@@ -25,3 +25,8 @@
     color: lighten($dark-electric-blue, 20%);
   }
 }
+.dropdown {
+  @media (max-width: 576px) {
+   margin-top: 12px;
+  }
+}
