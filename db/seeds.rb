@@ -498,3 +498,13 @@ Comment.create(
   message_id: lunch.id,
   content: "Thank you!"
 )
+
+puts "Creating meetings"
+Meeting.create(
+  title: "Needs Extra Study",
+  content: "Ren-kun seems to be struggling with the prepositions topic in English. I would like to meet you sometime next wednesday for a short meeting.",
+  date: "2021-9-22",
+  parent_id: viddy.id,
+  teacher_id: sae.id
+)
+puts "Meetings created"
