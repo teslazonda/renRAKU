@@ -1,6 +1,6 @@
 <div class="container center">
   <div class="row">
-    <% @events.each do |event| %>
+    <% @events.order(:date).each do |event| %>
       <div class="small m-4">
         <article class="event-card">
           <div class="pizza-box">
