@@ -2,8 +2,9 @@
   <div class="flex-grow-1 flex-column ml-3 mt-3">
     <div id="dashboard-profile" class="text-center">
       <h3>Welcome<br> <%= current_user.name %></h3>
-      <p>Today is <%= Date.today.strftime("%A, %b %d") %></p>
-      <p>You are in charge of <%= current_user.kurasus.length %> classes</p>
+      <p>Today is <em><%= Date.today.strftime("%A, %b %d") %></em></p>
+      <p class="time"><%= Time.now.strftime("%H:%M") %></p>
+      <p>You are in charge of <strong><%= current_user.kurasus.length %></strong> classes</p>
     </div>
   </div>
   <div class="container d-flex justify-content-center mt-4">
