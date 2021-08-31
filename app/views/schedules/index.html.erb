@@ -1,2 +1,7 @@
-<h1>Schedules#index</h1>
-<p>Find me in app/views/schedules/index.html.erb</p>
+<h1>Class <%= @kurasu.name %> Schedule</h1>
+<% if @kurasu.schedule %>
+  <%= cl_image_tag @kurasu.schedule.photo.key, crop: :fill if @kurasu.schedule.photo.attached? %>
+  <%= link_to 'Update Schedule', edit_schedule_path(@kurasu.schedule) , class: "btn btn-primary mb-3" %>
+<% else %>
+  <%= link_to 'New Schedule', new_kurasu_schedule_path(@kurasu) , class: "btn btn-primary mb-3" %>
+<% end %>
