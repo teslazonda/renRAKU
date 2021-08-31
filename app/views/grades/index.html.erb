@@ -1,5 +1,6 @@
 <h1 class="text-center">Grades#index</h1>
 <div class="container">
+<% if @english_grades.exists? %>
 <div class="card mb-5" style="width: 52rem;">
     <h5 class="card-title">English</h5>
   <% @english_grades.each do |grade| %>
@@ -19,9 +20,11 @@
   <% end %>
 </div>
 </div>
+</div>
+<% end %>
 
-
-<div class="card " style="width: 52rem;">
+<% if @math_grades.exists? %>
+<div class="card mb-5" style="width: 52rem;">
     <h5 class="card-title">Math</h5>
   <% @math_grades.each do |grade| %>
   <div class="card-body">
@@ -40,11 +43,13 @@
   <% end %>
 </div>
 </div>
+</div>
+<% end %>
 
 
 
-
-<div class="card " style="width: 52rem;">
+<% if @socialstudies_grades.exists? %>
+<div class="card mb-5" style="width: 52rem;">
     <h5 class="card-title">Social Studies</h5>
   <% @socialstudies_grades.each do |grade| %>
   <div class="card-body">
@@ -63,9 +68,11 @@
   <% end %>
 </div>
 </div>
+</div>
+<% end %>
 
-
-<div class="card " style="width: 52rem;">
+<% if @japanese_grades.exists? %>
+<div class="card mb-5" style="width: 52rem;" >
     <h5 class="card-title">Japanese</h5>
   <% @japanese_grades.each do |grade| %>
   <div class="card-body">
@@ -84,11 +91,14 @@
   <% end %>
 </div>
 </div>
+</div>
+<% end %>
 
 
 
 
-<div class="card " style="width: 52rem;">
+<% if @history_grades.exists? %>
+<div class="card mb-5" style="width: 52rem;">
     <h5 class="card-title">History</h5>
   <% @history_grades.each do |grade| %>
   <div class="card-body">
@@ -107,7 +117,8 @@
   <% end %>
 </div>
 </div>
-
+</div>
+<% end %>
 
 
 
