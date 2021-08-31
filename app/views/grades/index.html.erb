@@ -2,7 +2,7 @@
 <div class="container">
 <% if @english_grades.exists? %>
 <div class="card mb-5" style="width: 52rem;">
-    <h5 class="card-title">English</h5>
+    <h5 class="card-title text-center">English</h5>
   <% @english_grades.each do |grade| %>
   <div class="card-body">
     <h6 class="card-subtitle mb-2 text-muted"><%= grade.date %></h6>
@@ -25,7 +25,7 @@
 
 <% if @math_grades.exists? %>
 <div class="card mb-5" style="width: 52rem;">
-    <h5 class="card-title">Math</h5>
+    <h5 class="card-title text-center">Math</h5>
   <% @math_grades.each do |grade| %>
   <div class="card-body">
     <h6 class="card-subtitle mb-2 text-muted"><%= grade.date %></h6>
@@ -50,7 +50,7 @@
 
 <% if @socialstudies_grades.exists? %>
 <div class="card mb-5" style="width: 52rem;">
-    <h5 class="card-title">Social Studies</h5>
+    <h5 class="card-title text-center">Social Studies</h5>
   <% @socialstudies_grades.each do |grade| %>
   <div class="card-body">
     <h6 class="card-subtitle mb-2 text-muted"><%= grade.date %></h6>
@@ -73,7 +73,7 @@
 
 <% if @japanese_grades.exists? %>
 <div class="card mb-5" style="width: 52rem;" >
-    <h5 class="card-title">Japanese</h5>
+    <h5 class="card-title text-center">Japanese</h5>
   <% @japanese_grades.each do |grade| %>
   <div class="card-body">
     <h6 class="card-subtitle mb-2 text-muted"><%= grade.date %></h6>
@@ -99,7 +99,7 @@
 
 <% if @history_grades.exists? %>
 <div class="card mb-5" style="width: 52rem;">
-    <h5 class="card-title">History</h5>
+    <h5 class="card-title text-center">History</h5>
   <% @history_grades.each do |grade| %>
   <div class="card-body">
     <h6 class="card-subtitle mb-2 text-muted"><%= grade.date %></h6>
