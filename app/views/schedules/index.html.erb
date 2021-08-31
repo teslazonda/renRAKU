@@ -1,4 +1,6 @@
-<h1>Class <%= @kurasu.name %> Schedule</h1>
+<div class="container text-center mt-4">
+  <h1 class="text-white">Class <%= @kurasu.name %> Schedule</h1>
+</div>
 <% if @kurasu.schedule %>
   <%= cl_image_tag @kurasu.schedule.photo.key, crop: :fill if @kurasu.schedule.photo.attached? %>
   <%= link_to 'Update Schedule', edit_schedule_path(@kurasu.schedule) , class: "btn btn-primary mb-3" %>
