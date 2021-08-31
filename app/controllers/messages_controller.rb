@@ -22,7 +22,6 @@ class MessagesController < ApplicationController
       comment.status = "read"
       comment.save
     end
-    redirect_to "/students/#{@message.student_id}/messages"
   end
 
   def create
