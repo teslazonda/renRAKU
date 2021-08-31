@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
       @student = Student.find_by(user: current_user)
     end
     @user = current_user
-    @messages = policy_scope(Message)
+    @messages = policy_scope(Message).where(student: @student)
   end
 
   def create
