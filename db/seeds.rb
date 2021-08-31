@@ -247,16 +247,63 @@ grade_dates = ['Mon Aug 30 08:10:20 2021 UTC', 'Tue Aug 31 08:55:28 2021 UTC' 'S
 grade_subject = ['History', 'Math', 'Social Studies', 'English', 'Japanese']
 grade_name = ['Final Exam', 'Midterm', 'Pop quiz', 'Homework']
 grade_value = ['A', 'B', 'C']
-5.times do
-  Grade.create!(
-    date: grade_dates.sample,
-    subject: grade_subject.sample,
-    name: grade_name.sample,
-    value: grade_value.sample,
-    student: ren
-  )
-end
+# 5.times do
+#   Grade.create!(
+#     date: grade_dates.sample,
+#     subject: grade_subject.sample,
+#     name: grade_name.sample,
+#     value: grade_value.sample,
+#     student: ren
+#   )
+# end
 
+Grade.create!(
+  date: 'Mon Jul 30 08:10:20 2021 UTC',
+  subject: 'English',
+  name: 'Homework',
+  value: 'C',
+  student: ren
+)
+
+Grade.create!(
+  date: 'Mon Jul 30 08:10:20 2021 UTC',
+  subject: 'English',
+  name: 'Pop quiz',
+  value: 'C',
+  student: ren
+)
+
+Grade.create!(
+  date: 'Mon Jul 30 08:10:20 2021 UTC',
+  subject: 'Math',
+  name: 'Homework',
+  value: 'A',
+  student: ren
+)
+
+Grade.create!(
+  date: 'Mon Jul 30 08:10:20 2021 UTC',
+  subject: 'Math',
+  name: 'Pop quiz',
+  value: 'A',
+  student: ren
+)
+
+Grade.create!(
+  date: 'Mon Jul 30 08:10:20 2021 UTC',
+  subject: 'Social Studies',
+  name: 'Homework',
+  value: 'A',
+  student: ren
+)
+
+Grade.create!(
+  date: 'Mon Jul 30 08:10:20 2021 UTC',
+  subject: 'Social Studies',
+  name: 'Homework',
+  value: 'B',
+  student: ren
+)
 
 
 puts "Creating 9 students for class 1-A"
