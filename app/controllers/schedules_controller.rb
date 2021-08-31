@@ -33,8 +33,11 @@ class SchedulesController < ApplicationController
     authorize @schedule
     @schedule.update(schedule_params)
     @schedule.kurasu = @kurasu
-    # redirect_to kurasu_schedules_path(@kurasu)
-    redirect_to edit_schedule(@schedule)
+    if @schedule.save
+      redirect_to kurasu_schedules_path(@kurasu)
+    else
+      render '/schedules/edit'
+    end
   end
 
   private
