@@ -3,12 +3,12 @@
 <div class="container">
   <h1 class="text-center mt-3 text-white">Update Schedule: <%= @schedule.kurasu.name %></h1>
   <div class="text-center">
-    <%= link_to 'Back', kurasu_schedules_path(@kurasu), class: "btn btn-primary my-3 px-5"%>
+    <%= link_to 'Back', kurasu_schedules_path(@schedule), class: "btn btn-primary my-3 px-5"%>
   </div>
   <div class="row justify-content-center">
     <div class="col-lg-8 col-md-10">
       <div class="text-white schedule-form">
-        <%= render 'form', schedule: @schedule %>
+        <%= render 'edit', schedule: @schedule %>
       </div>
     </div>
   </div>

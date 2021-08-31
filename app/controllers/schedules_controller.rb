@@ -21,11 +21,13 @@ class SchedulesController < ApplicationController
   def new
     @schedule = Schedule.new
     authorize @schedule
+    # raise
   end
 
   def edit
     @schedule = Schedule.find(params[:id])
     authorize @schedule
+    # raise
   end
 
   def update
@@ -33,8 +35,13 @@ class SchedulesController < ApplicationController
     authorize @schedule
     @schedule.update(schedule_params)
     @schedule.kurasu = @kurasu
+    if @schedule.save
+      redirect_to kurasu_schedules_path(@kurasu)
+    else
+      render '/schedules/edit'
+    end
     # redirect_to kurasu_schedules_path(@kurasu)
-    redirect_to edit_schedule(@schedule)
+    # redirect_to edit_schedule(@schedule)
   end
 
   private
