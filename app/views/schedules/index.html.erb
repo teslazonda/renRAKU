@@ -1,13 +1,16 @@
-<div class="container">
-  <h1>Class <%= @kurasu.name %> Schedule</h1>
-  <% if @kurasu.schedule %>
-  <div class="container">
-    <%= cl_image_tag @kurasu.schedule.photo.key, height: 600, width: 800, crop: 'fill' if @kurasu.schedule.photo.attached? %>
-  </div>
-  <div class="container">
-    <%= link_to 'Update Schedule', edit_schedule_path(@kurasu.schedule) , class: "btn btn-primary mt-3" %>
-  </div>
-  <% else %>
-    <%= link_to 'New Schedule', new_kurasu_schedule_path(@kurasu) , class: "btn btn-primary mb-3" %>
-  <% end %>
+<div class="container text-center mt-4">
+  <h1 class="text-white">Class <%= @kurasu.name %> Schedule</h1>
 </div>
+<% if @kurasu.schedule %>
+  <div class="text-center mb-3">
+    <%= link_to 'Back to classes', kurasus_path, class: "btn btn-primary" %>
+    <%= link_to 'Update Schedule', edit_schedule_path(@kurasu.schedule) , class: "btn btn-primary" %>
+  </div>
+  <div class="text-center schedule-img p-5">
+    <%= cl_image_tag @kurasu.schedule.photo.key, class: 'img-fluid', height: 800, crop: :fill if @kurasu.schedule.photo.attached? %>
+  </div>
+<% else %>
+  <div class="text-center mb-3">
+    <%= link_to 'New Schedule', new_kurasu_schedule_path(@kurasu) , class: "btn btn-primary mb-3" %>
+  </div>
+<% end %>
