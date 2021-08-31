@@ -2,8 +2,9 @@
   <h1 class="text-white">Class <%= @kurasu.name %> Schedule</h1>
 </div>
 <% if @kurasu.schedule %>
-  <%= cl_image_tag @kurasu.schedule.photo.key, crop: :fill if @kurasu.schedule.photo.attached? %>
+  <%= link_to 'Back to classes', kurasus_path, class: "btn btn-primary mb-3" %>
   <%= link_to 'Update Schedule', edit_schedule_path(@kurasu.schedule) , class: "btn btn-primary mb-3" %>
+  <%= cl_image_tag @kurasu.schedule.photo.key, crop: :fill if @kurasu.schedule.photo.attached? %>
 <% else %>
   <%= link_to 'New Schedule', new_kurasu_schedule_path(@kurasu) , class: "btn btn-primary mb-3" %>
 <% end %>
