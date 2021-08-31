@@ -1,4 +1,4 @@
 <%= simple_form_for [@kurasu, @schedule] do |f| %>
   <%= f.input :photo, as: :file %>
-  <%= f.submit class: 'btn btn-danger mt-2 btn-lg btn-block' %>
+  <%= f.button :submit, 'Upload Schedule', class: 'btn btn-danger mt-2 btn-lg btn-block' %>
 <% end %>
