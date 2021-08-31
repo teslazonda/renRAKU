@@ -1,7 +1,9 @@
-<h1 class="text-center"><%= @student.first_name %>'s Grades</h1>
+<div class="text-white text-center my-4">
+  <h1><%= @student.first_name %>'s Grades</h1>
+  <%= link_to 'Return to Dashboard', dashboards_path, class: "btn btn-primary mb-3" %>
+  <%= link_to 'Return to Classes', kurasus_path, class: "btn btn-primary mb-3" %>
+</div>
 <div class="container">
-<%= link_to 'Return to Dashboard', dashboards_path, class: "btn btn-primary mb-3" %>
-<%= link_to 'Return to Classes', kurasus_path, class: "btn btn-primary mb-3" %>
 <% if @english_grades.exists? %>
 <div class="card mb-5" style="width: 52rem;">
     <h5 class="card-title text-center">English</h5>
@@ -125,5 +127,3 @@
 
 
 </div>
-
-
