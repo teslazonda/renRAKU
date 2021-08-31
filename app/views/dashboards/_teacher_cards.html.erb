@@ -1,66 +1,80 @@
-<div class="container d-flex justify-content-center mt-4">
-  <div class="cards">
-    <figure class="image-block mx-2">
-      <h1>Bulletin Board</h1>
-      <img src="<%= image_path 'dashboard/bulletinboard.jpg' %>" alt="" />
-      <figcaption>
-        <h3 class="text-center">
-          <i class="fas fa-chevron-up"></i>
-        </h3>
-        <p>Post messages about upcoming events on the school bulletin board, to inform parents of the next events the school organizes.</p>
-        <%= link_to "Go to the board", events_path, class: 'btn btn-primary' %>
-      </figcaption>
-    </figure>
-    <figure class="image-block mx-2">
-      <h1>Notebook</h1>
-      <img src="<%= image_path 'dashboard/notebook.jpg' %>" alt="" />
-      <figcaption>
-        <h3 class="text-center">
-          <i class="fas fa-chevron-up"></i>
-        </h3>
-        <p>Send messages to parents about their child's behaviour in class, or report their day. Get the parents" feedback</p>
-        <%= link_to "Go to the notebook", kurasus_path, class: 'btn btn-primary' %>
-      </figcaption>
-    </figure>
-    <figure class="image-block mx-2">
-      <h1>Parent meetings</h1>
-      <img src="<%= image_path 'dashboard/meeting.jpg' %>" alt="" />
-      <figcaption>
-        <h3 class="text-center">
-          <i class="fas fa-chevron-up"></i>
-        </h3 class="text-center">
-        <p>Schedule parent-teacher meetings for each student in the class you are in charge of.<br>
+<div class="d-flex justify-content-between dashboard-layout">
+  <div class="flex-grow-1 flex-column ml-3 mt-3">
+    <div id="dashboard-profile" class="text-center">
+      <h3>Welcome<br> <%= current_user.name %></h3>
+      <p>Today is <em><%= Date.today.strftime("%A, %b %d") %></em></p>
+      <p class="time"><%= Time.now.strftime("%H:%M") %></p>
+      <p>You are in charge of <strong><%= current_user.kurasus.length %></strong> classes</p>
+    </div>
+  </div>
+  <div class="container d-flex justify-content-center mt-4">
+    <div class="cards">
+      <figure class="image-block mx-2">
+        <h1>Bulletin Board</h1>
+        <img src="<%= image_path 'dashboard/bulletinboard.jpg' %>" alt="" />
+        <figcaption>
+          <h3 class="text-center">
+            <i class="fas fa-chevron-up"></i>
+          </h3>
+          <p>Post messages about upcoming events on the school bulletin board, to inform parents of the next events the school organizes.</p>
+          <%= link_to "Go to the board", events_path, class: 'btn btn-primary' %>
+        </figcaption>
+      </figure>
+
+      <figure class="image-block mx-2">
+        <h1>Notebook</h1>
+        <img src="<%= image_path 'dashboard/notebook.jpg' %>" alt="" />
+        <figcaption>
+          <h3 class="text-center">
+            <i class="fas fa-chevron-up"></i>
+          </h3>
+          <p>Send messages to parents about their child's behaviour in class, or report their day. Get the parents" feedback</p>
+          <%= link_to "Go to the notebook", kurasus_path, class: 'btn btn-primary' %>
+        </figcaption>
+      </figure>
+
+      <figure class="image-block mx-2">
+        <h1>Parent meetings</h1>
+        <img src="<%= image_path 'dashboard/meeting.jpg' %>" alt="" />
+        <figcaption>
+          <h3 class="text-center">
+            <i class="fas fa-chevron-up"></i>
+          </h3 class="text-center">
+          <p>Schedule parent-teacher meetings for each student in the class you are in charge of.<br>
           &nbsp;</p>
-        <button class="btn btn-primary">
-          Schedule meetings
-        </button>
-      </figcaption>
-    </figure>
-    <figure class="image-block mx-2">
-      <h1>Class schedules</h1>
-      <img src="<%= image_path 'dashboard/schedule.jpg' %>" alt="" />
-      <figcaption>
-        <h3 class="text-center">
-          <i class="fas fa-chevron-up"></i>
-        </h3>
-        <p>Enter the information of each classes schedule so parents can consult this schedule all-year-round.</p>
-        <button class="btn btn-primary">
-          Go the the schedules
-        </button>
-      </figcaption>
-    </figure>
-    <figure class="image-block mx-2">
-      <h1>Grades</h1>
-      <img src="<%= image_path 'dashboard/grade.jpg' %>" alt="" />
-      <figcaption>
-        <h3 class="text-center">
-          <i class="fas fa-chevron-up"></i>
-        </h3>
-        <p>Enter the latest grades of students in their grade reports for parents to consult and aknowledge they have seen them.</p>
-        <button class="btn btn-primary">
-          Go to grades
-        </button>
-      </figcaption>
-    </figure>
+          <button class="btn btn-primary">
+            Schedule meetings
+          </button>
+        </figcaption>
+      </figure>
+
+      <figure class="image-block mx-2">
+        <h1>Class schedules</h1>
+        <img src="<%= image_path 'dashboard/schedule.jpg' %>" alt="" />
+        <figcaption>
+          <h3 class="text-center">
+            <i class="fas fa-chevron-up"></i>
+          </h3>
+          <p>Enter the information of each classes schedule so parents can consult this schedule all-year-round.</p>
+          <button class="btn btn-primary">
+            Go the the schedules
+          </button>
+        </figcaption>
+      </figure>
+
+      <figure class="image-block mx-2">
+        <h1>Grades</h1>
+        <img src="<%= image_path 'dashboard/grade.jpg' %>" alt="" />
+        <figcaption>
+          <h3 class="text-center">
+            <i class="fas fa-chevron-up"></i>
+          </h3>
+          <p>Enter the latest grades of students in their grade reports for parents to consult and aknowledge they have seen them.</p>
+          <button class="btn btn-primary">
+            Go to grades
+          </button>
+        </figcaption>
+      </figure>
+    </div>
   </div>
 </div>

@@ -221,6 +221,7 @@ figure {
 // For class cards
 #class-card {
   background-color: $blue;
+  position: relative;
   background-image: url('kurasu/classroomtables.jpg');
   text-align: center;
   text-shadow: 2px 2px 4px black;
@@ -233,33 +234,62 @@ figure {
     color: white;
   }
 }
+.schedule-button {
+  background-color: rgb(235,235,235);
+  color: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  padding: 8px 16px;
+  text-shadow: none;
+  border-end-start-radius: 8px;
+  &:hover {
+    text-decoration: none;
+    color: rgb(60, 60, 60);
+    top: -2px;
+    box-shadow: 2px 2px 4px rgba($color: black, $alpha: 0.5);
+  }
+}
 // For student cards
 #student-card {
   box-shadow: 0 0 0;
-  border-radius: 8px 0 0 8px;
-  border-right: 1px solid $light-gray;
-  text-align: center;
+  border-radius: 8px 0 8px 0;
+  // border-right: 1px solid $light-gray;
+  text-align: right;
   font-size: large;
   position: relative;
-  background: linear-gradient(to left, $light-gray 25%,white 15%);
+  background: linear-gradient(to left, rgb(231, 230, 230) 35%,white 15%);
   &:hover {
     box-shadow: -2px 0px 4px rgba($color: black, $alpha: 0.6);
     background-color: rgba($color: white, $alpha: 1.0);
+    cursor: default;
   }
   p {
     margin-bottom: 0px;
   }
 }
+.notebook-button {
+  position: absolute;
+  bottom: -39px;
+  left: 0;
+  flex-grow: 1;
+}
+.grades-button {
+  position: absolute;
+  bottom: -39px;
+  left: 100px;
+  flex-grow: 1;
+}
 #student-number {
   color: white;
   position: absolute;
-  border: 1px solid rgba(0, 0, 0, 0.473);
   bottom: 50px;
   right: -12px;
   margin-right: 4px;
   padding-right: 4px;
   padding-left: 4px;
-  background-color: $dark-electric-blue;
+  background-color: $red;
   border-radius: 10px;
 }
 // For the animated cards on the homepage
@@ -442,4 +472,40 @@ figure {
   @media (max-width: 800px) {
     display: none;
   }
+}
+// For the profile card on the dashboard
+#dashboard-profile {
+  background-color: $light-gray;
+  color: white;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 15px;
+  margin-top: 8px;
+  padding: 16px;
+  margin-right: 8px;
+  width: 300px;
+  border-radius: 8px;
+  @media (max-width: 1110px) {
+    margin-right: auto;
+    margin-left: auto;
+    width: 350px;
+  }
+}
+.dashboard-layout {
+  position: relative;
+  @media (max-width: 1110px) {
+    flex-direction: column;
+  }
+}
+.time {
+  position: absolute;
+  border: 1px solid white;
+  border-top: none;
+  border-right: none;
+  top: -10px;
+  right: -10px;
+  background-color: lighten($light-gray, 5%);
+  padding: 4px;
+  border-radius: 4px;
+  color: white;
 }
