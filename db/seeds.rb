@@ -4,8 +4,15 @@ require 'open-uri'
 puts "Cleaning the DB"
 
 # We will have to remove this in order not to have someone inadvertently deleting real entries in production.
+puts "clearing grades"
 Grade.destroy_all
+puts "Grades cleared"
+puts "clearing schedules"
 Schedule.destroy_all
+puts "Schedules cleared"
+puts "clearing meetings"
+Meeting.destroy_all
+puts "Meetings cleared"
 puts "clearing messages"
 Message.destroy_all
 puts "Messages cleared"
