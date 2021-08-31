@@ -1,1 +1,1 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+renRAKU is an app that helps schools and teachers better communicate with parents. It allows writing daily notes to parents/teachers, uploading of schedules, creation of school/class events, posting grades for individual students, and scheduling of parent/teacher meetings.
