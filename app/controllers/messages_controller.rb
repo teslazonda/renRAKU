@@ -12,6 +12,9 @@ class MessagesController < ApplicationController
     @messages = policy_scope(Message).where(student: @student)
   end
 
+  # Create route
+  # Ceate non-CRUD action to change status of comment from unread to read
+
   def create
     @message = Message.new(message_params)
     @message.user = current_user
