@@ -1,7 +1,13 @@
 class GradesController < ApplicationController
   def index
     @user = current_user
-    @grades = policy_scope(Grade)
+    @student = Student.find(params[:student_id])
+    # Using separate variables to iterate over for each subject
+    @english_grades = policy_scope(@student.grades.where(subject: 'English'))
+    @math_grades = policy_scope(@student.grades.where(subject: 'Math'))
+    @socialstudies_grades = policy_scope(@student.grades.where(subject: 'Social Studies'))
+    @japanese_grades = policy_scope(@student.grades.where(subject: 'Japanese'))
+    @history_grades = policy_scope(@student.grades.where(subject: 'History'))
   end
 
   def new
