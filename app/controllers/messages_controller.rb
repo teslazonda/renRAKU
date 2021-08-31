@@ -1,6 +1,8 @@
 class MessagesController < ApplicationController
   before_action :find_student, only: %i[create new]
   def index
+    @message = Message.new
+    # authorize @message
     # Since teachers have to be brought to the class list to choose a student before getting to the messages index
     # and parents are brought directly to their children's message indexes, we find the student by different means.
     if current_user.teacher
