@@ -3,6 +3,7 @@ class EventPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
     def create?
       user.teacher?
@@ -22,5 +23,4 @@ class EventPolicy < ApplicationPolicy
     def destroy?
       user.teacher?
     end
-  end
 end
