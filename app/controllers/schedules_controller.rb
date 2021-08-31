@@ -32,9 +32,9 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
     authorize @schedule
     @schedule.update(schedule_params)
-    @schedule.kurasu = @kurasu
+    @schedule.kurasu = @schedule.kurasu
     if @schedule.save
-      redirect_to kurasu_schedules_path(@kurasu)
+      redirect_to kurasu_schedules_path(@schedule)
     else
       render '/schedules/edit'
     end
