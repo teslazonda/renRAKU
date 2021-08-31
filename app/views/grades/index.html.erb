@@ -1,5 +1,7 @@
 <h1 class="text-center">Grades#index</h1>
 <div class="container">
+<%= link_to 'Return to Dashboard', dashboards_path, class: "btn btn-primary mb-3" %>
+<%= link_to 'Return to Classes', kurasus_path, class: "btn btn-primary mb-3" %>
 <% if @english_grades.exists? %>
 <div class="card mb-5" style="width: 52rem;">
     <h5 class="card-title text-center">English</h5>
