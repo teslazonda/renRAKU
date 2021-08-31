@@ -6,7 +6,7 @@
     <%= link_to 'Back to classes', kurasus_path, class: "btn btn-primary" %>
     <%= link_to 'Update Schedule', edit_schedule_path(@kurasu.schedule) , class: "btn btn-primary" %>
   </div>
-  <div class="text-center">
+  <div class="text-center schedule-img">
     <%= cl_image_tag @kurasu.schedule.photo.key, class: 'img-fluid', height: 800, crop: :fill if @kurasu.schedule.photo.attached? %>
   </div>
 <% else %>
