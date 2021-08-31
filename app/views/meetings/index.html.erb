@@ -1,8 +1,8 @@
 <h1>Meetings#index</h1>
 <h1 class="text-center mt-3 text-white">Parent Teacher Meetings</h1>
 <div class="container mt-3 text-center">
-  <%= link_to 'Return to Dashboard', dashboards_path, class: "btn btn-primary mx-1" %>
-  <%#= link_to 'Add Meeting', meetings_new_path, class: "btn btn-danger mx-1" if @user.teacher %>
-  <%= link_to 'Add Meeting', meetings_new_path, class: "btn btn-danger mx-1" %>
+  <%= link_to 'Return to Classes', kurasus_path, class: "btn btn-primary mx-1" %>
+  <%= link_to 'Add Meeting', new_kurasu_meeting_path, class: "btn btn-danger mx-1" if @user.teacher %>
+  <%#= link_to 'Add Meeting', meetings_new_path, class: "btn btn-danger mx-1" %>
 </div>
 <%= render 'meetings_card' %>

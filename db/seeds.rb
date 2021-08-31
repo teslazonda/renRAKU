@@ -674,33 +674,33 @@ puts "Messages created"
 
 puts "creating comments"
 
-Comment.create(
+Comment.create!(
   user_id: viddy.id,
   message_id: sleepy.id,
   content: "Yes, sorry about this! Last weekend we went on a roatrip and he went to bed late last night"
 )
-Comment.create(
+Comment.create!(
   user_id: sae.id,
   message_id: sleepy.id,
   content: "Understood! Next time let us know, so we can let him nap longer"
 )
-Comment.create(
+Comment.create!(
   user_id: viddy.id,
   message_id: lunch.id,
   content: "Thank you for letting us know. This was an old lunch box, so we will get a new one this weekend"
 )
-Comment.create(
+Comment.create!(
   user_id: sae.id,
   message_id: lunch.id,
   content: "Thank you!"
 )
 
 puts "Creating meetings"
-Meeting.create(
+Meeting.create!(
   title: "Needs Extra Study",
-  content: "Ren-kun seems to be struggling with the prepositions topic in English. I would like to meet you sometime next wednesday for a short meeting.",
+  content: "Ren-kun seems to be struggling with the prepositions topic in English. I would like to see you sometime next Wednesday for a short meeting.",
   date: "2021-9-22",
-  parent_id: viddy.id,
-  teacher_id: sae.id
+  parent: viddy,
+  teacher: sae
 )
 puts "Meetings created"
