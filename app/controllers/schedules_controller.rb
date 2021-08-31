@@ -34,7 +34,7 @@ class SchedulesController < ApplicationController
     @schedule.update(schedule_params)
     @schedule.kurasu = @schedule.kurasu
     if @schedule.save
-      redirect_to kurasu_schedules_path(@schedule)
+      redirect_to kurasu_schedules_path(@schedule.kurasu)
     else
       render '/schedules/edit'
     end
