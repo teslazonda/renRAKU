@@ -1,3 +1,4 @@
+
 <% @student.messages.each do |message| %>
 <div class="d-flex justify-content-between">
   <%= cl_image_tag message.photo.key, :class=>"message-img mt-4", height: 200, width: 200, crop: :fill if message.photo.attached? %>
@@ -9,8 +10,10 @@
       </div>
       <p class="card-text"><%= message.content %></p>
       <%= link_to "Add Comment", new_message_comment_path(message), class: "btn btn-primary" %>
+      <%= link_to "Comment read", comments_read_path(message), class: "btn btn-primary" %>
       <a class="btn btn-danger" data-toggle="collapse" href="#comment<%= message.id %>" role="button" aria-expanded="false" aria-controls="collapseExample">
         See Comments <%= message.comments.where(status: "unread").count %> <i class="fas fa-sort-down"></i>
+
       </a>
     </div>
   </div>

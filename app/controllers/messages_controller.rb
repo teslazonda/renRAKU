@@ -15,6 +15,16 @@ class MessagesController < ApplicationController
   # Create route
   # Ceate non-CRUD action to change status of comment from unread to read
 
+  def read
+    @message = Message.find(params[:id])
+    authorize @message
+    @message.comments.each do |comment|
+      comment.status = "read"
+      comment.save
+    end
+    redirect_to "/students/#{@message.student_id}/messages"
+  end
+
   def create
     @message = Message.new(message_params)
     @message.user = current_user
@@ -39,6 +49,6 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:title, :content, :photo, :student_id, :user_id)
+    params.require(:message).permit(:title, :content, :photo, :student_id, :user_id, :message_id)
   end
 end
