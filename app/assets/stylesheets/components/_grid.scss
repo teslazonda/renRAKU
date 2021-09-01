@@ -56,9 +56,9 @@
 }
 
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
+@media (min-width: 1550px) {
   .cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
   .homepage-cards {
     grid-template-columns: 1fr 1fr 1fr 1fr;
