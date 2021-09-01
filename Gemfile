@@ -39,6 +39,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem "breadcrumbs_on_rails"
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'line-bot-api'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

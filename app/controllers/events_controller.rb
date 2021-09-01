@@ -13,6 +13,7 @@ class EventsController < ApplicationController
     authorize @event
     if @event.save
       redirect_to events_path
+      LineCreator.new("New event on bulletin board").send_line
     else
       @kurasus = Kurasu.all
       @event.participants = []

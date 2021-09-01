@@ -37,6 +37,7 @@ class MessagesController < ApplicationController
     authorize @message
     if @message.save
       redirect_to student_messages_path(@student)
+      LineCreator.new("New message in notebook").send_line
     else
       render '/messages/new'
     end
