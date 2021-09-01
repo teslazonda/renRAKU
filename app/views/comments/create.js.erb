@@ -1,9 +1,5 @@
-const insertComment = () => {
-const comments = document.querySelector("#comment<%= @comment.message.id %>-placeholder")
-const partial = "<%= j render @comment %>"
-comments.insertAdjacentHTML('beforebegin', partial )
-  document.querySelectorAll('.text').forEach((input) => {
+document.querySelector("#comment<%= @comment.message.id %>-placeholder")
+    .insertAdjacentHTML('beforebegin', "<%= j render @comment %>")
+document.querySelectorAll('.text').forEach((input) => {
     input.value = ""
   })
-}
-insertComment()
