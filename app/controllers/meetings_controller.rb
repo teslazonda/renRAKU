@@ -4,24 +4,24 @@ class MeetingsController < ApplicationController
 
   def index
     @user = current_user
-    @meetings = Meeting.where(current_user == :user)
-    @meetings = policy_scope(Meeting)
-    @meeting = Meeting.new
+    if @user.teacher
+      @meetings = Meeting.where(current_user == :user)
+      @meetings = policy_scope(Meeting)
+      @meeting = Meeting.new
+    else
+      @meetings = Meeting.where(parent_id.nil?)
+      @meetings = policy_scope(Meeting)
+    end
   end
 
   def show
   end
 
   def create
-    @meeting = Meeting.new(meeting_params)
-    @meeting.teacher = current_user
-    @meeting.kurasu = Kurasu.find(params[:kurasu_id])
-    authorize @meeting
-    if @meeting.save
-      redirect_to meeting_path
-    else
-      render '/meetings/new'
-      raise
+    @meetings = []
+    meeting_creation
+    @meetings.each do |meeting|
+      render '/meetings/index' unless meeting.save
     end
   end
 
@@ -43,6 +43,16 @@ class MeetingsController < ApplicationController
 
   def find_kurasu
     @kurasu = Kurasu.find(params[:kurasu_id])
+  end
+
+  def meeting_creation
+    5.times do
+      @meeting = Meeting.new(meeting_params)
+      @meeting.teacher = current_user
+      @meeting.kurasu = Kurasu.find(params[:kurasu_id])
+      authorize @meeting
+      @meetings << @meeting
+    end
   end
 
   def meeting_params
