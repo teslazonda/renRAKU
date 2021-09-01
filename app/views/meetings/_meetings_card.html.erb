@@ -1,9 +1,28 @@
 <div class="container center">
   <% @meetings.each do |meeting| %>
-    <h2><%= meeting.title %></h2>
-    <h5><%= meeting.date %></h5>
-    <h5><%= meeting.hour %></h5>
-    <p><%= meeting.content %></p>
-
+    <% if current_user.teacher? || current_user.meetings_as_parent.exists? %>
+      <div class="card-product mt-2">
+        <div class="card-product-infos">
+          <h2><%= meeting.title %></h2>
+          <h5><%= meeting.date %></h5>
+          <h5><%= meeting.hour %></h5>
+          <p><%= meeting.content %></p>
+          <%= meeting.parent ? meeting.parent.name : nil %>
+        </div>
+      </div>
+    <% elsif %>
+      <%= simple_form_for meeting do |f| %>
+        <%= f.button :button, data: { confirm: "Are you sure you want to book this timeslot?" } do %>
+          <div class="card-product mt-2">
+            <div class="card-product-infos">
+              <h2><%= meeting.title %></h2>
+              <h5><%= meeting.date %></h5>
+              <h5><%= meeting.hour %></h5>
+              <p><%= meeting.content %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
   <% end %>
 </div>
