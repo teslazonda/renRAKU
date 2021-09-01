@@ -1,7 +1,8 @@
 <div class="d-flex justify-content-between dashboard-layout">
   <div class="flex-column ml-3 mt-3">
     <div id="dashboard-profile" class="text-center">
-      <h3>Welcome<br> <%= current_user.name %></h3>
+      <h3>Welcome<br>
+         <%= current_user.name %></h3>
       <p>Today is <em><%= Date.today.strftime("%A, %b %d") %></em></p>
       <p class="time"><%= Time.now.strftime("%H:%M") %></p>
       <p>You are in charge of <strong><%= current_user.kurasus.length %></strong> classes</p>
@@ -20,7 +21,6 @@
           <%= link_to "Go to the board", events_path, class: 'btn btn-primary' %>
         </figcaption>
       </figure>
-
       <figure class="image-block mx-2">
         <h1>Classes</h1>
         <img src="<%= image_path 'dashboard/class.png' %>" alt="" />
@@ -28,23 +28,10 @@
           <h3 class="text-center">
             <i class="fas fa-chevron-up"></i>
           </h3>
-          <p>Write a message in a student's notebook<br>Check the class schedules<br>Look at students' grades</p>
+          <p>Write a message in a student's notebook<br>
+            Check the class schedules<br>
+            Look at students' grades</p>
           <%= link_to "Go to the classes", kurasus_path, class: 'btn btn-primary' %>
-        </figcaption>
-      </figure>
-
-      <figure class="image-block mx-2">
-        <h1>Parent meetings</h1>
-        <img src="<%= image_path 'dashboard/meeting.jpg' %>" alt="" />
-        <figcaption>
-          <h3 class="text-center">
-            <i class="fas fa-chevron-up"></i>
-          </h3 class="text-center">
-          <p>Schedule parent-teacher meetings for each student in the class you are in charge of.<br>
-          &nbsp;</p>
-          <button class="btn btn-primary">
-            Schedule meetings
-          </button>
         </figcaption>
       </figure>
     </div>
