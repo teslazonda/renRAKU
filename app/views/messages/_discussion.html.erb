@@ -1,49 +1,42 @@
 <% @student.messages.each do |message| %>
-<div class="d-flex justify-content-between">
-  <%= cl_image_tag message.photo.key, :class=>"message-img mt-4", height: 200, width: 200, crop: :fill if message.photo.attached? %>
-  <div class="card mt-4 flex-grow-1" id="message-card">
-    <div class="card-body">
-      <div class="d-flex justify-content-between mb-3">
-        <h5><%= message.title %></h5>
-        <em><%= message.created_at.strftime("%A, %b %d %Y") %></em>
-      </div>
-      <p class="card-text"><%= message.content %></p>
-      <div class="d-flex">
-        <%= link_to "Add Comment", new_message_comment_path(message), class: "btn btn-primary" %>
-        <div class="notification-buttons">
-          <%= link_to comments_read_path(message), class: "btn btn-danger ml-2", remote: true do %>
-          See Comments <i class="fas fa-sort-down"></i>
-          <% end %>
-          <div class="notification-pill" id="notif-comment-<%= message.id %>">
-            <%= message.comments.where(status: "unread").count %>
+  <div class="d-flex justify-content-between">
+    <%= cl_image_tag message.photo.key, :class=>"message-img mt-4", height: 200, width: 200, crop: :fill if message.photo.attached? %>
+    <div class="card mt-4 flex-grow-1" id="message-card">
+      <div class="card-body">
+        <div class="d-flex justify-content-between mb-3">
+          <h5><%= message.title %></h5>
+          <em><%= message.created_at.strftime("%A, %b %d %Y") %></em>
+        </div>
+        <p class="card-text"><%= message.content %></p>
+        <div class="d-flex">
+          <div class="notification-buttons">
+            <%= link_to comments_read_path(message), class: "btn btn-danger ml-2", remote: true do %>
+              <% if message.comments.any? %>
+                See Comments <i class="fas fa-sort-down"></i>
+              <% else %>
+                Add Comment <i class="fas fa-sort-down"></i>
+              <% end %>
+            <% end %>
+            <div class="notification-pill" id="notif-comment-<%= message.id %>">
+              <%= message.comments.where(status: "unread").count %>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="collapse" id="comment<%= message.id %>">
-  <% message.comments.each do |comment| %>
-    <% if comment.user.teacher %>
-      <div class="card mt-4" id="teacher-comment">
-        <div class="card-body">
-          <div class="d-flex flex-column">
-          <em class="mb-2">On <%= comment.created_at.strftime("%A, %b %d %Y") %></em>
-          <p><strong><%= comment.user.name %></strong>:  <%= comment.content %></p>
-          </div>
-        </div>
-      </div>
-    <% else %>
-      <div class="card mt-4" id="parents-comment">
-        <div class="card-body">
-          <div class="d-flex flex-column text-right">
-          <em class="mb-2">On <%= comment.created_at.strftime("%A, %b %d %Y") %></em>
-          <p><strong><%= comment.user.name %></strong>:  <%= comment.content %></p>
-          </div>
-        </div>
-      </div>
+  <div class="collapse" id="comment<%= message.id %>">
+    <% message.comments.each do |comment| %>
+      <%= render comment %>
     <% end %>
-  <% end %>
+    <div id="comment<%= message.id %>-placeholder"></div>
+    <div class="card mt-4" id="<%= current_user.teacher ? "teacher-comment": "parents-comment" %>">
+      <div class="card-body">
+        <div class="d-flex flex-column <%= "text-right" unless current_user.teacher %>">
+          <%= render 'comments/form', message: message, comment: @comment %>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
 <%# raise %>
