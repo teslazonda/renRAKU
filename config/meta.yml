@@ -1,0 +1,5 @@
+meta_product_name: "renRAKU"
+meta_title: "renRAKU - Communicate more, do less"
+meta_description: "RenRaku makes communication between parents and teachers easy."
+meta_image: "meta-image.png" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
