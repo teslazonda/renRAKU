@@ -8,5 +8,11 @@
     <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
     <%= f.submit 'Create Meeting', class: 'btn btn-danger' %>
   <% end %>
+  <% @meetings.each do |meeting| %>
+    <h2><%= meeting.title %></h2>
+    <h5><%= meeting.kurasu %></h5>
+    <p><%= meeting.content %></p>
+    <%# Add more later %>
+  <% end %>
 </div>
 <%= render 'meetings_card' %>

@@ -21,6 +21,7 @@ class MeetingsController < ApplicationController
       redirect_to meetings_path
     else
       render '/meetings/new'
+      raise
     end
   end
 
