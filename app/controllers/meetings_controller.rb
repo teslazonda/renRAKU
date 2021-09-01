@@ -71,9 +71,9 @@ class MeetingsController < ApplicationController
       @meetings = policy_scope(current_user.meetings_as_teacher).order(:date)
       @meeting = Meeting.new
     elsif !current_user.meetings_as_parent.empty?
-      @meetings = policy_scope(current_user.meetings_as_parent)
+      @meetings = policy_scope(current_user.meetings_as_parent).order(:date)
     else
-      @meetings = policy_scope(Meeting).where(parent_id: nil)
+      @meetings = policy_scope(Meeting).where(parent_id: nil).order(:date)
     end
   end
 
