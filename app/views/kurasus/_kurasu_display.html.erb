@@ -1,6 +1,6 @@
 <% @user.kurasus.each do |kurasu| %>
   <div class="container">
-    <div class="card mt-4" id="class-card">
+    <div class="card mt-4" id="class-card" data-toggle="collapse" href="#collapse<%= kurasu.id %>" role="button" aria-expanded="false" aria-controls="collapseExample">
       <div class="card-body">
         <a href="kurasus/<%= kurasu.id %>/schedules" class="schedule-button">Schedule</a>
         <a href="kurasus/<%= kurasu.id %>/schedules" class="meeting-button">Meetings</a>
@@ -9,6 +9,7 @@
     </div>
     <div class="student-cards mt-2">
       <% kurasu.students.sort_by { |student| student.last_name}.each do |student| %>
+      <div class="collapse" id="collapse<%= kurasu.id %>">
         <div class="card my-4" id="student-card">
           <div class="flex-column justify-content-between">
             <div class="notebook-button">
@@ -23,6 +24,7 @@
             <p id="student-number">#<%= student.student_number %></p>
           </div>
         </div>
+      </div>
       <% end %>
     </div>
   </div>
