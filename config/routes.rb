@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :kurasus, only: %i[index edit create new] do
     resources :schedules, only: %i[index new create]
+    resources :meetings, only: %i[index show create new]
   end
 
   resources :schedules, only: %i[edit update]
+  resources :meetings, only: %i[edit update]
 
   resources :events, only: %i[index create new edit update destroy] do
     resources :participants, only: %i[index create new]

@@ -247,16 +247,63 @@ grade_dates = ['Mon Aug 30 08:10:20 2021 UTC', 'Tue Aug 31 08:55:28 2021 UTC' 'S
 grade_subject = ['History', 'Math', 'Social Studies', 'English', 'Japanese']
 grade_name = ['Final Exam', 'Midterm', 'Pop quiz', 'Homework']
 grade_value = ['A', 'B', 'C']
-5.times do
-  Grade.create!(
-    date: grade_dates.sample,
-    subject: grade_subject.sample,
-    name: grade_name.sample,
-    value: grade_value.sample,
-    student: ren
-  )
-end
+# 5.times do
+#   Grade.create!(
+#     date: grade_dates.sample,
+#     subject: grade_subject.sample,
+#     name: grade_name.sample,
+#     value: grade_value.sample,
+#     student: ren
+#   )
+# end
 
+Grade.create!(
+  date: 'Mon Jul 30 08:10:20 2021 UTC',
+  subject: 'English',
+  name: 'Homework',
+  value: 'C',
+  student: ren
+)
+
+Grade.create!(
+  date: 'Mon Jul 30 08:10:20 2021 UTC',
+  subject: 'English',
+  name: 'Pop quiz',
+  value: 'C',
+  student: ren
+)
+
+Grade.create!(
+  date: 'Mon Jul 30 08:10:20 2021 UTC',
+  subject: 'Math',
+  name: 'Homework',
+  value: 'A',
+  student: ren
+)
+
+Grade.create!(
+  date: 'Mon Jul 30 08:10:20 2021 UTC',
+  subject: 'Math',
+  name: 'Pop quiz',
+  value: 'A',
+  student: ren
+)
+
+Grade.create!(
+  date: 'Mon Jul 30 08:10:20 2021 UTC',
+  subject: 'Social Studies',
+  name: 'Homework',
+  value: 'A',
+  student: ren
+)
+
+Grade.create!(
+  date: 'Mon Jul 30 08:10:20 2021 UTC',
+  subject: 'Social Studies',
+  name: 'Homework',
+  value: 'B',
+  student: ren
+)
 
 
 puts "Creating 9 students for class 1-A"
@@ -627,33 +674,33 @@ puts "Messages created"
 
 puts "creating comments"
 
-Comment.create(
+Comment.create!(
   user_id: viddy.id,
   message_id: sleepy.id,
   content: "Yes, sorry about this! Last weekend we went on a roatrip and he went to bed late last night"
 )
-Comment.create(
+Comment.create!(
   user_id: sae.id,
   message_id: sleepy.id,
   content: "Understood! Next time let us know, so we can let him nap longer"
 )
-Comment.create(
+Comment.create!(
   user_id: viddy.id,
   message_id: lunch.id,
   content: "Thank you for letting us know. This was an old lunch box, so we will get a new one this weekend"
 )
-Comment.create(
+Comment.create!(
   user_id: sae.id,
   message_id: lunch.id,
   content: "Thank you!"
 )
 
 puts "Creating meetings"
-Meeting.create(
+Meeting.create!(
   title: "Needs Extra Study",
-  content: "Ren-kun seems to be struggling with the prepositions topic in English. I would like to meet you sometime next wednesday for a short meeting.",
+  content: "Ren-kun seems to be struggling with the prepositions topic in English. I would like to see you sometime next Wednesday for a short meeting.",
   date: "2021-9-22",
-  parent_id: viddy.id,
-  teacher_id: sae.id
+  parent: viddy,
+  teacher: sae
 )
 puts "Meetings created"
