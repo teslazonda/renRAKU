@@ -41,10 +41,10 @@ class MessagesController < ApplicationController
     end
   end
 
-  # def new
-  #   @message = Message.new
-  #   authorize @message
-  # end
+  def new
+    @message = Message.new
+    authorize @message
+  end
 
   private
 
