@@ -4,14 +4,14 @@
 <% if @kurasu.schedule %>
   <div class="text-center mb-3">
     <%= link_to 'Update Schedule', edit_schedule_path(@kurasu.schedule) , class: "btn btn-primary" %>
-    <%= link_to 'Back to classes', kurasus_path, class: "btn btn-primary" %>
   </div>
   <div class="text-center schedule-img p-5">
     <%= cl_image_tag @kurasu.schedule.photo.key + ".png" , class: 'img-fluid', height: 800, crop: :fill if @kurasu.schedule.photo.attached? %>
   </div>
+    <%= link_to 'Back to classes', kurasus_path, class: "btn btn-info mx-2" %>
 <% else %>
   <div class="text-center mb-3">
     <%= link_to 'New Schedule', new_kurasu_schedule_path(@kurasu) , class: "btn btn-primary" %>
-    <%= link_to 'Back to classes', kurasus_path, class: "btn btn-primary" %>
+    <%= link_to 'Back to classes', kurasus_path, class: "btn btn-info" %>
   </div>
 <% end %>
