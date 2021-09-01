@@ -1,4 +1,7 @@
 class GradesController < ApplicationController
+  add_breadcrumb "Dashboard", :dashboards_path
+  add_breadcrumb "Classes", :kurasus_path
+  add_breadcrumb "Grades", :student_grades_path
   def index
     @user = current_user
     @student = Student.find(params[:student_id])

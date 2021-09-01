@@ -1,5 +1,8 @@
 class MessagesController < ApplicationController
   before_action :find_student, only: %i[create new]
+  add_breadcrumb "Dashboard", :dashboards_path
+  add_breadcrumb "Classes", :kurasus_path
+  add_breadcrumb "Messages", :student_messages_path
   def index
     @message = Message.new
     # authorize @message

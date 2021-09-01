@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!
+  add_breadcrumb "Dashboard", :dashboards_path
+  add_breadcrumb "Events", :events_path
 
   def index
     @user = current_user
@@ -24,6 +26,7 @@ class EventsController < ApplicationController
     @kurasus = Kurasu.all
     @event.participants.build
     authorize @event
+    add_breadcrumb "New Event", :new_event_path
   end
 
   def edit
@@ -32,6 +35,7 @@ class EventsController < ApplicationController
     @event.participants = []
     @event.participants.build
     authorize @event
+    add_breadcrumb "Edit Event", :edit_event_path
   end
 
   def update
