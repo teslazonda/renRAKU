@@ -324,7 +324,7 @@ DEPENDENCIES
   faker!
   font-awesome-sass
   jbuilder (~> 2.7)
-  line-bot-api (~> 1.18.0)
+  line-bot-api
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   pry-byebug
