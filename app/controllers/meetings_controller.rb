@@ -22,9 +22,7 @@ class MeetingsController < ApplicationController
         return nil
       end
     end
-    # If all meetings save then reroute to:
     redirect_to kurasu_meetings_path
-    # If even one meeting fails, go back to the create form
   end
 
   def new
@@ -70,7 +68,7 @@ class MeetingsController < ApplicationController
 
   def display_meetings
     if @user.teacher
-      @meetings = policy_scope(current_user.meetings_as_teacher)
+      @meetings = policy_scope(current_user.meetings_as_teacher).order(:date)
       @meeting = Meeting.new
     elsif !current_user.meetings_as_parent.empty?
       @meetings = policy_scope(current_user.meetings_as_parent)
