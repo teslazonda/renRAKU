@@ -14,8 +14,9 @@ class MeetingsController < ApplicationController
   end
 
   def create
-    new_meetings = meeting_creation
-    new_meetings.each do |meeting|
+    @new_meetings = []
+    meeting_creation
+    @new_meetings.each do |meeting|
       unless meeting.save
         render 'meetings/index'
         return nil
@@ -47,15 +48,16 @@ class MeetingsController < ApplicationController
   end
 
   def meeting_creation
-    new_meetings = []
+    hour_counter = 0
     5.times do
       @meeting = Meeting.new(meeting_params)
       @meeting.teacher = current_user
       @meeting.kurasu = Kurasu.find(params[:kurasu_id])
+      @meeting.hour = hour_counter
+      hour_counter += 1
       authorize @meeting
-      new_meetings << @meeting
+      @new_meetings << @meeting
     end
-    new_meetings
   end
 
   def meeting_params
@@ -63,7 +65,7 @@ class MeetingsController < ApplicationController
   end
 
   def find_meeting
-    Meeting.find(params[:id]) # TODO: change this later
+    Meeting.find(params[:id])
   end
 
   def display_meetings
