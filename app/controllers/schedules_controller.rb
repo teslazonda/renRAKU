@@ -17,6 +17,7 @@ class SchedulesController < ApplicationController
     @schedule.kurasu = @kurasu
     if @schedule.save
       redirect_to kurasu_schedules_path(@kurasu)
+      LineCreator.new("New class schedule was uploaded").send_line
     else
       render '/schedules/new'
     end
@@ -39,6 +40,7 @@ class SchedulesController < ApplicationController
     @schedule.kurasu = @schedule.kurasu
     if @schedule.save
       redirect_to kurasu_schedules_path(@schedule.kurasu)
+      LineCreator.new("New class schedule was uploaded").send_line
     else
       render '/schedules/edit'
     end
