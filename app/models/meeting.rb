@@ -5,7 +5,8 @@ class Meeting < ApplicationRecord
   # validates :parent_id, presence: true
   validates :teacher_id, presence: true
   validates :kurasu_id, presence: true
-  # belongs_to :parent, class_name: "User"
+  enum hour: ['16:00', '17:00', '18:00', '19:00', '20:00']
+  belongs_to :parent, class_name: "User", optional: true
   belongs_to :teacher, class_name: "User"
   belongs_to :kurasu
 end
