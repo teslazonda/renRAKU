@@ -1,0 +1,8 @@
+<div class="card mt-4" id="<%= comment.user.teacher ? "teacher-comment": "parents-comment" %>">
+  <div class="card-body">
+    <div class="d-flex flex-column <%= "text-right" unless comment.user.teacher %>">
+      <em class="mb-2">On <%= comment.created_at.strftime("%A, %b %d %Y") %></em>
+      <p><strong><%= comment.user.name %></strong>:  <%= comment.content %></p>
+    </div>
+  </div>
+</div>

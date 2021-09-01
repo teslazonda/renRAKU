@@ -1,4 +1,4 @@
-<%= simple_form_for [message, comment] do |f| %>
+<%= simple_form_for [message, comment], remote: true do |f| %>
   <%= f.input :content %>
   <%= f.submit 'Add comment', class: 'btn btn-danger mt-2 btn-lg btn-block' %>
 <% end %>
