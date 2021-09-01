@@ -1,5 +1,8 @@
 class MeetingsController < ApplicationController
   before_action :authenticate_user!
+  add_breadcrumb "Dashboard", :dashboards_path
+  add_breadcrumb "Classes", :kurasus_path
+  add_breadcrumb "Meetings", :kurasu_meetings_path
 
   def index
     @user = current_user
