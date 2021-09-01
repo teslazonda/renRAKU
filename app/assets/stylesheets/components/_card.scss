@@ -288,15 +288,38 @@ figure {
 }
 .notebook-button {
   position: absolute;
-  bottom: -39px;
-  left: 0;
+  bottom: 10px;
+  right: 80px;
   flex-grow: 1;
+  z-index: 99;
+  font-size: 28px;
+  i {
+    color: $light-gray;
+  }
+  &:hover i {
+    color:lighten($color: $light-gray, $amount: 5%);
+  }
 }
 .grades-button {
   position: absolute;
-  bottom: -39px;
-  left: 100px;
+  bottom: 10px;
+  right: 30px;
   flex-grow: 1;
+  z-index: 99;
+  font-size: 28px;
+  i {
+    color: $light-gray;
+  }
+  #plus i {
+    color: $light-gray;
+    font-size: 16px;
+  }
+  &:hover i {
+    color: lighten($color: $light-gray, $amount: 15%);
+  }
+  &:hover #plus i {
+    color: lighten($color: $light-gray, $amount: 15%);
+  }
 }
 #student-number {
   color: white;
