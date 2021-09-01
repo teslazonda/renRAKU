@@ -5,4 +5,5 @@ class Meeting < ApplicationRecord
   validates :parent_id, presence: true
   belongs_to :parent, class_name: "User"
   belongs_to :teacher, class_name: "User"
+  belongs_to :kurasu
 end

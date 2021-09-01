@@ -13,7 +13,7 @@ class MeetingsController < ApplicationController
   def create
     @meeting = Meeting.new(meeting_params)
     @meeting.teacher = current_user
-    @student = Student.find(params[:student_id])
+    @kurasu = Kurasu.find(params[:kurasu_id])
     @meeting.parent = @student.user
     authorize @meeting
     if @meeting.save
