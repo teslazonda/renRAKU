@@ -700,7 +700,6 @@ Meeting.create!(
   title: "Second semester meeting",
   content: "The second semester has started and we would like to have one-on-one meeting to talk about the progress your children made in the first semester, as well as what to focus on onwards.",
   date: "2021-9-22",
-  parent: viddy,
   teacher: sae,
   kurasu: class_one_a
 )

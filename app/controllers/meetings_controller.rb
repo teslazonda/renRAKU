@@ -15,7 +15,8 @@ class MeetingsController < ApplicationController
   def create
     @meeting = Meeting.new(meeting_params)
     @meeting.teacher = current_user
-    @meeting.parent = @kurasu.parents
+    raise
+    # @meeting.parent = @kurasu.parents
     authorize @meeting
     if @meeting.save
       redirect_to meetings_path
@@ -35,6 +36,7 @@ class MeetingsController < ApplicationController
   end
 
   def update
+    @meeting.parent = current_user
     authorize @meeting
   end
 

@@ -1,11 +1,8 @@
 <div class="container center">
-  <div class="row">
-    <% @meetings.each do |meeting| %>
-      <%# if meeting. %>
-      <%= meeting.title  %>
-      <%= meeting.content %>
-      <%= meeting.date %>
-      <%= meeting.hour %>
-    <% end %>
-  </div>
+  <% @meetings.each do |meeting| %>
+    <h2><%= meeting.title  %></h2>
+    <h5><%= meeting.date %></h5>
+    <p><%= meeting.content %></p>
+
+  <% end %>
 </div>
