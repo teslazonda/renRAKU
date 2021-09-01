@@ -30,6 +30,8 @@ Rails.application.routes.draw do
   # /dashboard
   devise_for :users
   get '/dashboard' => "dashboards#index", :as => :user_root
+  # creating route for comment button
+  get '/messages/:id/read' => "messages#read", :as => :comments_read
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
