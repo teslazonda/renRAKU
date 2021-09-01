@@ -1,3 +1,4 @@
+
 <% @student.messages.each do |message| %>
 <div class="d-flex justify-content-between">
   <%= cl_image_tag message.photo.key, :class=>"message-img mt-4", height: 200, width: 200, crop: :fill if message.photo.attached? %>

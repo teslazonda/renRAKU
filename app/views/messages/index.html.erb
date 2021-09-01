@@ -1,15 +1,10 @@
 <div class="container">
   <%= render 'header', student: @student %>
-  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Link with href
-  </a>
-  <div class="collapse" id="collapseExample">
   <%= simple_form_for([@student, @message], remote: true) do |f| %>
     <%= f.input :title %>
     <%= f.input :content %>
     <%= f.input :photo %>
     <%= f.submit 'Add message', class: 'btn btn-danger mt-2 btn-lg btn-block' %>
   <% end %>
-  </div>
   <%= render 'discussion', student: @student %>
 </div>
