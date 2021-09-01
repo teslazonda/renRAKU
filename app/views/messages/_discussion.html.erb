@@ -9,13 +9,17 @@
         <em><%= message.created_at.strftime("%A, %b %d %Y") %></em>
       </div>
       <p class="card-text"><%= message.content %></p>
-      <%= link_to "Add Comment", new_message_comment_path(message), class: "btn btn-primary" %>
-      <%= link_to comments_read_path(message), class: "btn btn-danger", remote: true do %>
-        See Comments <i class="fas fa-sort-down"></i>
-      <% end %>
-        <div id="notif-comment-<%= message.id %>">
-          <%= message.comments.where(status: "unread").count %>
+      <div class="d-flex">
+        <%= link_to "Add Comment", new_message_comment_path(message), class: "btn btn-primary" %>
+        <div class="notif-buttons">
+          <%= link_to comments_read_path(message), class: "btn btn-danger notification-button ml-2", remote: true do %>
+          See Comments <i class="fas fa-sort-down"></i>
+          <% end %>
+          <div class="notification-pill" id="notif-comment-<%= message.id %>">
+            <%= message.comments.where(status: "unread").count %>
+          </div>
         </div>
+      </div>
     </div>
   </div>
 </div>
