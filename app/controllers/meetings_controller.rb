@@ -24,7 +24,7 @@ class MeetingsController < ApplicationController
   end
 
   def new
-    @student = Student.find(params[:student_id])
+    @kurasu = Kurasu.find(params[:kurasu_id])
     @meeting = Meeting.new
     authorize @meeting
   end
