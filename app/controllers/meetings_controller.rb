@@ -8,6 +8,7 @@ class MeetingsController < ApplicationController
   add_breadcrumb "Meetings", :kurasu_meetings_path
 
   def index
+    # meeting_booking unless current_user.teacher?
   end
 
   def show
@@ -36,8 +37,7 @@ class MeetingsController < ApplicationController
   end
 
   def update
-    @meeting.parent = current_user
-    authorize @meeting
+    meeting_booking
   end
 
   private
@@ -80,5 +80,15 @@ class MeetingsController < ApplicationController
 
   def create_user
     @user = current_user
+  end
+
+  def meeting_booking
+    @meeting_edit = Meeting.find(params[:id])
+    @meeting_edit.parent = current_user
+    if @meeting_edit.save
+      redirect_to kurasu_meetings_path(@meeting_edit.kurasu)
+    else
+      render 'meetings/index'
+    end
   end
 end
