@@ -1,9 +1,12 @@
 <div class="container center">
   <% @meetings.each do |meeting| %>
-    <h2><%= meeting.title %></h2>
-    <h5><%= meeting.date %></h5>
-    <h5><%= meeting.hour %></h5>
-    <p><%= meeting.content %></p>
-
+    <div class="card-product mt-2">
+      <div class="card-product-infos">
+        <h2><%= meeting.title %></h2>
+        <h5><%= meeting.date %></h5>
+        <h5><%= meeting.hour %></h5>
+        <p><%= meeting.content %></p>
+      </div>
+    </div>
   <% end %>
 </div>
