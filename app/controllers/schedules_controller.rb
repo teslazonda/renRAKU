@@ -1,6 +1,10 @@
 class SchedulesController < ApplicationController
   before_action :authenticate_user!
   before_action :find_kurasu, only: %i[index create new]
+  add_breadcrumb "Dashboard", :dashboards_path
+  add_breadcrumb "Classes", :kurasus_path
+  add_breadcrumb "Schedules", :kurasu_schedules_path
+
 
   def index
     @user = current_user
