@@ -13,6 +13,6 @@ class MeetingPolicy < ApplicationPolicy
   end
 
   def update?
-    user?
+    user
   end
 end
