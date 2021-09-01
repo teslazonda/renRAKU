@@ -11,8 +11,8 @@
       <p class="card-text"><%= message.content %></p>
       <div class="d-flex">
         <%= link_to "Add Comment", new_message_comment_path(message), class: "btn btn-primary" %>
-        <div class="notif-buttons">
-          <%= link_to comments_read_path(message), class: "btn btn-danger notification-button ml-2", remote: true do %>
+        <div class="notification-buttons">
+          <%= link_to comments_read_path(message), class: "btn btn-danger ml-2", remote: true do %>
           See Comments <i class="fas fa-sort-down"></i>
           <% end %>
           <div class="notification-pill" id="notif-comment-<%= message.id %>">
