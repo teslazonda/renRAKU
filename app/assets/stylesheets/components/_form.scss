@@ -1,6 +1,14 @@
-#new_event, .edit_event, #new_message, #new_comment, .new_user, .new_meeting {
+#new_event, .edit_event, #new_message, .new_user, .new_meeting {
   background-color: rgb(240, 240, 240);
   color: black;
+
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+#new-comment {
+  background-color: $red;
+  color: white;
 
   padding: 16px;
   border-radius: 8px;

@@ -30,7 +30,7 @@
       <%= render comment %>
     <% end %>
     <div id="comment<%= message.id %>-placeholder"></div>
-    <div class="card mt-4" id="<%= current_user.teacher ? "teacher-comment": "parents-comment" %>">
+    <div class="card mt-4 comment-form" id="<%= current_user.teacher ? "teacher-comment": "parents-comment" %>">
       <div class="card-body">
         <div class="d-flex flex-column <%= "text-right" unless current_user.teacher %>">
           <%= render 'comments/form', message: message, comment: @comment %>
