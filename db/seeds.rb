@@ -697,10 +697,10 @@ Comment.create!(
 
 puts "Creating meetings"
 Meeting.create!(
-  title: "Needs Extra Study",
-  content: "Ren-kun seems to be struggling with the prepositions topic in English. I would like to see you sometime next Wednesday for a short meeting.",
+  title: "Second semester meeting",
+  content: "The second semester has started and we would like to have one-on-one meeting to talk about the progress your children made in the first semester, as well as what to focus on onwards.",
   date: "2021-9-22",
-  parent: viddy,
-  teacher: sae
+  teacher: sae,
+  kurasu: class_one_a
 )
 puts "Meetings created"
