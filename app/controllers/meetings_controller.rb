@@ -31,6 +31,7 @@ class MeetingsController < ApplicationController
   end
 
   def edit
+    @meeting = Meeting.find(params[:meeting_id])
     authorize @meeting
   end
 
@@ -68,12 +69,12 @@ class MeetingsController < ApplicationController
 
   def display_meetings
     if @user.teacher
-      @meetings = policy_scope(current_user.meetings_as_teacher).order(:date)
+      @meetings = policy_scope(current_user.meetings_as_teacher).order(:date).order(:hour)
       @meeting = Meeting.new
     elsif !current_user.meetings_as_parent.empty?
-      @meetings = policy_scope(current_user.meetings_as_parent).order(:date)
+      @meetings = policy_scope(current_user.meetings_as_parent).order(:date).order(:hour)
     else
-      @meetings = policy_scope(Meeting).where(parent_id: nil).order(:date)
+      @meetings = policy_scope(Meeting).where(parent_id: nil).order(:date).order(:hour)
     end
   end
 
