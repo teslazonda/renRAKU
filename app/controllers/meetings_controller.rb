@@ -15,11 +15,10 @@ class MeetingsController < ApplicationController
   def create
     @meeting = Meeting.new(meeting_params)
     @meeting.teacher = current_user
-    raise
-    # @meeting.parent = @kurasu.parents
+    @meeting.kurasu = Kurasu.find(params[:kurasu_id])
     authorize @meeting
     if @meeting.save
-      redirect_to meetings_path
+      redirect_to meeting_path
     else
       render '/meetings/new'
       raise
