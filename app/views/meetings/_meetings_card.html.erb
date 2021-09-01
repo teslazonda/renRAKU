@@ -7,11 +7,12 @@
           <h5><%= meeting.date %></h5>
           <h5><%= meeting.hour %></h5>
           <p><%= meeting.content %></p>
+          <%= meeting.parent ? meeting.parent.name : nil %>
         </div>
       </div>
     <% elsif %>
       <%= simple_form_for meeting do |f| %>
-        <%= f.button :button do %>
+        <%= f.button :button, data: { confirm: "Are you sure you want to book this timeslot?" } do %>
           <div class="card-product mt-2">
             <div class="card-product-infos">
               <h2><%= meeting.title %></h2>

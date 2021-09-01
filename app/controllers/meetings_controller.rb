@@ -38,6 +38,7 @@ class MeetingsController < ApplicationController
 
   def update
     meeting_booking
+    authorize @meeting
   end
 
   private
@@ -83,10 +84,10 @@ class MeetingsController < ApplicationController
   end
 
   def meeting_booking
-    @meeting_edit = Meeting.find(params[:id])
-    @meeting_edit.parent = current_user
-    if @meeting_edit.save
-      redirect_to kurasu_meetings_path(@meeting_edit.kurasu)
+    @meeting = Meeting.find(params[:id])
+    @meeting.parent = current_user
+    if @meeting.save
+      redirect_to kurasu_meetings_path(@meeting.kurasu)
     else
       render 'meetings/index'
     end
