@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2021_09_01_015131) do
     t.bigint "message_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "status", default: "unread"
     t.index ["message_id"], name: "index_comments_on_message_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -107,6 +108,7 @@ ActiveRecord::Schema.define(version: 2021_09_01_015131) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "status", default: "unread"
     t.index ["student_id"], name: "index_messages_on_student_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end

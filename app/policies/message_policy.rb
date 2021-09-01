@@ -12,4 +12,8 @@ class MessagePolicy < ApplicationPolicy
   def update?
     user.teacher?
   end
+
+  def read?
+    user
+  end
 end

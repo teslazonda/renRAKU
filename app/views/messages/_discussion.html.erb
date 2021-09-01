@@ -1,3 +1,4 @@
+
 <% @student.messages.each do |message| %>
 <div class="d-flex justify-content-between">
   <%= cl_image_tag message.photo.key, :class=>"message-img mt-4", height: 200, width: 200, crop: :fill if message.photo.attached? %>
@@ -8,10 +9,17 @@
         <em><%= message.created_at.strftime("%A, %b %d %Y") %></em>
       </div>
       <p class="card-text"><%= message.content %></p>
-      <%= link_to "Add Comment", new_message_comment_path(message), class: "btn btn-primary" %>
-      <a class="btn btn-danger" data-toggle="collapse" href="#comment<%= message.id %>" role="button" aria-expanded="false" aria-controls="collapseExample">
-        See Comments <i class="fas fa-sort-down"></i>
-      </a>
+      <div class="d-flex">
+        <%= link_to "Add Comment", new_message_comment_path(message), class: "btn btn-primary" %>
+        <div class="notification-buttons">
+          <%= link_to comments_read_path(message), class: "btn btn-danger ml-2", remote: true do %>
+          See Comments <i class="fas fa-sort-down"></i>
+          <% end %>
+          <div class="notification-pill" id="notif-comment-<%= message.id %>">
+            <%= message.comments.where(status: "unread").count %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -39,3 +47,4 @@
   <% end %>
   </div>
 <% end %>
+<%# raise %>

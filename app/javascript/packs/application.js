@@ -36,6 +36,8 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
   // Call your functions here, e.g:
   // initSelect2();
+  // console.log($)
+  window.$ = $;
 });
 
 import "controllers"
