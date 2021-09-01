@@ -70,12 +70,12 @@ class MeetingsController < ApplicationController
 
   def display_meetings
     if @user.teacher
-      @meetings = Meeting.where(current_user == :user)
-      @meetings = policy_scope(Meeting)
+      @meetings = policy_scope(current_user.meetings_as_teacher)
       @meeting = Meeting.new
+    elsif !current_user.meetings_as_parent.empty?
+      @meetings = policy_scope(current_user.meetings_as_parent)
     else
-      @meetings = Meeting.where(parent_id.nil?)
-      @meetings = policy_scope(Meeting)
+      @meetings = policy_scope(Meeting).where(parent_id: nil)
     end
   end
 
