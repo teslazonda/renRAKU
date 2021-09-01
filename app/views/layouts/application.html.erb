@@ -20,6 +20,11 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+      <% unless current_page?(root_path) %>
+        <div class="breadcrumb">
+          <%= render_breadcrumbs :separator => '/' %>
+        </div>
+      <% end %>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>
