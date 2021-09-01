@@ -7,7 +7,7 @@
         <p class="card-text stretched-link">Class - <%= kurasu.name %></p>
       </div>
     </div>
-    <div class="cards mt-2">
+    <div class="student-cards mt-2">
       <% kurasu.students.sort_by { |student| student.last_name}.each do |student| %>
         <div class="card my-4" id="student-card">
           <div class="flex-column justify-content-between">
