@@ -1,9 +1,12 @@
 .breadcrumb {
-  text-decoration: none;
   color: white;
-  background-color: black;
+  background-color: rgba($color: $light-gray, $alpha: 0.3);
+  font-size: 16px;
 }
 
 .breadcrumb a{
   color: white;
+  &:hover {
+    text-decoration: none;
+  }
 }

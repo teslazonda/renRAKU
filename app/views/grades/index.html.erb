@@ -1,129 +1,145 @@
 <div class="text-white text-center my-4">
   <h1><%= @student.first_name %>'s Grades</h1>
-  <%= link_to 'Return to Dashboard', dashboards_path, class: "btn btn-primary mb-3" %>
-  <%= link_to 'Return to Classes', kurasus_path, class: "btn btn-primary mb-3" %>
 </div>
-<div class="container">
+
 <% if @english_grades.exists? %>
-<div class="card mb-5" style="width: 52rem;">
-    <h5 class="card-title text-center">English</h5>
-  <% @english_grades.each do |grade| %>
-  <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted"><%= grade.date.strftime("%B %d, %Y") %></h6>
-    <p class="card-text"></p>
-    <div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><%= grade.name %></h5>
-        <p class="card-text"><%= grade.value %></p>
-      </div>
-    </div>
+  <div class="table-responsive">
+  <div class="container">
+    <h4 class="text-left btn topic bg-white text-black">English</h4 >
   </div>
-</div>
-  <% end %>
-</div>
-</div>
-</div>
+      <div class="container">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Type</th>
+              <th scope="col">Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @english_grades.each do |grade| %>
+            <tr>
+              <th scope="row"><%= grade.date.strftime("%B %d, %Y") %></th>
+              <td><%= grade.name %></td>
+              <td><%= grade.value %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    <div>
 <% end %>
 
 <% if @math_grades.exists? %>
-<div class="card mb-5" style="width: 52rem;">
-    <h5 class="card-title text-center">Math</h5>
-  <% @math_grades.each do |grade| %>
-  <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted"><%= grade.date.strftime("%B %d, %Y") %></h6>
-    <p class="card-text"></p>
-    <div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><%= grade.name %></h5>
-        <p class="card-text"><%= grade.value %></p>
-      </div>
+  <div class="table-responsive">
+    <div class="container">
+      <h4 class="text-left btn topic bg-white text-black">Math</h4 >
     </div>
-  </div>
-</div>
-  <% end %>
-</div>
-</div>
-</div>
+      <div class="container">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Type</th>
+              <th scope="col">Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @math_grades.each do |grade| %>
+            <tr>
+              <th scope="row"><%= grade.date.strftime("%B %d, %Y") %></th>
+              <td><%= grade.name %></td>
+              <td><%= grade.value %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    <div>
 <% end %>
 
-
-
 <% if @socialstudies_grades.exists? %>
-<div class="card mb-5" style="width: 52rem;">
-    <h5 class="card-title text-center">Social Studies</h5>
-  <% @socialstudies_grades.each do |grade| %>
-  <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted"><%= grade.date.strftime("%B %d, %Y") %></h6>
-    <p class="card-text"></p>
-    <div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><%= grade.name %></h5>
-        <p class="card-text"><%= grade.value %></p>
-      </div>
+  <div class="table-responsive">
+    <div class="container">
+      <h4 class="text-left btn topic bg-white text-black">Social Studies</h4 >
     </div>
-  </div>
-</div>
-  <% end %>
-</div>
-</div>
-</div>
+      <div class="container">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Type</th>
+              <th scope="col">Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @socialstudies_grades.each do |grade| %>
+            <tr>
+              <th scope="row"><%= grade.date.strftime("%B %d, %Y") %></th>
+              <td><%= grade.name %></td>
+              <td><%= grade.value %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    <div>
 <% end %>
 
 <% if @japanese_grades.exists? %>
-<div class="card mb-5" style="width: 52rem;" >
-    <h5 class="card-title text-center">Japanese</h5>
-  <% @japanese_grades.each do |grade| %>
-  <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted"><%= grade.date.strftime("%B %d, %Y") %></h6>
-    <p class="card-text"></p>
-    <div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><%= grade.name %></h5>
-        <p class="card-text"><%= grade.value %></p>
-      </div>
+  <div class="table-responsive">
+    <div class="container">
+      <h4 class="text-left btn topic bg-white text-black">Japanese</h4 >
     </div>
-  </div>
-</div>
-  <% end %>
-</div>
-</div>
-</div>
+      <div class="container">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Type</th>
+              <th scope="col">Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @japanese_grades.each do |grade| %>
+            <tr>
+              <th scope="row"><%= grade.date.strftime("%B %d, %Y") %></th>
+              <td><%= grade.name %></td>
+              <td><%= grade.value %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    <div>
 <% end %>
-
-
-
 
 <% if @history_grades.exists? %>
-<div class="card mb-5" style="width: 52rem;">
-    <h5 class="card-title text-center">History</h5>
-  <% @history_grades.each do |grade| %>
-  <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted"><%= grade.date.strftime("%B %d, %Y") %></h6>
-    <p class="card-text"></p>
-    <div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><%= grade.name %></h5>
-        <p class="card-text"><%= grade.value %></p>
-      </div>
+  <div class="table-responsive">
+    <div class="container">
+      <h4 class="text-left btn topic bg-white text-black">History</h4 >
     </div>
-  </div>
-</div>
-  <% end %>
-</div>
-</div>
-</div>
+      <div class="container">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Type</th>
+              <th scope="col">Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @history_grades.each do |grade| %>
+            <tr>
+              <th scope="row"><%= grade.date.strftime("%B %d, %Y") %></th>
+              <td><%= grade.name %></td>
+              <td><%= grade.value %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    <div>
 <% end %>
-
-
-
-</div>
+<%= link_to 'Return to Dashboard', dashboards_path, class: "btn btn-info ml-3" %>
+<%= link_to 'Return to Classes', kurasus_path, class: "btn btn-info" %>
