@@ -1,0 +1,5 @@
+document.querySelector("#comment<%= @comment.message.id %>-placeholder")
+    .insertAdjacentHTML('beforebegin', "<%= j render @comment %>")
+document.querySelectorAll('.text').forEach((input) => {
+    input.value = ""
+  })

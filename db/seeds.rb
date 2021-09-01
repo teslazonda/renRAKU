@@ -305,40 +305,89 @@ Grade.create!(
   student: ren
 )
 
-
 puts "Creating 9 students for class 1-A"
 
-counter = 1
-parent_counter = 0
-9.times do
-  counter += 1
-  student = Student.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    birthday: Faker::Date.between(from: '2015-01-01', to: '2015-12-31'),
-    student_number: counter,
-    kurasu_id: class_one_a.id,
-    user_id: parents[parent_counter].id
-  )
+Student.create!(
+  first_name: 'Ayaka',
+  last_name: 'Hisamune',
+  birthday: Faker::Date.between(from: '2015-01-01', to: '2015-12-31'),
+  student_number: 2,
+  kurasu_id: class_one_a.id,
+  user_id: parents[0].id
+)
 
-  5.times do
-  Grade.create!(
-    date: grade_dates.sample,
-    subject: grade_subject.sample,
-    name: grade_name.sample,
-    value: grade_value.sample,
-    student: student
-  )
-  end
-  parent_counter += 1
-  puts "Created #{student.id}"
-end
+Student.create!(
+  first_name: 'Sakura',
+  last_name: 'Nishimura',
+  birthday: Faker::Date.between(from: '2015-01-01', to: '2015-12-31'),
+  student_number: 3,
+  kurasu_id: class_one_a.id,
+  user_id: parents[1].id
+)
+
+Student.create!(
+  first_name: 'Takumi',
+  last_name: 'Watanabe',
+  birthday: Faker::Date.between(from: '2015-01-01', to: '2015-12-31'),
+  student_number: 4,
+  kurasu_id: class_one_a.id,
+  user_id: parents[2].id
+)
+
+Student.create!(
+  first_name: 'Gen',
+  last_name: 'Hoshino',
+  birthday: Faker::Date.between(from: '2015-01-01', to: '2015-12-31'),
+  student_number: 5,
+  kurasu_id: class_one_a.id,
+  user_id: parents[3].id
+)
+
+Student.create!(
+  first_name: 'Ryo',
+  last_name: 'Takahashi',
+  birthday: Faker::Date.between(from: '2015-01-01', to: '2015-12-31'),
+  student_number: 6,
+  kurasu_id: class_one_a.id,
+  user_id: parents[4].id
+)
+
+Student.create!(
+  first_name: 'Jiro',
+  last_name: 'Sakai',
+  birthday: Faker::Date.between(from: '2015-01-01', to: '2015-12-31'),
+  student_number: 7,
+  kurasu_id: class_one_a.id,
+  user_id: parents[5].id
+)
+
+Student.create!(
+  first_name: 'Hina',
+  last_name: 'Yamagishi',
+  birthday: Faker::Date.between(from: '2015-01-01', to: '2015-12-31'),
+  student_number: 8,
+  kurasu_id: class_one_a.id,
+  user_id: parents[6].id
+)
+
+Student.create!(
+  first_name: 'Shohei',
+  last_name: 'Nakamura',
+  birthday: Faker::Date.between(from: '2015-01-01', to: '2015-12-31'),
+  student_number: 9,
+  kurasu_id: class_one_a.id,
+  user_id: parents[7].id
+)
+
+puts "Created Students in 1-A"
+
 
 puts "students created"
 
 puts "Creating 10 students for class 1-B"
 
-# counter = 10
+counter = 10
+parent_counter = 8
 10.times do
   counter += 1
   student = Student.create!(

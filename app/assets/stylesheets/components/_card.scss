@@ -524,6 +524,14 @@ figure {
  @media (max-width: 800px) {
    border-radius: 8px;
    border-left: none;
+  }
+  @media (max-width: 1200px) {
+    h5 {
+      margin-top: 32px;
+    }
+ }
+ @media (min-width: 1000px) {
+   margin-right: 200px;
  }
 }
 .message-img {

@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
   add_breadcrumb "Messages", :student_messages_path
   def index
     @message = Message.new
+    @comment = Comment.new
     # authorize @message
     # Since teachers have to be brought to the class list to choose a student before getting to the messages index
     # and parents are brought directly to their children's message indexes, we find the student by different means.
