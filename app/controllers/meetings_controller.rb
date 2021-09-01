@@ -21,7 +21,7 @@ class MeetingsController < ApplicationController
     @meetings = []
     meeting_creation
     @meetings.each do |meeting|
-      render '/meetings/index' unless meeting.save
+      render '/kurasus_meetings' unless meeting.save
     end
   end
 
