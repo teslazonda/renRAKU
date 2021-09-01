@@ -1,5 +1,6 @@
 class MeetingsController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_kurasu, only: %i[create new index]
   add_breadcrumb "Dashboard", :dashboards_path
   add_breadcrumb "Classes", :kurasus_path
   add_breadcrumb "Meetings", :kurasu_meetings_path
@@ -8,6 +9,7 @@ class MeetingsController < ApplicationController
     @user = current_user
     @meetings = Meeting.where(current_user == :user)
     @meetings = policy_scope(Meeting)
+    @meeting = Meeting.new
   end
 
   def show
@@ -16,18 +18,17 @@ class MeetingsController < ApplicationController
   def create
     @meeting = Meeting.new(meeting_params)
     @meeting.teacher = current_user
-    @student = Student.find(params[:student_id])
-    @meeting.parent = @student.user
+    @meeting.kurasu = Kurasu.find(params[:kurasu_id])
     authorize @meeting
     if @meeting.save
-      redirect_to meetings_path
+      redirect_to meeting_path
     else
       render '/meetings/new'
+      raise
     end
   end
 
   def new
-    @student = Student.find(params[:student_id])
     @meeting = Meeting.new
     authorize @meeting
   end
@@ -37,10 +38,15 @@ class MeetingsController < ApplicationController
   end
 
   def update
+    @meeting.parent = current_user
     authorize @meeting
   end
 
   private
+
+  def find_kurasu
+    @kurasu = Kurasu.find(params[:kurasu_id])
+  end
 
   def meeting_params
     params.require(:meeting).permit(:title, :content, :date, :parent_id)

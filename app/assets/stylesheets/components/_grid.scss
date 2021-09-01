@@ -54,16 +54,21 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+@media (min-width: 1240px) {
+  .homepage-cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
 
-// Extra large devices (large desktops, 1200px and up)
+// Extra large devices (large desktops, 1550px and up)
 @media (min-width: 1550px) {
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .homepage-cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
   .student-cards {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .homepage-cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
