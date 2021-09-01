@@ -1,4 +1,6 @@
 class KurasusController < ApplicationController
+  add_breadcrumb "Dashboard", :dashboards_path
+  add_breadcrumb "Classes", :kurasus_path
   def index
     @user = current_user
     @kurasus = policy_scope(Kurasu)
