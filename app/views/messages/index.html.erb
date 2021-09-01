@@ -1,8 +1,10 @@
 <div class="container">
   <%= render 'header', student: @student %>
-  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Link with href
-  </a>
+  <div class="text-center">
+    <a class="btn btn-primary mb-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Write a message
+    </a>
+  </div>
   <div class="collapse" id="collapseExample">
   <%= simple_form_for([@student, @message], remote: true) do |f| %>
     <%= f.input :title %>
