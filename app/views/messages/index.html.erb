@@ -16,4 +16,9 @@
   <% end %>
   </div>
   <%= render 'discussion', student: @student %>
+  <% if current_user.teacher %>
+      <%= link_to "Return to Classes", kurasus_path, class: "btn btn-info my-4"%>
+    <% else %>
+      <%= link_to "Return to Dashboard", dashboards_path, class: "btn btn-info my-4"%>
+    <% end %>
 </div>
