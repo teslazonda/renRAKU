@@ -42,10 +42,8 @@
       <h3 class="text-center">
         <i class="fas fa-chevron-up"></i>
       </h3>
-      <p>Consult your child's schedule to make sure what time they start and finish each day so you can organize yourself.</p>
-      <button class="btn btn-primary">
-        Go the the schedules
-      </button>
+      <p>Consult the class schedule to make sure what time they start and finish each day so you can organize yourself.</p>
+      <%= link_to "Go to the schedule", kurasu_schedules_path(current_user.students.first.kurasu_id), class: 'btn btn-primary' %>
     </figcaption>
   </figure>
   <figure class="image-block mx-2">
@@ -56,9 +54,7 @@
         <i class="fas fa-chevron-up"></i>
       </h3>
       <p>Consult each individual grades your child got and the semester average. Confirm there that you have seen them.</p>
-      <button class="btn btn-primary">
-        Go to grades
-      </button>
+      <%= link_to "Go to your child's grades", student_grades_path(current_user.students.first), class: 'btn btn-primary' %>
     </figcaption>
   </figure>
 </div>
