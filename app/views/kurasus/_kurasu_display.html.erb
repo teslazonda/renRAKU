@@ -10,22 +10,22 @@
     </div>
     <div class="student-cards mt-2">
       <% kurasu.students.sort_by { |student| student.last_name}.each do |student| %>
-      <div class="collapse" id="collapse<%= kurasu.id %>">
-        <div class="card my-4" id="student-card">
-          <div class="flex-column justify-content-between">
-            <div class="notebook-button">
-              <a href="/students/<%= student.id %>/messages"><i class="fas fa-book-open"></i></a>
+        <div class="collapse" id="collapse<%= kurasu.id %>">
+          <div class="card my-4" id="student-card">
+            <div class="flex-column justify-content-between">
+              <div class="notebook-button">
+                <a href="/students/<%= student.id %>/messages"><i class="fas fa-book-open"></i></a>
+              </div>
+              <div class="grades-button">
+                <a href="/students/<%= student.id %>/grades"><i class="fas fa-font"></i><span id="plus"><i class="fas fa-plus"></i></span></a>
+              </div>
             </div>
-            <div class="grades-button">
-              <a href="/students/<%= student.id %>/grades"><i class="fas fa-font"></i><span id="plus"><i class="fas fa-plus"></i></span></a>
+            <div class="card-body d-flex justify-content-between">
+              <p class="card-text stretched-link pr-4"><%= student.first_name%> <%= student.last_name%></p>
+              <p id="student-number">#<%= student.student_number %></p>
             </div>
-          </div>
-          <div class="card-body d-flex justify-content-between">
-            <p class="card-text stretched-link pr-4"><%= student.first_name%> <%= student.last_name%></p>
-            <p id="student-number">#<%= student.student_number %></p>
           </div>
         </div>
-      </div>
       <% end %>
     </div>
   </div>
