@@ -8,17 +8,17 @@
         <h2 class="text-center"><%= title %></h2>
         <p class="text-center"><em>"<%= meetings[0].content %>"</em></p>
         <p class="text-center">Choose a timeslot for: <strong id="meeting-day" class="p-2"><%= date.strftime("%A, %b %d") %></strong></p>
-        <div class="timeslots d-flex flex-row mt-4 mx-1">
+        <div class="timeslots d-flex flex-row justify-content-center my-4 mx-1">
           <% meetings.each do |meeting| %>
             <% if current_user.teacher? || current_user.meetings_as_parent.exists? %>
-              <div class="timeslot">
+              <div class="timeslot mt-4 mx-1">
                 <h5><%= meeting.hour %></h5>
                 <%= meeting.parent ? meeting.parent.name : nil %>
               </div>
             <% else %>
               <%= simple_form_for meeting do |f| %>
                 <%= f.button :button, data: { confirm: "Are you sure you want to book this timeslot?" } do %>
-                  <div class="timeslot mt-4 mx-1 align-middle">
+                  <div class="timeslot mt-4 mx-1">
                     <h5><%= meeting.hour %></h5>
                     <%= meeting.parent ? meeting.parent.name : nil %>
                   </div>
@@ -28,6 +28,7 @@
           <% end %>
         </div>
       </div>
+      <hr style="height:1px; width:50%; border-width:0; color:black; background-color:black">
     <% end %>
   </div>
 </div>
