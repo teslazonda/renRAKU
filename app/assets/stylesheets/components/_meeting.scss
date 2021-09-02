@@ -1,10 +1,15 @@
 .timeslot {
   background-color: $dark-electric-blue;
+  width: 150px;
   color: white;
   border-radius: 4px;
   padding: 4px;
   text-align: center;
-  box-shadow: 2px 2px 4px rgba($color: black, $alpha: 0.7);
+  box-shadow: 2px 2px 8px rgba($color: black, $alpha: 0.5);
+  border: 2px groove lighten($color: $dark-electric-blue, $amount: 15%);
+  h5 {
+    padding-top: 15px;
+  }
 }
 #meeting-day {
   background-color: $light-gray;
