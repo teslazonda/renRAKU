@@ -4,11 +4,11 @@
 
 <% if @english_grades.exists? %>
   <div class="table-responsive">
-  <div class="container">
+  <div class="container table-background">
     <h4 class="text-left btn topic bg-white text-black">English</h4 >
   </div>
-      <div class="container">
-        <table class="table table-striped">
+      <div class="container table-background">
+        <table class="table">
           <thead>
             <tr>
               <th scope="col">Date</th>
@@ -32,11 +32,11 @@
 
 <% if @math_grades.exists? %>
   <div class="table-responsive">
-    <div class="container">
+    <div class="container table-background">
       <h4 class="text-left btn topic bg-white text-black">Math</h4 >
     </div>
-      <div class="container">
-        <table class="table table-striped">
+      <div class="container table-background">
+        <table class="table">
           <thead>
             <tr>
               <th scope="col">Date</th>
@@ -60,11 +60,11 @@
 
 <% if @socialstudies_grades.exists? %>
   <div class="table-responsive">
-    <div class="container">
+    <div class="container table-background">
       <h4 class="text-left btn topic bg-white text-black">Social Studies</h4 >
     </div>
-      <div class="container">
-        <table class="table table-striped">
+      <div class="container table-background">
+        <table class="table">
           <thead>
             <tr>
               <th scope="col">Date</th>
@@ -88,11 +88,11 @@
 
 <% if @japanese_grades.exists? %>
   <div class="table-responsive">
-    <div class="container">
+    <div class="container table-background">
       <h4 class="text-left btn topic bg-white text-black">Japanese</h4 >
     </div>
-      <div class="container">
-        <table class="table table-striped">
+      <div class="container table-background">
+        <table class="table">
           <thead>
             <tr>
               <th scope="col">Date</th>
@@ -116,11 +116,11 @@
 
 <% if @history_grades.exists? %>
   <div class="table-responsive">
-    <div class="container">
+    <div class="container table-background">
       <h4 class="text-left btn topic bg-white text-black">History</h4 >
     </div>
-      <div class="container">
-        <table class="table table-striped">
+      <div class="container table-background">
+        <table class="table">
           <thead>
             <tr>
               <th scope="col">Date</th>
@@ -141,5 +141,7 @@
       </div>
     <div>
 <% end %>
-<%= link_to 'Return to Dashboard', dashboards_path, class: "btn btn-info ml-3" %>
-<%= link_to 'Return to Classes', kurasus_path, class: "btn btn-info" if current_user.teacher? %>
+<div class="container text-center">
+  <%= link_to 'Return to Dashboard', dashboards_path, class: "btn btn-info ml-3" %>
+  <%= link_to 'Return to Classes', kurasus_path, class: "btn btn-info" if current_user.teacher? %>
+</div>
