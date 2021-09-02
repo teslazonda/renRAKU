@@ -1,9 +1,2 @@
 <h1 class="mt-3 text-center text-white"><%= @student.last_name %>, <%= @student.first_name %>'s<br>Correspondence Notebook</h1>
   <p class="text-center text-white mb-3">Student Number: <%= @student.student_number %></p>
-  <div class="">
-    <% if current_user.teacher %>
-      <%= link_to "Return to Classes", kurasus_path, class: "btn btn-info my-4"%>
-    <% else %>
-      <%= link_to "Return to Dashboard", dashboards_path, class: "btn btn-info my-4"%>
-    <% end %>
-  </div>
