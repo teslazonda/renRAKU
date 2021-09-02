@@ -1,0 +1,16 @@
+<div class="container">
+      <h2><%= @meetings[0].title %></h2>
+      <h3><%= @meetings[0].content %></h3>
+      <p>please choose a timeslot that suits you</p>
+    <div class="container d-flex justify-content-between">
+  <% @meetings.each do |meeting| %>
+    <% if current_user.teacher? || current_user.meetings_as_parent.exists? %>
+      <div class="timeslot mx-2">
+        <h5><%= meeting.date.strftime("%A, %b %d") %></h5>
+        <h5><%= meeting.hour %></h5>
+        <%= meeting.parent ? meeting.parent.name : nil %>
+      </div>
+    <% end %>
+  <% end %>
+    </div>
+</div>
