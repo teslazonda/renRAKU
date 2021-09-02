@@ -17,9 +17,11 @@
                 Add Comment <i class="fas fa-sort-down"></i>
               <% end %>
             <% end %>
-            <div class="notification-pill" id="notif-comment-<%= message.id %>">
-              <%= message.comments.where(status: "unread").count %>
-            </div>
+            <% if message.comments.where(status: "unread").count > 0 %>
+              <div class="notification-pill" id="notif-comment-<%= message.id %>">
+                <%= message.comments.where(status: "unread").count %>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
