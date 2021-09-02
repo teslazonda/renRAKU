@@ -13,13 +13,10 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Bulletin Board", events_path, class: "dropdown-item" %>
             <% if current_user.teacher %>
-              <%= link_to "Notebook", kurasus_path, class: "dropdown-item" %>
+              <%= link_to "Classes", kurasus_path, class: "dropdown-item" %>
             <% else %>
               <%= link_to "Notebook", student_messages_path(current_user.students), class: "dropdown-item" %>
             <% end %>
-            <%= link_to "Parent Meetings", user_root_path, class: "dropdown-item" %> <%# Path to be changed later %>
-            <%= link_to "Class Schedules", user_root_path, class: "dropdown-item" %> <%# Path to be changed later %>
-            <%= link_to "Grades", user_root_path, class: "dropdown-item" %> <%# Path to be changed later %>
             <%= link_to "Dashboard", user_root_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>

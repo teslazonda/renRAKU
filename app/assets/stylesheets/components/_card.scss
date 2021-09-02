@@ -499,6 +499,12 @@ figure {
     margin-left: 35px;
   }
 }
+// For the teacher/parents comments form
+.comment-form {
+  background-color: lighten($red, 25%);
+  color: black;
+}
+
 // For the message cards
 #message-card {
  box-shadow: none;

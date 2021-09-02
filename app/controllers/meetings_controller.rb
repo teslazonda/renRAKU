@@ -23,6 +23,7 @@ class MeetingsController < ApplicationController
         return nil
       end
     end
+    LineCreator.new("Please choose a slot for the parent teacher meeting").send_line
     redirect_to kurasu_meetings_path
   end
 
