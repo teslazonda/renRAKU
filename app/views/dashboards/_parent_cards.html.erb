@@ -11,7 +11,6 @@
         <%= link_to "Go to the board", events_path, class: 'btn btn-primary' %>
       </figcaption>
     </figure>
-
     <figure class="image-block mx-2">
       <h1>Notebook</h1>
       <img src="<%= image_path 'dashboard/notebook.jpg' %>" alt="" />
@@ -23,7 +22,6 @@
         <%= link_to "Go to the notebook", student_messages_path(current_user.students), class: 'btn btn-primary' %>
       </figcaption>
     </figure>
-
     <figure class="image-block mx-2">
       <h1>Parent Meetings</h1>
       <img src="<%= image_path 'dashboard/meeting.jpg' %>" alt="" />
@@ -31,39 +29,38 @@
         <h3 class="text-center">
           <i class="fas fa-chevron-up"></i>
         </h3>
-        <p>Check when is the next parent/teacher meeting and select a time slot for when you are available.<br>&nbsp;</p>
-        <button class="btn btn-primary">
-          Schedule meetings
-        </button>
-      </figcaption>
-    </figure>
-
-    <figure class="image-block mx-2">
-      <h1>Class Schedules</h1>
-      <img src="<%= image_path 'dashboard/schedule.jpg' %>" alt="" />
-      <figcaption>
-        <h3 class="text-center">
-          <i class="fas fa-chevron-up"></i>
-        </h3>
-        <p>Consult your child's schedule to make sure what time they start and finish each day so you can organize yourself.</p>
-        <button class="btn btn-primary">
-          Go the the schedules
-        </button>
-      </figcaption>
-    </figure>
-
-    <figure class="image-block mx-2">
-      <h1>Grades</h1>
-      <img src="<%= image_path 'dashboard/grade.jpg' %>" alt="" />
-      <figcaption>
-        <h3 class="text-center">
-          <i class="fas fa-chevron-up"></i>
-        </h3>
-        <p>Consult each individual grades your child got and the semester average. Confirm there that you have seen them.</p>
-        <button class="btn btn-primary">
-          Go to grades
-        </button>
-      </figcaption>
-    </figure>
-  </div>
+        <p>Check when is the next parent/teacher meeting and select a time slot for when you are available.<br>
+          &nbsp;</p>
+        <%= link_to "Go to meetings", kurasu_meetings_path(current_user.students[0].kurasu), class: 'btn btn-primary' %>
+        Schedule meetings
+      </button>
+    </figcaption>
+  </figure>
+  <figure class="image-block mx-2">
+    <h1>Class Schedules</h1>
+    <img src="<%= image_path 'dashboard/schedule.jpg' %>" alt="" />
+    <figcaption>
+      <h3 class="text-center">
+        <i class="fas fa-chevron-up"></i>
+      </h3>
+      <p>Consult your child's schedule to make sure what time they start and finish each day so you can organize yourself.</p>
+      <button class="btn btn-primary">
+        Go the the schedules
+      </button>
+    </figcaption>
+  </figure>
+  <figure class="image-block mx-2">
+    <h1>Grades</h1>
+    <img src="<%= image_path 'dashboard/grade.jpg' %>" alt="" />
+    <figcaption>
+      <h3 class="text-center">
+        <i class="fas fa-chevron-up"></i>
+      </h3>
+      <p>Consult each individual grades your child got and the semester average. Confirm there that you have seen them.</p>
+      <button class="btn btn-primary">
+        Go to grades
+      </button>
+    </figcaption>
+  </figure>
+</div>
 </div>
