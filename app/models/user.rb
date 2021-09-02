@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :students
   # has_many :students, through: :kurasus
   has_many :messages
-  has_many :messages, through: :students
+  # has_many :messages, through: :students
   has_many :comments
   has_many :comments, through: :messages
   has_many :meetings_as_parent, class_name: "Meeting", foreign_key: :parent_id
