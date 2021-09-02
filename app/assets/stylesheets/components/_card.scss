@@ -346,10 +346,11 @@ figure {
   bottom: 50px;
   right: -12px;
   margin-right: 4px;
-  padding-right: 4px;
-  padding-left: 4px;
+  padding-right: 13px;
+  padding-left: 13px;
   background-color: $red;
-  border-radius: 10px;
+  border-radius: 50%;
+  font-size: x-large;
 }
 // For the animated cards on the homepage
 .page-contain {
