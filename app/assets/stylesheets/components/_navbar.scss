@@ -10,11 +10,18 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
-.fa-address-book {
+.fa-school {
   font-size: 32px;
   color: $dark-electric-blue;
   &:hover {
     color: lighten($dark-electric-blue, 20%);;
+  }
+}
+.fa-users {
+  font-size: 32px;
+  color: $red;
+  &:hover {
+    color: lighten($red, 20%);;
   }
 }
 .fa-cogs {
