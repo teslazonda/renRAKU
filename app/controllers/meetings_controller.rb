@@ -23,7 +23,7 @@ class MeetingsController < ApplicationController
         return nil
       end
     end
-    LineCreator.new("Please choose a slot for the parent teacher meeting").send_line
+    LineCreator.new("Please choose a slot for the parent teacher meeting https://www.renrakuchou.com/dashboard").send_line
     redirect_to kurasu_meetings_path
   end
 
@@ -89,6 +89,7 @@ class MeetingsController < ApplicationController
     @meeting.parent = current_user
     if @meeting.save
       redirect_to kurasu_meetings_path(@meeting.kurasu)
+      LineCreator.new("Confirmation for booking on #{@meeting.date} starting at #{@meeting.hour} \n\nTopic: #{@meeting.title} \nContent: #{@meeting.content}").send_line
     else
       render 'meetings/index'
     end
