@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :kurasus
   has_many :students
-  has_many :students, through: :kurasus
+  # has_many :students, through: :kurasus
   has_many :messages
   has_many :messages, through: :students
   has_many :comments
