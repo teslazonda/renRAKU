@@ -3,7 +3,7 @@ class SchedulesController < ApplicationController
   before_action :find_kurasu, only: %i[index create new]
   add_breadcrumb "Dashboard", :dashboards_path
   add_breadcrumb "Classes", :kurasus_path
-  add_breadcrumb "Schedules", :kurasu_schedules_path
+  add_breadcrumb "Schedules", :kurasu_schedules_path, except: %i[edit update]
 
 
   def index
@@ -31,6 +31,8 @@ class SchedulesController < ApplicationController
   def edit
     @schedule = Schedule.find(params[:id])
     authorize @schedule
+    @kurasu = @schedule.kurasu
+    add_breadcrumb "Schedules"
   end
 
   def update
