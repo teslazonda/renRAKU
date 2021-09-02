@@ -721,29 +721,6 @@ file_lunch = URI.open('https://3.bp.blogspot.com/-soud9WTrtm0/WPYuy6umw3I/AAAAAA
 lunch.photo.attach(io: file_lunch, filename: 'lunch.jpg', content_type: 'image/jpg')
 puts "Messages created"
 
-puts "creating comments"
-
-Comment.create!(
-  user_id: viddy.id,
-  message_id: sleepy.id,
-  content: "Yes, sorry about this! Last weekend we went on a roatrip and he went to bed late last night"
-)
-Comment.create!(
-  user_id: sae.id,
-  message_id: sleepy.id,
-  content: "Understood! Next time let us know, so we can let him nap longer"
-)
-Comment.create!(
-  user_id: viddy.id,
-  message_id: lunch.id,
-  content: "Thank you for letting us know. This was an old lunch box, so we will get a new one this weekend"
-)
-Comment.create!(
-  user_id: sae.id,
-  message_id: lunch.id,
-  content: "Thank you!"
-)
-
 puts "Creating meetings"
 Meeting.create!(
   title: "Second semester meeting",
