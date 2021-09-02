@@ -21,6 +21,9 @@
               <div class="notification-pill" id="notif-comment-<%= message.id %>">
                 <%= message.comments.where(status: "unread").count %>
               </div>
+            <% else %>
+              <div id="notif-comment-<%= message.id %>">
+              </div>
             <% end %>
           </div>
         </div>

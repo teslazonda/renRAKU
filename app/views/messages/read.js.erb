@@ -1,2 +1,3 @@
-document.getElementById("notif-comment-<%= @message.id %>").innerHTML = "0"
+var notif = document.getElementById("notif-comment-<%= @message.id %>")
+if (notif) notif.remove()
 $('#comment<%= @message.id %>').collapse('toggle')
