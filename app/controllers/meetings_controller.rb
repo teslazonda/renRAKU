@@ -89,6 +89,7 @@ class MeetingsController < ApplicationController
     @meeting.parent = current_user
     if @meeting.save
       redirect_to kurasu_meetings_path(@meeting.kurasu)
+      LineCreator.new("Confirmation for booking on #{@meeting.date} starting at #{@meeting.hour} \n\nTopic: #{@meeting.title} \nContent: #{@meeting.content}").send_line
     else
       render 'meetings/index'
     end
