@@ -24,6 +24,8 @@ gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 # Putting Cloudinary for image uploads
 gem 'cloudinary', '~> 1.16.0'
+#Setting up local time
+gem 'local_time'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
