@@ -22,7 +22,9 @@
             </div>
             <div class="card-body d-flex justify-content-between">
               <p class="card-text stretched-link pr-4"><%= student.first_name%> <%= student.last_name%></p>
-              <p id="student-number">#<%= student.student_number %></p>
+              <% unless student.unread_comments.zero? %>
+                <p id="student-number"><%= student.unread_comments %></p>
+              <% end %>
             </div>
           </div>
         </div>
