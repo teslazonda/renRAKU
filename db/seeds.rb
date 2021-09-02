@@ -121,7 +121,7 @@ viddy = User.create!(
 # )
 
 parents = []
-239.times do
+119.times do
   name = Faker::Name.name
   parent = User.create!(
     name: name,
@@ -750,6 +750,43 @@ Meeting.create!(
   content: "The second semester has started and we would like to have one-on-one meeting to talk about the progress your children made in the first semester, as well as what to focus on onwards.",
   date: "2021-9-22",
   teacher: sae,
-  kurasu: class_one_a
+  kurasu: class_one_a,
+  hour: 0
+)
+
+Meeting.create!(
+  title: "Second semester meeting",
+  content: "The second semester has started and we would like to have one-on-one meeting to talk about the progress your children made in the first semester, as well as what to focus on onwards.",
+  date: "2021-9-22",
+  teacher: sae,
+  kurasu: class_one_a,
+  hour: 1
+)
+
+Meeting.create!(
+  title: "Second semester meeting",
+  content: "The second semester has started and we would like to have one-on-one meeting to talk about the progress your children made in the first semester, as well as what to focus on onwards.",
+  date: "2021-9-22",
+  teacher: sae,
+  kurasu: class_one_a,
+  hour: 2
+)
+
+Meeting.create!(
+  title: "Second semester meeting",
+  content: "The second semester has started and we would like to have one-on-one meeting to talk about the progress your children made in the first semester, as well as what to focus on onwards.",
+  date: "2021-9-22",
+  teacher: sae,
+  kurasu: class_one_a,
+  hour: 3
+)
+
+Meeting.create!(
+  title: "Second semester meeting",
+  content: "The second semester has started and we would like to have one-on-one meeting to talk about the progress your children made in the first semester, as well as what to focus on onwards.",
+  date: "2021-9-22",
+  teacher: sae,
+  kurasu: class_one_a,
+  hour: 4
 )
 puts "Meetings created"
