@@ -101,7 +101,7 @@ puts 'Creating new parents'
 viddy = User.create!(
   email: "viddy@me.com",
   password: 123456,
-  name: "Viddy",
+  name: "Aya",
   teacher: false
 )
 
