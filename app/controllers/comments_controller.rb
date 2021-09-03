@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     authorize @comment
     if @comment.save
       # redirect_to student_messages_path(@message.student_id)
-      LineCreator.new("New comment in notebook https://www.renrakuchou.com/students/#{@message.student_id}/messages").send_line
+      LineCreator.new("New comment in notebook https://www.renrakuchou.com/students/#{@message.student_id}/messages").send_line if @comment.user.teacher
       respond_to do |format|
         format.html { redirect_to student_messages_path(@message.student_id) }
         format.js
