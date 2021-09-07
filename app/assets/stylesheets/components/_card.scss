@@ -587,6 +587,11 @@ figure {
 .message-card {
   border-radius: 4px;
   box-shadow: 2px 2px 4px rgba($color: black, $alpha: 0.7);
+  @media (max-width: 570px) {
+    margin-left: 16px;
+    margin-right: 16px;
+    width: auto;
+  }
 }
 @media (max-width: 600px) {
   .timeslots {
