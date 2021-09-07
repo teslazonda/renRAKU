@@ -588,3 +588,21 @@ figure {
   border-radius: 4px;
   box-shadow: 2px 2px 4px rgba($color: black, $alpha: 0.7);
 }
+@media (max-width: 600px) {
+  .timeslots {
+    flex-direction: column !important;
+    align-self: center;
+  }
+}
+// On the parents side, the timeslots for the meeting are simple form, so they need their own styling
+.edit_meeting .timeslot {
+  @media (max-width: 990px) {
+    width: 100px;
+  }
+  @media (max-width: 768px) {
+    width: 75px;
+  }
+  @media (max-width: 600px) {
+    width: 150px;
+  }
+}
